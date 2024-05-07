@@ -1,0 +1,10 @@
+{
+    "cmake.configureOnOpen": false,
+    "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.default.compilerPath": "/usr/bin/g++",
+    "files.associations": {
+      "expAndSim.C": "cpp",
+      "ScintAndPMT.C": "cpp",
+      "*.icc": "cpp"
+    }
+}

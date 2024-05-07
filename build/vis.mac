@@ -1,0 +1,26 @@
+/run/initialize
+
+/vis/open OGL
+/vis/viewer/set/viewpointVector -1 -1 -1
+
+/vis/viewer/set/autoRefresh true
+/vis/drawVolume
+
+/vis/geometry/set/visibility logicWorld 0 false
+
+/vis/viewer/set/style surface
+#/vis/viewer/set/style wireframe
+/vis/viewer/set/auxiliaryEdge true
+
+/vis/scene/add/trajectories smooth
+
+/vis/scene/endOfEventAction accumulate
+
+/vis/scene/add/axes 0 0 0 200 mm
+
+/vis/geometry/set/colour logicScint 1 red
+/vis/geometry/set/colour logicScintL 1 red
+/vis/geometry/set/colour logicScintR 1 red
+
+/vis/geometry/set/colour logicPBox 1 cyan
+/vis/geometry/set/colour logicSBox 1 orange
