@@ -15,6 +15,8 @@ MyDetectorConstruction::MyDetectorConstruction()
 
 	G4Material *Lead = nist->FindOrBuildMaterial("G4_Pb");
 
+  G4Material *Al = nist->FindOrBuildMaterial("G4_Al");
+
 // Material for Steel
 
 	G4Material *Steel = new G4Material("Steel", 8.*g/cm3, 9);
@@ -43,7 +45,7 @@ MyDetectorConstruction::MyDetectorConstruction()
 
 // Cell_World
 	
-	G4double dWorld = 0.2*m;
+	G4double dWorld = 1*m;
 
 	solidWorld = new G4Box("solidWorld", dWorld, dWorld, dWorld);
 	G4LogicalVolume *logicWorld = new G4LogicalVolume(solidWorld, worldMat, "logicWorld");
@@ -141,6 +143,15 @@ MyDetectorConstruction::MyDetectorConstruction()
   solidSBox = new G4Box("solidSBox", sBoxDepth/2., bWidth/2., bHeight/2.);
 	G4LogicalVolume *logicSBox = new G4LogicalVolume(solidSBox, Steel, "logicSBox");
 	// G4VPhysicalVolume *physSBox = new G4PVPlacement(0, G4ThreeVector(-(trapA + pBoxDepth + sBoxDepth/2.), 0., 0.), logicSBox, "physSBox", logicWorld, false, 0, true);
+
+  G4Box* solidAlBox1 = new G4Box("solidAlBox", 25.*cm, 1.*cm, 25.*cm);
+	G4LogicalVolume *logicAlBox1 = new G4LogicalVolume(solidAlBox1, Al, "logicAlBox1");
+	G4VPhysicalVolume* physAlBox1 = new G4PVPlacement(0, G4ThreeVector(0., -(RH + 1.*cm), -((trapA/sin(60*deg)/2) + (HH+HC)/2)), logicAlBox1, "physAlBox1", logicWorld, false, 0, true);
+
+
+  G4Box* solidAlBox2 = new G4Box("solidAlBox", 25.*cm, 2.5*cm, 25.*cm);
+	G4LogicalVolume *logicAlBox2 = new G4LogicalVolume(solidAlBox2, Al, "logicAlBox2");
+	G4VPhysicalVolume* physAlBox2 = new G4PVPlacement(0, G4ThreeVector(0., (RH + 2.5*cm) + 5*cm, -((trapA/sin(60*deg)/2) + (HH+HC)/2)), logicAlBox2, "physAlBox2", logicWorld, false, 0, true);
 
 // Select scoring volume
 	fDEScoringVolume = logicScint;

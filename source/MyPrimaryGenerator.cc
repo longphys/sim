@@ -30,15 +30,23 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 	G4ThreeVector pos1(0., 0., -zPar); // source position
 	
 	fParticleGun->SetParticlePosition(pos1);
-	fParticleGun->SetParticleEnergy(.662*MeV);
-  // G4double parE = 1*G4UniformRand();
-  // if(parE <= 0.5){
-  //   fParticleGun->SetParticleEnergy(1.173*MeV);
+  fParticleGun->SetParticleDefinition(particle);
+	fParticleGun->SetParticleEnergy(.6616553*MeV);
+
+  G4double parE = 1*G4UniformRand();
+  // if(parE <= 0.643885404789054){
+  //   fParticleGun->SetParticleEnergy(0.511*MeV);
   // }
   // else{
-  //   fParticleGun->SetParticleEnergy(1.332*MeV);
+  //   fParticleGun->SetParticleEnergy(1.274537*MeV);
   // }
-	fParticleGun->SetParticleDefinition(particle);
+	
+  // if(parE <= 0.500331777697933){
+  //   fParticleGun->SetParticleEnergy(1.173492*MeV);
+  // }
+  // else{
+  //   fParticleGun->SetParticleEnergy(1.332228*MeV);
+  // }
 
 	G4double random = G4UniformRand();
 	
