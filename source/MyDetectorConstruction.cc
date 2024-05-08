@@ -81,16 +81,16 @@ MyDetectorConstruction::MyDetectorConstruction()
 // PMT
 	// Scoring PMT
 	G4Tubs *solidPMT = new G4Tubs("solidPMT", 0, RC, HC/2, 0.*deg, 360.*deg);
-	G4LogicalVolume *logicPMT = new G4LogicalVolume(solidPMT, worldMat, "logicPMT");
+	G4LogicalVolume *logicPMT = new G4LogicalVolume(solidPMT, matPMT, "logicPMT");
 	G4VPhysicalVolume *physPMT = new G4PVPlacement(0, G4ThreeVector(0., 0., HH/2), logicPMT, "physPMT", logicMWorld, false, 0, true);
 
 	// Left PMT
 	G4LogicalVolume *logicPMTL = new G4LogicalVolume(solidPMT, matPMT, "logicPMTL");
-	G4VPhysicalVolume *physPMTL = new G4PVPlacement(0, G4ThreeVector(0., 2*RH, (HH+HC)/2), logicPMTL, "physPMTL", logicWorld, false, 0, true);
+	G4VPhysicalVolume *physPMTL = new G4PVPlacement(0, G4ThreeVector(0., 0., HH/2), logicPMTL, "physPMTL", logicMWorldL, false, 0, true);
 
 	// Right PMT
 	G4LogicalVolume *logicPMTR = new G4LogicalVolume(solidPMT, matPMT, "logicPMTR");
-	G4VPhysicalVolume *physPMTR = new G4PVPlacement(0, G4ThreeVector(0., -2*RH, (HH+HC)/2), logicPMTR, "physPMTR", logicWorld, false, 0, true);
+	G4VPhysicalVolume *physPMTR = new G4PVPlacement(0, G4ThreeVector(0., 0., HH/2), logicPMTR, "physPMTR", logicMWorldR, false, 0, true);
 		
 // Scintillator
 
@@ -115,16 +115,16 @@ MyDetectorConstruction::MyDetectorConstruction()
     	solidScint->AddNode(*solidScint2, tr2);
     	solidScint->Voxelize();
 	// Scoring Scintillator
-	G4LogicalVolume *logicScint = new G4LogicalVolume(solidScint, worldMat, "logicScint");
+	G4LogicalVolume *logicScint = new G4LogicalVolume(solidScint, BC404, "logicScint");
 	G4VPhysicalVolume *physScint = new G4PVPlacement(0, G4ThreeVector(0., 0., -HC/2.), logicScint, "physScint", logicMWorld, false, 0, true);
 	
 	//Left Scintillator
 	G4LogicalVolume *logicScintL = new G4LogicalVolume(solidScint, BC404, "logicScintL");
-	G4VPhysicalVolume *physScintL = new G4PVPlacement(0, G4ThreeVector(0., 2*RH, 0.), logicScintL, "physScintL", logicWorld, false, 0, true);
+	G4VPhysicalVolume *physScintL = new G4PVPlacement(0, G4ThreeVector(0., 0., -HC/2.), logicScintL, "physScintL", logicMWorldL, false, 0, true);
 	
 	//Right Scintillator
 	G4LogicalVolume *logicScintR = new G4LogicalVolume(solidScint, BC404, "logicScintR");
-	G4VPhysicalVolume *physScintR = new G4PVPlacement(0, G4ThreeVector(0., -2*RH, 0.), logicScintR, "physScintR", logicWorld, false, 0, true);
+	G4VPhysicalVolume *physScintR = new G4PVPlacement(0, G4ThreeVector(0., 0., -HC/2.), logicScintR, "physScintR", logicMWorldR, false, 0, true);
 
 	//Plastic Box
 	G4double bHeight = 4*RH;

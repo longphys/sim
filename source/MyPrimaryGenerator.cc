@@ -21,13 +21,13 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 	G4double HH = 0.75*RH;
   G4double HC = 0.5*HH;
   G4double trapA = detectorConstruction->GettrapA();
-	G4double zPar = (trapA/sin(60*deg)/2);
-	G4double zDis = zPar + (HH+HC)/2;
+	G4double zPar = (trapA/sin(60*deg)/2) + (HH+HC)/2;
+	G4double zDis = zPar - (HH+HC)/2;
 
 	G4ParticleTable *particleTable = G4ParticleTable::GetParticleTable();
 	G4ParticleDefinition *particle = particleTable->FindParticle("gamma");
 
-	G4ThreeVector pos1(0., 0., -zDis); // source position
+	G4ThreeVector pos1(0., 0., -zPar); // source position
 	
 	fParticleGun->SetParticlePosition(pos1);
 	fParticleGun->SetParticleEnergy(.662*MeV);
@@ -45,44 +45,31 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   for (G4int i = 0; i < 1; i++)
   {
     G4double RHrand = RH*G4UniformRand();
-    G4double theta = atan(RH/zDis);
-    G4double alpha1 = atan(2.*RH/zDis);
-    G4double alpha2 = alpha1 - theta;
     G4double phirand = twopi*G4UniformRand();
 
     G4double a = RHrand;
-    G4double b = sqrt((a*a + zDis*zDis))*sin(alpha2);
+    G4double x = a*cos(phirand);
+    G4double y = a*sin(phirand);
+    G4double z = zDis;
 
     // fParticleGun->SetNumberOfParticles(4);
-    random = 0.5;
+    // random = 0.1;
     if (random < (1./3.))
     {
-      G4double x = a*cos(phirand);
-      G4double y = b*sin(phirand);
-      G4double z = sqrt((RH*RH + zDis*zDis))*cos(alpha2);
-
       G4ThreeVector* zTrans = new G4ThreeVector(x, y, z);
 
-      fParticleGun->SetParticleMomentumDirection(zTrans->rotateX(-atan(2.*RH/zDis)));
+      fParticleGun->SetParticleMomentumDirection(zTrans->rotateY(-120*deg));
       fParticleGun->GeneratePrimaryVertex(event);
     }
     else if (random > (2./3.))
     {
-      G4double x = a*cos(phirand);
-      G4double y = b*sin(phirand);
-      G4double z = sqrt((RH*RH + zDis*zDis))*cos(alpha2);
-
       G4ThreeVector* zTrans = new G4ThreeVector(x, y, z);
 
-      fParticleGun->SetParticleMomentumDirection(zTrans->rotateX(atan(2.*RH/zDis)));
+      fParticleGun->SetParticleMomentumDirection(zTrans->rotateY(120*deg));
       fParticleGun->GeneratePrimaryVertex(event);
     }
     else
     {	
-      G4double x = a*cos(phirand);
-      G4double y = a*sin(phirand);
-      G4double z = zDis;
-
       fParticleGun->SetParticleMomentumDirection(G4ThreeVector(x, y, z));
       fParticleGun->GeneratePrimaryVertex(event);
     }

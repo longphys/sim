@@ -2590,6 +2590,10 @@ G4Types.hh
 
 /home/long/software/geant4/geant4-v11.1.2/singleinstall/include/Geant4/windefs.hh
 
+/home/long/software/geant4/geant4build/sim/source/MyDetectorConstruction.cc
+MyDetectorConstruction.hh
+/home/long/software/geant4/geant4build/sim/source/MyDetectorConstruction.hh
+
 /home/long/software/geant4/geant4build/sim/source/MyPrimaryGenerator.cc
 MyPrimaryGenerator.hh
 /home/long/software/geant4/geant4build/sim/source/MyPrimaryGenerator.hh
