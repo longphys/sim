@@ -41,37 +41,50 @@ MyDetectorConstruction::MyDetectorConstruction()
 
 	G4Material *matPMT = nist->FindOrBuildMaterial("G4_GLASS_PLATE");
 
-// Cell_World
+// World
 	
 	G4double dWorld = 0.2*m;
 
 	solidWorld = new G4Box("solidWorld", dWorld, dWorld, dWorld);
 	G4LogicalVolume *logicWorld = new G4LogicalVolume(solidWorld, worldMat, "logicWorld");
 	physWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicWorld, "physWorld", 0, false, 0, true);
-	
-// Y-Rotation 90 degrees
-
-	G4RotationMatrix* xRot = new G4RotationMatrix; // Rotates X and Z axes only
-	xRot->rotateX(M_PI/2.*rad);	
 
 	G4double trapA = 2.0*RH/sqrt(3); // hexagon side
 	G4double trapB = 4.0*RH/sqrt(3);
 	G4double RC = 0.9*RH;
 	G4double HC = 0.5*HH;
-	
+
+  G4RotationMatrix* rotY1 = new G4RotationMatrix();
+  rotY1->rotateY(120.*deg);
+  G4RotationMatrix* rotY2 = new G4RotationMatrix();
+  rotY2->rotateY(-120.*deg);
+
+// Module World
+  G4double xMWorld = trapA;
+  G4double yMWorld = RH;
+  G4double zMWorld = (HH + HC)/2;
+
+  G4Box* solidMWorld = new G4Box("solidMWorld", xMWorld, yMWorld, zMWorld);
+  G4LogicalVolume* logicMWorld = new G4LogicalVolume(solidMWorld, worldMat, "logicMWorld");
+  G4LogicalVolume* logicMWorldL = new G4LogicalVolume(solidMWorld, worldMat, "logicMWorldL");
+  G4LogicalVolume* logicMWorldR = new G4LogicalVolume(solidMWorld, worldMat, "logicMWorldR");
+  G4VPhysicalVolume* physMWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0), logicMWorld, "physMWorld", logicWorld, false, 0, true);
+  G4VPhysicalVolume* physMWorldL = new G4PVPlacement(0, G4ThreeVector(-2*trapA, 0., 0), logicMWorldL, "physMWorldL", logicWorld, false, 0, true);
+  G4VPhysicalVolume* physMWorldR = new G4PVPlacement(0, G4ThreeVector(2*trapA, 0., 0), logicMWorldR, "physMWorldR", logicWorld, false, 0, true);
+
 // PMT
 	// Scoring PMT
 	G4Tubs *solidPMT = new G4Tubs("solidPMT", 0, RC, HC/2, 0.*deg, 360.*deg);
 	G4LogicalVolume *logicPMT = new G4LogicalVolume(solidPMT, matPMT, "logicPMT");
-	G4VPhysicalVolume *physPMT = new G4PVPlacement(0, G4ThreeVector(0., 0., (HH+HC)/2), logicPMT, "physPMT", logicWorld, false, 0, true);
+	G4VPhysicalVolume *physPMT = new G4PVPlacement(0, G4ThreeVector(0., 0., HH/2), logicPMT, "physPMT", logicMWorld, false, 0, true);
 
 	// Left PMT
 	G4LogicalVolume *logicPMTL = new G4LogicalVolume(solidPMT, matPMT, "logicPMTL");
-	G4VPhysicalVolume *physPMTL = new G4PVPlacement(0, G4ThreeVector(0., 2*RH, (HH+HC)/2), logicPMTL, "physPMTL", logicWorld, false, 0, true);
+	G4VPhysicalVolume *physPMTL = new G4PVPlacement(0, G4ThreeVector(0., 0., HH/2), logicPMTL, "physPMTL", logicMWorldL, false, 0, true);
 
 	// Right PMT
 	G4LogicalVolume *logicPMTR = new G4LogicalVolume(solidPMT, matPMT, "logicPMTR");
-	G4VPhysicalVolume *physPMTR = new G4PVPlacement(0, G4ThreeVector(0., -2*RH, (HH+HC)/2), logicPMTR, "physPMTR", logicWorld, false, 0, true);
+	G4VPhysicalVolume *physPMTR = new G4PVPlacement(0, G4ThreeVector(0., 0., HH/2), logicPMTR, "physPMTR", logicMWorldR, false, 0, true);
 		
 // Scintillator
 
@@ -79,33 +92,33 @@ MyDetectorConstruction::MyDetectorConstruction()
 
 	G4Trd *solidScint2 = new G4Trd("solidScint2", trapA/2, trapB/2, HH/2, HH/2, RH/2);
 
-	G4RotationMatrix rotMatr1 = G4RotationMatrix();
-    	rotMatr1.rotateX(90.*deg);
-    	G4ThreeVector position1 = G4ThreeVector(0., -RH/2, 0.);
+  G4RotationMatrix rotMatr1 = G4RotationMatrix();
+  rotMatr1.rotateX(90.*deg);
+  G4ThreeVector position1 = G4ThreeVector(0., -RH/2, 0.);
 
-    	G4RotationMatrix rotMatr2 = G4RotationMatrix();
-    	rotMatr2.rotateX(90.*deg);
-    	G4ThreeVector position2 = G4ThreeVector(0., RH/2, 0.);
-    	
-    	G4Transform3D tr1 = G4Transform3D(rotMatr1, position1);
-    	G4Transform3D tr2 = G4Transform3D(rotMatr2, position2);
+  G4RotationMatrix rotMatr2 = G4RotationMatrix();
+  rotMatr2.rotateX(90.*deg);
+  G4ThreeVector position2 = G4ThreeVector(0., RH/2, 0.);
+  
+  G4Transform3D tr1 = G4Transform3D(rotMatr1, position1);
+  G4Transform3D tr2 = G4Transform3D(rotMatr2, position2);
 	
 	G4MultiUnion* solidScint = new G4MultiUnion("solidScint");
 
-    	solidScint->AddNode(*solidScint1, tr1);
-    	solidScint->AddNode(*solidScint2, tr2);
-    	solidScint->Voxelize();
+  solidScint->AddNode(*solidScint1, tr1);
+  solidScint->AddNode(*solidScint2, tr2);
+  solidScint->Voxelize();
 	// Scoring Scintillator
 	G4LogicalVolume *logicScint = new G4LogicalVolume(solidScint, BC404, "logicScint");
-	G4VPhysicalVolume *physScint = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicScint, "physScint", logicWorld, false, 0, true);
+	G4VPhysicalVolume *physScint = new G4PVPlacement(0, G4ThreeVector(0., 0., -HC/2.), logicScint, "physScint", logicMWorld, false, 0, true);
 	
 	//Left Scintillator
 	G4LogicalVolume *logicScintL = new G4LogicalVolume(solidScint, BC404, "logicScintL");
-	G4VPhysicalVolume *physScintL = new G4PVPlacement(0, G4ThreeVector(0., 2*RH, 0.), logicScintL, "physScintL", logicWorld, false, 0, true);
+	G4VPhysicalVolume *physScintL = new G4PVPlacement(0, G4ThreeVector(0., 0., -HC/2.), logicScintL, "physScintL", logicMWorldL, false, 0, true);
 	
 	//Right Scintillator
 	G4LogicalVolume *logicScintR = new G4LogicalVolume(solidScint, BC404, "logicScintR");
-	G4VPhysicalVolume *physScintR = new G4PVPlacement(0, G4ThreeVector(0., -2*RH, 0.), logicScintR, "physScintR", logicWorld, false, 0, true);
+	G4VPhysicalVolume *physScintR = new G4PVPlacement(0, G4ThreeVector(0., 0., -HC/2.), logicScintR, "physScintR", logicMWorldR, false, 0, true);
 
 	//Plastic Box
 	G4double bHeight = 4*RH;
