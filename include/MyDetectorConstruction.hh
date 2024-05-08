@@ -34,6 +34,7 @@ public: // public to all classes
 
 	G4double GetRH() const { return RH; }
 	G4double GetHH() const { return HH; }
+	G4double GettrapA() const { return trapA; }
 
 	G4Box* GetSolidWorld() const { return solidWorld; }
 	G4Box* GetSolidPBox() const { return solidPBox; }
@@ -50,6 +51,7 @@ protected: // only inhereting classes can access
 
 	G4double RH = 50.; // Scintillator's inner-circle radius (mm)
 	G4double HH = 0.75*RH;
+  G4double trapA = 2.0*RH/sqrt(3); // hexagon side
 
 	G4Box* solidPBox, *solidSBox;
 	G4VPhysicalVolume* physPBox;

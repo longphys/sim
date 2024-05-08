@@ -19,13 +19,15 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 // Active source
 	G4double RH = detectorConstruction->GetRH(); // Get RH from Detector Construction (it is in milimeter)
 	G4double HH = 0.75*RH;
-	G4double zPar = 4.*RH;
-	G4double zDis = zPar + HH/2;
+  G4double HC = 0.5*HH;
+  G4double trapA = detectorConstruction->GettrapA();
+	G4double zPar = (trapA/sin(60*deg)/2);
+	G4double zDis = zPar + (HH+HC)/2;
 
 	G4ParticleTable *particleTable = G4ParticleTable::GetParticleTable();
 	G4ParticleDefinition *particle = particleTable->FindParticle("gamma");
 
-	G4ThreeVector pos1(0., 0., -zPar); // source position
+	G4ThreeVector pos1(0., 0., -zDis); // source position
 	
 	fParticleGun->SetParticlePosition(pos1);
 	fParticleGun->SetParticleEnergy(.662*MeV);
@@ -52,7 +54,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
     G4double b = sqrt((a*a + zDis*zDis))*sin(alpha2);
 
     // fParticleGun->SetNumberOfParticles(4);
-    random = G4UniformRand();
+    random = 0.5;
     if (random < (1./3.))
     {
       G4double x = a*cos(phirand);
