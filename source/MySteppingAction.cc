@@ -84,13 +84,11 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
   G4int StepNumber = track->GetCurrentStepNumber();
 
 	// bool for BackScatter
-	G4int MaxBackDep = 0.2886;
-
-	if (VolumeName != "physScint" && VolumeName != "physWorld")
+	if (VolumeName == "physPMT")
 	{
-		if (ParticleName == "gamma" && ProcessName == "compt" && TotalEnergy == 0.662 && TotalEnergyAfter < 0.2886)
+		if (ParticleName == "gamma" && ProcessName == "compt" && TotalEnergy == 0.662)
 		{
-   			fEventAction->SwitchBS();
+      fEventAction->SwitchBS();
 		}
 	}
 

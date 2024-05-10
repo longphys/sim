@@ -69,8 +69,8 @@ MyDetectorConstruction::MyDetectorConstruction()
   G4LogicalVolume* logicMWorldL = new G4LogicalVolume(solidMWorld, worldMat, "logicMWorldL");
   G4LogicalVolume* logicMWorldR = new G4LogicalVolume(solidMWorld, worldMat, "logicMWorldR");
   G4VPhysicalVolume* physMWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0), logicMWorld, "physMWorld", logicWorld, false, 0, true);
-  G4VPhysicalVolume* physMWorldL = new G4PVPlacement(0, G4ThreeVector(-2*trapA, 0., 0), logicMWorldL, "physMWorldL", logicWorld, false, 0, true);
-  G4VPhysicalVolume* physMWorldR = new G4PVPlacement(0, G4ThreeVector(2*trapA, 0., 0), logicMWorldR, "physMWorldR", logicWorld, false, 0, true);
+  G4VPhysicalVolume* physMWorldL = new G4PVPlacement(0, G4ThreeVector(0., 2.*RH, 0), logicMWorldL, "physMWorldL", logicWorld, false, 0, true);
+  G4VPhysicalVolume* physMWorldR = new G4PVPlacement(0, G4ThreeVector(0., -2.*RH, 0), logicMWorldR, "physMWorldR", logicWorld, false, 0, true);
 
 // PMT
 	// Scoring PMT

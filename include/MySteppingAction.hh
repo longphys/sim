@@ -24,7 +24,7 @@ public:
 	MySteppingAction(MyEventAction* eventAction);
 	virtual ~MySteppingAction();
 
-    virtual void UserSteppingAction(const G4Step*);
+  virtual void UserSteppingAction(const G4Step*);
 private:
   MyEventAction* fEventAction;
 
