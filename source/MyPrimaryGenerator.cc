@@ -31,15 +31,15 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 	
 	fParticleGun->SetParticlePosition(pos1);
   fParticleGun->SetParticleDefinition(particle);
-	fParticleGun->SetParticleEnergy(.6616553*MeV);
+	// fParticleGun->SetParticleEnergy(.6616553*MeV);
 
   G4double parE = 1*G4UniformRand();
-  // if(parE <= 0.643885404789054){
-  //   fParticleGun->SetParticleEnergy(0.511*MeV);
-  // }
-  // else{
-  //   fParticleGun->SetParticleEnergy(1.274537*MeV);
-  // }
+  if(parE <= 0.643885404789054){
+    fParticleGun->SetParticleEnergy(0.511*MeV);
+  }
+  else{
+    fParticleGun->SetParticleEnergy(1.274537*MeV);
+  }
 	
   // if(parE <= 0.500331777697933){
   //   fParticleGun->SetParticleEnergy(1.173492*MeV);

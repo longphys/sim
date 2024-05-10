@@ -37,7 +37,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/long/software/root/root-6.30.02/rootinstall/include"
   "../include"
-  "/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4"
+  "/home/long/software/geant4/geant4-v11.1.2/singleinstall/include/Geant4"
   "/usr/include/x86_64-linux-gnu/qt5"
   "/usr/include/x86_64-linux-gnu/qt5/QtCore"
   "/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"
