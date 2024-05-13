@@ -28,7 +28,7 @@ int main (int argc, char** argv)
 
 	// Physics list is QBBC
 	G4VModularPhysicsList* physicsList = new QBBC;
-	physicsList->SetVerboseLevel(1);
+	physicsList->SetVerboseLevel(0);
 	runManager->SetUserInitialization(physicsList);
 	// runManager->SetUserInitialization(new MyPhysicsList());
 
