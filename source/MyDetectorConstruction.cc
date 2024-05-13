@@ -68,9 +68,9 @@ MyDetectorConstruction::MyDetectorConstruction()
   G4LogicalVolume* logicMWorld = new G4LogicalVolume(solidMWorld, worldMat, "logicMWorld");
   G4LogicalVolume* logicMWorldL = new G4LogicalVolume(solidMWorld, worldMat, "logicMWorldL");
   G4LogicalVolume* logicMWorldR = new G4LogicalVolume(solidMWorld, worldMat, "logicMWorldR");
-  G4VPhysicalVolume* physMWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0), logicMWorld, "physMWorld", logicWorld, false, 0, true);
-  G4VPhysicalVolume* physMWorldL = new G4PVPlacement(0, G4ThreeVector(0., 2.*RH, 0), logicMWorldL, "physMWorldL", logicWorld, false, 0, true);
-  G4VPhysicalVolume* physMWorldR = new G4PVPlacement(0, G4ThreeVector(0., -2.*RH, 0), logicMWorldR, "physMWorldR", logicWorld, false, 0, true);
+  // G4VPhysicalVolume* physMWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0), logicMWorld, "physMWorld", logicWorld, false, 0, true);
+  // G4VPhysicalVolume* physMWorldL = new G4PVPlacement(0, G4ThreeVector(0., 2.*RH, 0), logicMWorldL, "physMWorldL", logicWorld, false, 0, true);
+  // G4VPhysicalVolume* physMWorldR = new G4PVPlacement(0, G4ThreeVector(0., -2.*RH, 0), logicMWorldR, "physMWorldR", logicWorld, false, 0, true);
 
 // PMT
 	// Scoring PMT
@@ -126,15 +126,15 @@ MyDetectorConstruction::MyDetectorConstruction()
 	G4double pBoxDepth = (1/pDens)/(bHeight*bWidth);
 
 	solidPBox = new G4Box("solidPBox", pBoxDepth/2., bWidth/2., bHeight/2.);
-	G4LogicalVolume *logicPBox = new G4LogicalVolume(solidPBox, matPMT, "logicPBox");
-	// physPBox = new G4PVPlacement(0, G4ThreeVector(-(trapA + pBoxDepth/2.), 0., 0.), logicPBox, "physPBox", logicWorld, false, 0, true);
+	G4LogicalVolume *logicPBox = new G4LogicalVolume(solidPBox, worldMat, "logicPBox");
+	physPBox = new G4PVPlacement(0, G4ThreeVector(-(trapA + pBoxDepth/2.), 0., 0.), logicPBox, "physPBox", logicWorld, false, 0, true);
 
 	//Steel Box
 	G4double sBoxDepth = (1/sDens)/(bHeight*bWidth);
 
   solidSBox = new G4Box("solidSBox", sBoxDepth/2., bWidth/2., bHeight/2.);
-	G4LogicalVolume *logicSBox = new G4LogicalVolume(solidSBox, Steel, "logicSBox");
-	// G4VPhysicalVolume *physSBox = new G4PVPlacement(0, G4ThreeVector(-(trapA + pBoxDepth + sBoxDepth/2.), 0., 0.), logicSBox, "physSBox", logicWorld, false, 0, true);
+	G4LogicalVolume *logicSBox = new G4LogicalVolume(solidSBox, worldMat, "logicSBox");
+	G4VPhysicalVolume *physSBox = new G4PVPlacement(0, G4ThreeVector(-(trapA + pBoxDepth + sBoxDepth/2.), 0., 0.), logicSBox, "physSBox", logicWorld, false, 0, true);
 
 // Select scoring volume
 	fDEScoringVolume = logicScint;

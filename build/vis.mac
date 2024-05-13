@@ -6,13 +6,13 @@
 /vis/viewer/set/autoRefresh true
 /vis/drawVolume
 
-/vis/geometry/set/visibility logicWorld 0 false
-/vis/geometry/set/visibility logicMWorld 0 false
-/vis/geometry/set/visibility logicMWorldL 0 false
-/vis/geometry/set/visibility logicMWorldR 0 false
+#/vis/geometry/set/visibility logicWorld 0 false
+#/vis/geometry/set/visibility logicMWorld 0 false
+#/vis/geometry/set/visibility logicMWorldL 0 false
+#/vis/geometry/set/visibility logicMWorldR 0 false
 
-/vis/viewer/set/style surface
-#/vis/viewer/set/style wireframe
+#/vis/viewer/set/style surface
+/vis/viewer/set/style wireframe
 /vis/viewer/set/auxiliaryEdge true
 
 /vis/scene/add/trajectories smooth
