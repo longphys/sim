@@ -82,20 +82,20 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 	// fParticleGun->SetParticleEnergy(.6616553*MeV);
   
   //! Na22
-  if(randParE <= 0.643885404789054){
-    fParticleGun->SetParticleEnergy(0.511*MeV);
-  }
-  else{
-    fParticleGun->SetParticleEnergy(1.274537*MeV);
-  }
-	
-  //! Co60
-  // if(parE <= 0.500331777697933){
-  //   fParticleGun->SetParticleEnergy(1.173492*MeV);
+  // if(randParE <= 0.643885404789054){
+  //   fParticleGun->SetParticleEnergy(0.511*MeV);
   // }
   // else{
-  //   fParticleGun->SetParticleEnergy(1.332228*MeV);
+  //   fParticleGun->SetParticleEnergy(1.274537*MeV);
   // }
+	
+  //! Co60
+  if(randParE <= 0.500331777697933){
+    fParticleGun->SetParticleEnergy(1.173492*MeV);
+  }
+  else{
+    fParticleGun->SetParticleEnergy(1.332228*MeV);
+  }
 
 	fParticleGun->SetParticleDefinition(particle);
 
