@@ -34,19 +34,19 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 	// fParticleGun->SetParticleEnergy(.6616553*MeV);
 
   G4double parE = 1*G4UniformRand();
-  // if(parE <= 0.643885404789054){
-  //   fParticleGun->SetParticleEnergy(0.511*MeV);
-  // }
-  // else{
-  //   fParticleGun->SetParticleEnergy(1.274537*MeV);
-  // }
-	
-  if(parE <= 0.500331777697933){
-    fParticleGun->SetParticleEnergy(1.173492*MeV);
+  if(parE <= 0.643885404789054){
+    fParticleGun->SetParticleEnergy(0.511*MeV);
   }
   else{
-    fParticleGun->SetParticleEnergy(1.332228*MeV);
+    fParticleGun->SetParticleEnergy(1.274537*MeV);
   }
+
+  // if(parE <= 0.500331777697933){
+  //   fParticleGun->SetParticleEnergy(1.173492*MeV);
+  // }
+  // else{
+  //   fParticleGun->SetParticleEnergy(1.332228*MeV);
+  // }
 
 	G4double random = G4UniformRand();
 	
@@ -81,6 +81,21 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
       fParticleGun->SetParticleMomentumDirection(G4ThreeVector(x, y, z));
       fParticleGun->GeneratePrimaryVertex(event);
     }
+  }
+
+//! Annihilation 511 gammas
+  if(fParticleGun->GetParticleEnergy() == 1.274537*MeV){
+    fParticleGun->SetParticleEnergy(0.511*MeV);
+    G4double cosTheta = 2*G4UniformRand() - 1., phi = twopi*G4UniformRand();
+    G4double sinTheta = std::sqrt(1. - cosTheta*cosTheta);
+    G4double ux = sinTheta*std::cos(phi),
+    uy = sinTheta*std::sin(phi),
+    uz = cosTheta;
+
+    fParticleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
+    fParticleGun->GeneratePrimaryVertex(event);
+    fParticleGun->SetParticleMomentumDirection(G4ThreeVector(-ux,-uy,-uz));
+    fParticleGun->GeneratePrimaryVertex(event);
   }
 // Ray tracing problem
 	// G4Box* solidPBox = detectorConstruction->GetSolidPBox();
