@@ -283,15 +283,23 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   G4int n = sizeof(points) / sizeof(points[0]);
   convexHull(points, n);
 
-  //! Convert from X', Y' to X, Y, Z
-  std::vector <G4double> newintX, newintY, newintZ;
+  //! K40
+  fParticleGun->SetParticleEnergy(1.460822*MeV);
+	// fParticleGun->GeneratePrimaryVertex(event);
+
+  //! Get X', Y' coordinates in order
+  std::vector <G4double> newintX, newintY, newintZ, newintPlaneX, newintPlaneY;
   for (G4int l = 0; l < hullSize; l++)
   {
     for (G4int i = 0; i < 8; i++)
     {
       if (intPlaneX[i] == hull[l].x && intPlaneY[i] == hull[l].y)
       {
-        G4cout << "(" << hull[l].x << ", " << hull[l].y << ") \n";
+        G4cout << "2D coordinates: \n(" << hull[l].x << ", " << hull[l].y << ") \n";
+        G4cout << "3D coordinates: \n(" << intX[i] << ", " << intY[i] << ", " << intZ[i] << ") \n";
+        newintPlaneX.push_back(intPlaneX[i]);
+        newintPlaneY.push_back(intPlaneY[i]);
+
         newintX.push_back(intX[i]);
         newintY.push_back(intY[i]);
         newintZ.push_back(intZ[i]);
@@ -299,35 +307,33 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
     }
   }
 
+  // G4cout << "size = " << newintPlaneX.size() << "\n";
+  // G4cout << "size = " << newintPlaneY.size() << "\n";
+
   // G4cout << "size = " << newintX.size() << "\n";
   // G4cout << "size = " << newintY.size() << "\n";
   // G4cout << "size = " << newintZ.size() << "\n";
 
   for (G4int i = 0; i < newintX.size(); i++)
   {
-    // G4cout << "newintX[" << i << "] = " << newintX[i] 
-    // << "; newintY[" << i << "] = " << newintY[i] 
-    // << "; newintZ[" << i << "] = " << newintZ[i] << "\n";
     fParticleGun->SetParticleMomentumDirection(G4ThreeVector(newintX[i] - pos2x, newintY[i] - pos2y, newintZ[i] - pos2z));
-	  fParticleGun->GeneratePrimaryVertex(event);
+	  // fParticleGun->GeneratePrimaryVertex(event);
   }
-
-  //! K40
-  fParticleGun->SetParticleEnergy(1.460822*MeV);
-	// fParticleGun->GeneratePrimaryVertex(event);
   
-  for (G4int i = 0; i < hullSize; i++)
-  {
-    if(i != hullSize -1)
-    { // connect newint i and newint i + 1
-      G4cout << "hullpoint " << i + 1 << " = " << hull[i].x << "; " << hull[i].y << " and "
-    << "hullpoint " << i + 2 << " = " << hull[i+1].x << "; " << hull[i+1].y << "\n";
-    }
-    else
-    {// connect last newint i and newint 0
-      G4cout << "hullpoint " << i + 1 << " = " << hull[i].x << "; " << hull[i].y << " and "
-    << "hullpoint 0 = " << hull[0].x << "; " << hull[0].y << "\n";
-    }
-  }
+  // for (G4int i = 0; i < hullSize; i++)
+  // {
+  //   if(i != hullSize -1)
+  //   { // connect newint i and newint i + 1
+  //     G4cout << "hullpoint " << i + 1 << " = (" << newintX[i] << ", " << newintY[i] << ", " << newintZ[i] << ") and "
+  //   << "hullpoint " << i + 2 << " = (" << newintX[i+1] << ", " << newintY[i+1] << ", " << newintZ[i+1] << ")\n";
+  //   }
+  //   else
+  //   {// connect last newint i and newint 0
+  //     G4cout << "hullpoint " << i + 1 << " = (" << newintX[i] << ", " << newintY[i] << ", " << newintZ[i] << ") and "
+  //   << "hullpoint 0 = (" << newintX[0] << ", " << newintY[0] << ", " << newintZ[0] << ")\n";
+  //   }
+  // }
+
+  G4double phirand;
   
 }
