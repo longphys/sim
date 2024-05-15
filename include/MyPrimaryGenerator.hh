@@ -16,6 +16,7 @@
 #include "G4PVPlacement.hh"
 
 #include "MyDetectorConstruction.hh"
+#include "MyTreeHandler.hh"
 
 class MyPrimaryGenerator: public G4VUserPrimaryGeneratorAction
 {

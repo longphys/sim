@@ -31,5 +31,5 @@ void MyRunAction::EndOfRunAction(const G4Run* run)
 	<< "\n";
 	
 	MyTreeHandler* aTreeHandler = MyTreeHandler::GetInstance();
-  	aTreeHandler->Close();
+  aTreeHandler->Close();
 }

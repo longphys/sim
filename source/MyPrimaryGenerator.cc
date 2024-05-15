@@ -332,9 +332,12 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   for (G4int i = 0; i < newintX.size(); i++)
   {
     fParticleGun->SetParticleMomentumDirection(G4ThreeVector(newintX[i] - pos2x, newintY[i] - pos2y, newintZ[i] - pos2z));
-	  // fParticleGun->GeneratePrimaryVertex(event);
+	  fParticleGun->GeneratePrimaryVertex(event);
   }
-  
+
+  MyTreeHandler* aTreeHandler = MyTreeHandler::GetInstance();
+  aTreeHandler->PushVer(newintPlaneX, newintPlaneY);
+
   // for (G4int i = 0; i < hullSize; i++)
   // {
   //   if(i != hullSize -1)

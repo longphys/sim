@@ -104,7 +104,7 @@ void expAndSim()
   for(int i = 0; i < entries; i++){
   // for(int i = 0; i < 10; i++){
     tree3->GetEntry(i);
-    // std::cout << x[0] << std::endl;
+    std::cout << x[0] << std::endl;
     // std::cout << a*x[0] + b << std::endl;
     // hist5->Fill(a*x[0] + b);
     hist5->Fill(a*(x[0]+0.5) + b);

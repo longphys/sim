@@ -14,12 +14,12 @@ class MyTreeHandler
     {
       if (fTreeHandlerPtr == NULL)
       {
-          fTreeHandlerPtr = new MyTreeHandler();
-          return fTreeHandlerPtr;
+        fTreeHandlerPtr = new MyTreeHandler();
+        return fTreeHandlerPtr;
       }
       else
       {
-          return fTreeHandlerPtr;
+        return fTreeHandlerPtr;
       }
     }
     G4int Push(int64_t eventNr, G4double dE, G4double dEL, 
@@ -28,6 +28,8 @@ class MyTreeHandler
     G4int Open();
     G4int Close();
     G4int Print();
+    
+    G4int PushVer(std::vector <G4double> xVer,std::vector <G4double> yVer);
 
   protected:
     static MyTreeHandler* fTreeHandlerPtr;
@@ -36,14 +38,18 @@ class MyTreeHandler
 
     TFile* fFile;
     TTree* fTree;
+    TTree* fVerTree;
     int64_t fEventNr;
 
     G4double fdE, fdEL, fdER,
     fE, fEL, fER, fbackEDep;
     
     int64_t fcomptNr;
-    std::vector <G4double> fcomptEDep;
+    std::vector <G4double> fcomptEDep; 
     
+
+    std::vector <G4double> fxVer, fyVer;
+
 };
 
 #endif

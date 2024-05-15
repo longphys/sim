@@ -7,6 +7,8 @@ MyTreeHandler::MyTreeHandler()
   //fFile = new TFile("out.root", "recreate");
   fFile = new TFile();
   fTree = new TTree("dEEtree", "dEEtree");
+  fVerTree = new TTree("verTree", "verTree");
+
   fEventNr = -1;
   fdE = -1.0;
   fdEL = -1.0;
@@ -15,6 +17,8 @@ MyTreeHandler::MyTreeHandler()
   fEL = -1.0;
   fER = -1.0;
   fcomptNr = -1;
+
+  // fcomptEDep.reserve(10);
   fcomptEDep.clear();
   
   fTree->Branch("EventID", &fEventNr, "EventID/I");
@@ -30,6 +34,12 @@ MyTreeHandler::MyTreeHandler()
   fTree->Branch("ComptonInteractions", &fcomptNr, "ComptonInteractions/L");
   fTree->Branch("ComptonEnergyDeposition", &fcomptEDep);
   fTree->Branch("BackScatteredComptonEnergyDeposition", &fbackEDep, "BackScatteredComptonEnergyDeposition/D");
+
+  fxVer.clear();
+  fyVer.clear();
+  
+  fVerTree->Branch("xVer", &fxVer);
+  fVerTree->Branch("yVer", &fyVer);
 }
 
 G4int MyTreeHandler::Open()
@@ -61,9 +71,20 @@ std::vector <G4double> comptEDep, G4double backEDep)
   return 0;
 }
 
+G4int MyTreeHandler::PushVer(std::vector <G4double> xVer,std::vector <G4double> yVer)
+{
+  fxVer = xVer;
+  fyVer = yVer;
+
+  fVerTree->Fill();
+
+  return 0;
+}
+
 G4int MyTreeHandler::Close()
 {
   fTree->Write();
+  fVerTree->Write();
   fFile->Close();
 
   return 0;

@@ -49,7 +49,8 @@ protected: // only inhereting classes can access
 	G4VPhysicalVolume *physWorld;
 
 	G4double RH = 50.; // Scintillator's inner-circle radius (mm)
-	G4double HH = 0.75*RH;
+	// G4double HH = 0.75*RH;
+  G4double HH = 70.;
 
 	G4Box* solidPBox, *solidSBox;
 	G4VPhysicalVolume* physPBox;
