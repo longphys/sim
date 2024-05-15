@@ -49,7 +49,7 @@ MyDetectorConstruction::MyDetectorConstruction()
 
 	solidWorld = new G4Box("solidWorld", dWorld, dWorld, dWorld);
 	G4LogicalVolume *logicWorld = new G4LogicalVolume(solidWorld, worldMat, "logicWorld");
-	physWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicWorld, "physWorld", 0, false, 0, true);
+	physWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicWorld, "physWorld", 0, false, 0, true); 
 
 	G4double trapB = 4.0*RH/sqrt(3);
 	G4double RC = 0.9*RH;
@@ -59,6 +59,25 @@ MyDetectorConstruction::MyDetectorConstruction()
   rotY1->rotateY(120.*deg);
   G4RotationMatrix* rotY2 = new G4RotationMatrix();
   rotY2->rotateY(-120.*deg);
+
+//Al Box
+  G4Box* solidAlBox = new G4Box("solidAlBox", 27.*cm, 2*RH+2.*cm, 27.*cm);
+  G4LogicalVolume* logicAlBox = new G4LogicalVolume(solidAlBox, Al, "logicAlBox");
+  G4VPhysicalVolume* physAlBox = new G4PVPlacement(0, G4ThreeVector(0., 0., -((trapA/sin(60*deg)/2) + (HH+HC)/2)), logicAlBox, "physAlBox", logicWorld, false, 0, true);
+
+//Air Box
+  G4Box* solidAirBox = new G4Box("solidAirBox", 25.*cm, 2*RH, 25.*cm);
+  G4LogicalVolume* logicAirBox = new G4LogicalVolume(solidAirBox, worldMat, "logicAirBox");
+  G4VPhysicalVolume* physAirBox = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicAirBox, "physAirBox", logicAlBox, false, 0, true);
+
+  G4Box* solidAlBox1 = new G4Box("solidAlBox1", 25.*cm, 1.*cm, 25.*cm);
+	G4LogicalVolume *logicAlBox1 = new G4LogicalVolume(solidAlBox1, Al, "logicAlBox1");
+	// G4VPhysicalVolume* physAlBox1 = new G4PVPlacement(0, G4ThreeVector(0., -(RH + 1.*cm), -((trapA/sin(60*deg)/2) + (HH+HC)/2)), logicAlBox1, "physAlBox1", logicWorld, false, 0, true);
+
+
+  G4Box* solidAlBox2 = new G4Box("solidAlBox2", 25.*cm, 2.5*cm, 25.*cm);
+	G4LogicalVolume *logicAlBox2 = new G4LogicalVolume(solidAlBox2, Al, "logicAlBox2");
+	// G4VPhysicalVolume* physAlBox2 = new G4PVPlacement(0, G4ThreeVector(0., (RH + 2.5*cm) + 5*cm, -((trapA/sin(60*deg)/2) + (HH+HC)/2)), logicAlBox2, "physAlBox2", logicWorld, false, 0, true);
 
 // Module World
   G4double xMWorld = trapA;
@@ -143,15 +162,6 @@ MyDetectorConstruction::MyDetectorConstruction()
   solidSBox = new G4Box("solidSBox", sBoxDepth/2., bWidth/2., bHeight/2.);
 	G4LogicalVolume *logicSBox = new G4LogicalVolume(solidSBox, Steel, "logicSBox");
 	// G4VPhysicalVolume *physSBox = new G4PVPlacement(0, G4ThreeVector(-(trapA + pBoxDepth + sBoxDepth/2.), 0., 0.), logicSBox, "physSBox", logicWorld, false, 0, true);
-
-  G4Box* solidAlBox1 = new G4Box("solidAlBox", 25.*cm, 1.*cm, 25.*cm);
-	G4LogicalVolume *logicAlBox1 = new G4LogicalVolume(solidAlBox1, Al, "logicAlBox1");
-	G4VPhysicalVolume* physAlBox1 = new G4PVPlacement(0, G4ThreeVector(0., -(RH + 1.*cm), -((trapA/sin(60*deg)/2) + (HH+HC)/2)), logicAlBox1, "physAlBox1", logicWorld, false, 0, true);
-
-
-  G4Box* solidAlBox2 = new G4Box("solidAlBox", 25.*cm, 2.5*cm, 25.*cm);
-	G4LogicalVolume *logicAlBox2 = new G4LogicalVolume(solidAlBox2, Al, "logicAlBox2");
-	G4VPhysicalVolume* physAlBox2 = new G4PVPlacement(0, G4ThreeVector(0., (RH + 2.5*cm) + 5*cm, -((trapA/sin(60*deg)/2) + (HH+HC)/2)), logicAlBox2, "physAlBox2", logicWorld, false, 0, true);
 
 // Select scoring volume
 	fDEScoringVolume = logicScint;
