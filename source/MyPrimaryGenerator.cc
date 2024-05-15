@@ -310,10 +310,13 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
     {
       if (intPlaneX[i] == hull[l].x && intPlaneY[i] == hull[l].y)
       {
-        G4cout << "2D coordinates: \n(" << hull[l].x << ", " << hull[l].y << ") \n";
-        G4cout << "3D coordinates: \n(" << intX[i] << ", " << intY[i] << ", " << intZ[i] << ") \n";
+      //   G4cout << "2D coordinates: \n(" << hull[l].x << ", " << hull[l].y << ") \n";
+      //   G4cout << "3D coordinates: \n(" << intX[i] << ", " << intY[i] << ", " << intZ[i] << ") \n";
         newintPlaneX.push_back(intPlaneX[i]);
         newintPlaneY.push_back(intPlaneY[i]);
+
+
+        G4cout << "2D coordinates: \n(" << intPlaneX[i] << ", " << intPlaneY[i] << ") \n";
 
         newintX.push_back(intX[i]);
         newintY.push_back(intY[i]);
@@ -328,6 +331,13 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   // G4cout << "size = " << newintX.size() << "\n";
   // G4cout << "size = " << newintY.size() << "\n";
   // G4cout << "size = " << newintZ.size() << "\n";
+  
+  G4int ns = newintPlaneX.size();
+  G4double arrnewintPlaneX[ns];
+  G4double arrnewintPlaneY[ns];
+
+  copy(newintPlaneX.begin(), newintPlaneX.end(), arrnewintPlaneX);
+  copy(newintPlaneY.begin(), newintPlaneY.end(), arrnewintPlaneY);
 
   for (G4int i = 0; i < newintX.size(); i++)
   {
@@ -352,6 +362,4 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   //   }
   // }
 
-  G4double phirand;
-  
 }

@@ -47,7 +47,6 @@ class MyTreeHandler
     int64_t fcomptNr;
     std::vector <G4double> fcomptEDep; 
     
-
     std::vector <G4double> fxVer, fyVer;
 
 };
