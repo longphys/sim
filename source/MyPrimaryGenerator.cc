@@ -40,8 +40,6 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   //   fParticleGun->SetParticleEnergy(1.274537*MeV);
   // }
 
-
-
 	G4double random = G4UniformRand();
 	
   // for (G4int i = 0; i < 1; i++)
@@ -75,7 +73,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   //   }
   // }
 //! Cs137
-	fParticleGun->SetParticleEnergy(.6616553*MeV);
+	// fParticleGun->SetParticleEnergy(.6616553*MeV);
 
 //! Co60
   // if(parE <= 0.500331777697933){
@@ -84,9 +82,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   // else{
   //   fParticleGun->SetParticleEnergy(1.332228*MeV);
   // }
-
-//! Na22
-  // fParticleGun->SetParticleEnergy(1.274537*MeV);
+//! Na22 0.511 MeV Annihilation gammas
 
   G4double cosTheta = 2*G4UniformRand() - 1., phi = twopi*G4UniformRand();
   G4double sinTheta = std::sqrt(1. - cosTheta*cosTheta);
@@ -94,26 +90,24 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   uy = sinTheta*std::sin(phi),
   uz = cosTheta;
 
-
+  fParticleGun->SetParticleEnergy(0.511*MeV);
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
   fParticleGun->GeneratePrimaryVertex(event);
+  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(-ux,-uy,-uz));
+  fParticleGun->GeneratePrimaryVertex(event);
 
-//! Annihilation 511 gammas
-  // G4double parE = 1*G4UniformRand();
-  // if(parE < 0.9){
-  //   cosTheta = 2*G4UniformRand() - 1., phi = twopi*G4UniformRand();
-  //   sinTheta = std::sqrt(1. - cosTheta*cosTheta);
-  //   ux = sinTheta*std::cos(phi),
-  //   uy = sinTheta*std::sin(phi),
-  //   uz = cosTheta;
+//! Na22 1.2 MeV
+  fParticleGun->SetParticleEnergy(1.274537*MeV);
+  if(parE < 0.75){
+    cosTheta = 2*G4UniformRand() - 1., phi = twopi*G4UniformRand();
+    sinTheta = std::sqrt(1. - cosTheta*cosTheta);
+    ux = sinTheta*std::cos(phi),
+    uy = sinTheta*std::sin(phi),
+    uz = cosTheta;  
+    fParticleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
+    fParticleGun->GeneratePrimaryVertex(event);
+  }
 
-  //   fParticleGun->SetParticleEnergy(0.511*MeV);
-  //   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
-    
-  //   fParticleGun->GeneratePrimaryVertex(event);
-  //   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(-ux,-uy,-uz));
-  //   fParticleGun->GeneratePrimaryVertex(event);
-  // }
 //! Ray tracing problem
 	// G4Box* solidPBox = detectorConstruction->GetSolidPBox();
   // G4Box* solidSBox = detectorConstruction->GetSolidSBox();
