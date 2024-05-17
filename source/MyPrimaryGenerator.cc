@@ -33,12 +33,6 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   fParticleGun->SetParticleDefinition(particle);
 
   G4double parE = 1*G4UniformRand();
-  // if(parE <= 0.643885404789054){
-  //   fParticleGun->SetParticleEnergy(0.511*MeV);
-  // }
-  // else{
-  //   fParticleGun->SetParticleEnergy(1.274537*MeV);
-  // }
 
 	G4double random = G4UniformRand();
 	
@@ -72,17 +66,6 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   //     fParticleGun->GeneratePrimaryVertex(event);
   //   }
   // }
-//! Cs137
-	// fParticleGun->SetParticleEnergy(.6616553*MeV);
-
-//! Co60
-  // if(parE <= 0.500331777697933){
-  //   fParticleGun->SetParticleEnergy(1.173492*MeV);
-  // }
-  // else{
-  //   fParticleGun->SetParticleEnergy(1.332228*MeV);
-  // }
-//! Na22 0.511 MeV Annihilation gammas
 
   G4double cosTheta = 2*G4UniformRand() - 1., phi = twopi*G4UniformRand();
   G4double sinTheta = std::sqrt(1. - cosTheta*cosTheta);
@@ -90,15 +73,28 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   uy = sinTheta*std::sin(phi),
   uz = cosTheta;
 
+  //! Cs137
+	// fParticleGun->SetParticleEnergy(.6616553*MeV);
+  //! Na22 0.511 MeV Annihilation gamma
   fParticleGun->SetParticleEnergy(0.511*MeV);
+  //! Co60
+  // if(parE < 0.500331777697933){
+  //   fParticleGun->SetParticleEnergy(1.173492*MeV);
+  // }
+  // else{
+  //   fParticleGun->SetParticleEnergy(1.332228*MeV);
+  // }
+
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
   fParticleGun->GeneratePrimaryVertex(event);
+
+  //! Na22 Second 0.511 MeV 
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(-ux,-uy,-uz));
   fParticleGun->GeneratePrimaryVertex(event);
 
 //! Na22 1.2 MeV
   fParticleGun->SetParticleEnergy(1.274537*MeV);
-  if(parE < 0.75){
+  if(parE < 0.8){
     cosTheta = 2*G4UniformRand() - 1., phi = twopi*G4UniformRand();
     sinTheta = std::sqrt(1. - cosTheta*cosTheta);
     ux = sinTheta*std::cos(phi),
