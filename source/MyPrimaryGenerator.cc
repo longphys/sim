@@ -79,16 +79,9 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   G4double randParE = 1*G4UniformRand();
 
   //! Cs137
-	// fParticleGun->SetParticleEnergy(.6616553*MeV);
   
   //! Na22
-  // if(randParE <= 0.643885404789054){
-  //   fParticleGun->SetParticleEnergy(0.511*MeV);
-  // }
-  // else{
-  //   fParticleGun->SetParticleEnergy(1.274537*MeV);
-  // }
-	
+
   //! Co60
   if(randParE <= 0.500331777697933){
     fParticleGun->SetParticleEnergy(1.173492*MeV);
@@ -155,9 +148,9 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
     uz = cosTheta;
 
     fParticleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
-    fParticleGun->GeneratePrimaryVertex(event);
+    // fParticleGun->GeneratePrimaryVertex(event);
     fParticleGun->SetParticleMomentumDirection(G4ThreeVector(-ux,-uy,-uz));
-    fParticleGun->GeneratePrimaryVertex(event);
+    // fParticleGun->GeneratePrimaryVertex(event);
   }
   
 //! Ray tracing problem
@@ -205,10 +198,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 		}
 	}
 
-  // pos2x = dWorld;
-	// pos2y = dWorld;
-	// pos2z = dWorld;
-  // Vertices 3D
+  //! Vertices coordinates in 3D
   std::vector <G4double> verX, verY, verZ;
   verX.push_back(XposPBox + pBoxDepth/2.); verY.push_back(YposPBox + bWidth/2.); verZ.push_back(ZposPBox + bHeight/2.);
   verX.push_back(XposPBox + pBoxDepth/2.); verY.push_back(YposPBox + bWidth/2.); verZ.push_back(ZposPBox - bHeight/2.);
@@ -240,21 +230,24 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 
   G4double XposBoxCombined = XposPBox - sBoxDepth/2; // middle point of combined box
 
+  //! Normal vector of the plane
   G4ThreeVector normalDirCenter
   (XposBoxCombined - pos2x,
   YposPBox - pos2y,
   ZposPBox - pos2z);
   
+  //! Plane equation is: aPlane*x + bPlane*y + cPlane*z + dPlane = 0
   G4double aPlane = XposBoxCombined - pos2x;
   G4double bPlane = YposPBox - pos2y;
   G4double cPlane = ZposPBox - pos2z;
-  G4double dPlane = -(aPlane*XposBoxCombined + bPlane*YposPBox + cPlane*ZposPBox);
-  // plane equation is: aPlane*x + bPlane*y + cPlane*z + dPlane = 0
 
-  // G4cout << "a = " << aPlane << "; b = " << bPlane << "; c = " << cPlane << "; d = " << dPlane << "\n";
+  //! d = -(ax + by + cz) with (x,y,z) belongs to plane
+  G4double dPlane = -(aPlane*XposBoxCombined + bPlane*YposPBox + cPlane*ZposPBox);
+
+  G4cout << "a = " << aPlane << "; b = " << bPlane << "; c = " << cPlane << "; d = " << dPlane << "\n";
 
   G4ThreeVector planeXdef(bPlane, -aPlane, 0);
-  G4ThreeVector planeYdef(normalDirCenter.cross(planeXdef)); //not checked
+  G4ThreeVector planeYdef(normalDirCenter.cross(planeXdef));
 
   std::vector <G4double> 
   intX, intY, intZ, 
@@ -274,7 +267,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 
     G4ThreeVector newdir(intX[i] - pos2x, intY[i] - pos2y, intZ[i] - pos2z);
     fParticleGun->SetParticleMomentumDirection(newdir);
-	  // fParticleGun->GeneratePrimaryVertex(event);
+	  fParticleGun->GeneratePrimaryVertex(event);
 
     disPlaceX.push_back(intX[i] - XposBoxCombined);
     disPlaceY.push_back(intY[i] - YposPBox);
@@ -315,9 +308,6 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
         newintPlaneX.push_back(intPlaneX[i]);
         newintPlaneY.push_back(intPlaneY[i]);
 
-
-        G4cout << "2D coordinates: \n(" << intPlaneX[i] << ", " << intPlaneY[i] << ") \n";
-
         newintX.push_back(intX[i]);
         newintY.push_back(intY[i]);
         newintZ.push_back(intZ[i]);
@@ -333,16 +323,11 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   // G4cout << "size = " << newintZ.size() << "\n";
   
   G4int ns = newintPlaneX.size();
-  G4double arrnewintPlaneX[ns];
-  G4double arrnewintPlaneY[ns];
-
-  copy(newintPlaneX.begin(), newintPlaneX.end(), arrnewintPlaneX);
-  copy(newintPlaneY.begin(), newintPlaneY.end(), arrnewintPlaneY);
 
   for (G4int i = 0; i < newintX.size(); i++)
   {
     fParticleGun->SetParticleMomentumDirection(G4ThreeVector(newintX[i] - pos2x, newintY[i] - pos2y, newintZ[i] - pos2z));
-	  fParticleGun->GeneratePrimaryVertex(event);
+	  // fParticleGun->GeneratePrimaryVertex(event);
   }
 
   MyTreeHandler* aTreeHandler = MyTreeHandler::GetInstance();
