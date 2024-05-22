@@ -193,7 +193,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 	}
   
   // G4ThreeVector pos2(pos2x, pos2y, pos2z);
-  G4ThreeVector pos2(dWorld/2. , dWorld/2. , dWorld/2.);
+  G4ThreeVector pos2(dWorld/1.2 , dWorld/1.2 , dWorld/1.7);
 
   //! Vertices coordinates in 3D
   std::vector <G4ThreeVector> ver;
@@ -213,7 +213,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
     dir.push_back(ver[i] - pos2);
 
     fParticleGun->SetParticlePosition(pos2);
-    fParticleGun->SetParticleMomentumDirection(dir[i]);
+    // fParticleGun->SetParticleMomentumDirection(dir[i]);
 	  // fParticleGun->GeneratePrimaryVertex(event);
   }
 
@@ -224,24 +224,29 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 
   //! Normal vector of the plane
   G4ThreeVector normalDirCenter = origin - pos2;
+  // G4cout << "origin x = " << origin.getX() << "; " << "y = " << origin.getY() << "; " << "z = " << origin.getZ() << "\n";
+  // G4cout << "pos2 x = " << pos2.getX() << "; " << "y = " << pos2.getY() << "; " << "z = " << pos2.getZ() << "\n";
+  // G4cout << "norm x = " << normalDirCenter.getX() << "; " << "y = " << normalDirCenter.getY() << "; " << "z = " << normalDirCenter.getZ() << "\n";
   
   //! Plane equation is: aPlane*x + bPlane*y + cPlane*z + dPlane = 0
-  G4double aPlane = origin.getX() - pos2x;
-  G4double bPlane = origin.getY() - pos2y;
-  G4double cPlane = origin.getZ() - pos2z;
+  G4double aPlane = normalDirCenter.getX();
+  G4double bPlane = normalDirCenter.getY();
+  G4double cPlane = normalDirCenter.getZ();
 
   //! d = -(ax + by + cz) with (x,y,z) belongs to plane
   G4double dPlane = -(aPlane*origin.getX() + bPlane*origin.getY() + cPlane*origin.getZ());
 
-  G4cout << "a = " << aPlane << "; b = " << bPlane << "; c = " << cPlane << "; d = " << dPlane << "\n";
+  // G4cout << "a = " << aPlane << "; b = " << bPlane << "; c = " << cPlane << "; d = " << dPlane << "\n";
 
   //! X' and Y' axes in 3D coordinates
-  G4ThreeVector planeXdef(bPlane, -aPlane, 0);
-  G4ThreeVector planeYdef(normalDirCenter.cross(planeXdef));
+  G4ThreeVector planeYdef(bPlane, -aPlane, 0);
+  G4ThreeVector planeXdef((-normalDirCenter).cross(planeYdef));
 
-  //! Normalize
-  planeXdef = planeXdef/planeXdef.mag();
-  planeYdef = planeYdef/planeYdef.mag();
+  // fParticleGun->SetParticlePosition(origin);
+  // fParticleGun->SetParticleMomentumDirection(planeXdef - origin);
+	// fParticleGun->GeneratePrimaryVertex(event);
+  // fParticleGun->SetParticleMomentumDirection(planeYdef - origin);
+	// fParticleGun->GeneratePrimaryVertex(event);
 
   std::vector <G4ThreeVector> interSect, disPlace;
   std::vector <G4TwoVector> intPrime;
@@ -249,22 +254,24 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   for(G4int i = 0; i < 8; i++)
   {
     //! Solve t by substituting parametric line equation to plane equation
-    G4double t = -(aPlane*pos2x + bPlane*pos2y + cPlane*pos2z + dPlane)/(aPlane*dir[i].getX() + bPlane*dir[i].getY() + cPlane*dir[i].getZ());
+    G4double t = -(aPlane*pos2.getX() + bPlane*pos2.getY() + cPlane*pos2.getZ() + dPlane) / (aPlane*dir[i].getX() + bPlane*dir[i].getY() + cPlane*dir[i].getZ());
 
     //! Parametric equation of the line
-    interSect.push_back(G4ThreeVector(pos2x + dir[i].getX()*t, pos2y + dir[i].getY()*t, pos2z + dir[i].getZ()*t));
+    interSect.push_back(G4ThreeVector(pos2.getX() + dir[i].getX()*t, pos2.getY() + dir[i].getY()*t, pos2.getZ() + dir[i].getZ()*t));
 
-    // G4cout << "intX = " << interSect[i].getX() << "; intY = " << interSect[i].getY() << "; intZ = " << interSect[i].getZ() << "\n";
-
-    G4ThreeVector newdir(interSect[i].getX() - pos2x, interSect[i].getY() - pos2y, interSect[i].getZ() - pos2z);
-    fParticleGun->SetParticleMomentumDirection(newdir);
+    fParticleGun->SetParticleMomentumDirection(interSect[i] - pos2);
 	  // fParticleGun->GeneratePrimaryVertex(event);
 
     //! Displacement vector from the origin O of the OX'Y' system
     disPlace.push_back(interSect[i] - origin);
+    // G4cout << "interSect[" << i << "] = (" << interSect[i].getX() << ", " << interSect[i].getY() << ", " << interSect[i].getZ() << ")\n";
+    // G4cout << "origin[" << i << "] = (" << origin.getX() << ", " << origin.getY() << ", " << origin.getZ() << ")\n";
+    // G4cout << "disPlace[" << i << "] = (" << disPlace[i].getX() << ", " << disPlace[i].getY() << ", " << disPlace[i].getZ() << ")\n";
     
     //! Conversion intersection from OXYZ to OX'Y' coordinates
-    intPrime.push_back(G4TwoVector(disPlace[i].dot(planeXdef), disPlace[i].dot(planeYdef)));
+    intPrime.push_back(G4TwoVector(disPlace[i].dot(planeXdef)/planeXdef.mag(), disPlace[i].dot(planeYdef)/planeYdef.mag()));
+    // G4cout << "intPrime[" << i << "] = (" << disPlace[i].dot(planeXdef)/planeXdef.mag() << ", " << disPlace[i].dot(planeYdef)/planeYdef.mag() << ")\n";
+    // G4cout << "intPrime[" << i << "] = (" << intPrime[i].x() << ", " << intPrime[i].y() << ")\n";
   }
 
   //! Convex hull algorithm
@@ -279,100 +286,125 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   // fParticleGun->SetParticleEnergy(1.460822*MeV);
 	// fParticleGun->GeneratePrimaryVertex(event);
 
+  G4cout << "hull size = " << hullSize << "\n";
+
+  std::vector <G4ThreeVector> hull3D;
+
   //! Convert hulls to 3D coordinates
   for (G4int i = 0; i < hullSize; i++)
   {
-    disPlace[i] = hull[i].x()*planeXdef + (hull[i].y())*planeYdef;
+    // G4cout << "hullpoint [" << i << "] = (" << hull[i].x() << ", " << hull[i].y() << ") \n";
+
+    G4ThreeVector dX = (hull[i].x())*(planeXdef)/planeXdef.mag();
+    G4ThreeVector dY = (hull[i].y())*(planeYdef)/planeYdef.mag();
+
+    hull3D.push_back(dX + dY + origin);
+    // hull3D.push_back(hull[i].x()*planeXdef/planeXdef.mag() + (hull[i].y())*planeYdef/planeXdef.mag() + origin);
+
+    fParticleGun->SetParticleMomentumDirection(hull3D[i] - pos2);
+	  // fParticleGun->GeneratePrimaryVertex(event);
   }
 
   //! new OX' start from first hull
-  planeXdef = (hull[0].x())*(planeXdef) + (hull[0].y())*(planeYdef); // convert to 3D then minus origin
-  planeYdef = normalDirCenter.cross(planeXdef);
+  planeYdef = hull3D[0] - origin; // convert to 3D then minus origin
+  planeXdef = -normalDirCenter.cross(planeYdef);
 
-  //! Normalize
-  planeXdef = planeXdef/planeXdef.mag();
-  planeYdef = planeYdef/planeYdef.mag();
+  // G4cout << "angle between 2 def =" << planeXdef.angle(planeYdef)/deg;
 
+  // fParticleGun->SetParticlePosition(origin);
+  // fParticleGun->SetParticleMomentumDirection(planeXdef - origin);
+	// fParticleGun->GeneratePrimaryVertex(event);
+  // fParticleGun->SetParticleMomentumDirection(planeYdef - origin);
+	// fParticleGun->GeneratePrimaryVertex(event);
+
+  std::vector <G4ThreeVector> newintPrime;
   for (G4int i = 0; i < hullSize; i++)
   {
-    intPrime[i] = G4TwoVector(disPlace[i].dot(planeXdef), disPlace[i].dot(planeYdef));
+    G4ThreeVector newdisPlace = hull3D[i] - origin;
+    newintPrime.push_back(G4TwoVector(newdisPlace.dot(planeXdef)/planeXdef.mag(), newdisPlace.dot(planeYdef)/planeYdef.mag()));
   }
 
   //! Connect each points
-  std::vector <G4double> slope, intercept, angle1, angle;
-  double dAngle = 0.;
+  std::vector <G4double> slope, intercept, angle1, angle2;
+  G4double dAngle = 0.;
 
   for(G4int i = 0; i < hullSize; i++)
   {
-    if(i < hullSize -1)
+    if(i < hullSize-1)
     { //! connect newint i and newint i + 1
-    //   G4cout << "hullpoint " << i + 1 << " = (" << intPrime[i].x() << ", " << intPrime[i].y() << ") and "
-    // << "hullpoint " << i + 2 << " = (" << intPrime[i+1].x() << ", " << intPrime[i+1].y() << ")\n";
+      G4cout << "hullpoint [" << i << "] = (" << newintPrime[i].x() << ", " << newintPrime[i].y() << ") and "
+    << "hullpoint [" << i + 1 << "] = (" << newintPrime[i+1].x() << ", " << newintPrime[i+1].y() << ")\n";
       
-      slope.push_back((intPrime[i+1].y() - intPrime[i].y()) / (intPrime[i+1].x() - intPrime[i+1].x()));
-      intercept.push_back(intPrime[i].y() - slope[i]*intPrime[i].x());
+      slope.push_back((newintPrime[i+1].y() - newintPrime[i].y()) / (newintPrime[i+1].x() - newintPrime[i].x()));
+      intercept.push_back(newintPrime[i].y() - slope[i]*newintPrime[i].x());
 
-      dAngle = dAngle + intPrime[i].angle(intPrime[i+1])/deg;
+      angle1.push_back(dAngle);
+      angle2.push_back(dAngle+ newintPrime[i].angle(newintPrime[i+1])/deg);
+      dAngle = dAngle + newintPrime[i].angle(newintPrime[i+1])/deg;
 
-      angle.push_back(dAngle);
-
-      // G4cout << "angle " << i << " = " << angle[i] << "\n";
+      G4cout << "angle1 [" << i << "] = " << angle1[i] << "\n";
+      G4cout << "angle2 [" << i << "] = " << angle2[i] << "\n";
     }
     else
     { //! connect last newint i and newint 0
-    //   G4cout << "hullpoint " << i + 1 << " = (" << intPrime[i].x() << ", " << intPrime[i].y() << ") and "
-    // << "hullpoint 0 = (" << intPrime[0].x() << ", " << intPrime[0].y() << ")\n";
+      G4cout << "hullpoint [" << i << "] = (" << newintPrime[i].x() << ", " << newintPrime[i].y() << ") and "
+    << "hullpoint [0] = (" << newintPrime[0].x() << ", " << newintPrime[0].y() << ")\n";
 
-      slope.push_back((intPrime[hullSize -1].y() - intPrime[0].y()) / (intPrime[hullSize -1].x() - intPrime[0].x()));
-      intercept.push_back(intPrime[hullSize -1].y() - slope[hullSize -1]*intPrime[hullSize -1].x());
+      slope.push_back((newintPrime[0].y() - newintPrime[hullSize-1].y()) / (newintPrime[0].x() - newintPrime[hullSize-1].x()));
+      intercept.push_back(newintPrime[hullSize-1].y() - slope[hullSize-1]*newintPrime[hullSize-1].x());
       
-      dAngle = dAngle + intPrime[hullSize - 1].angle(intPrime[0])/deg;
-      
-      angle.push_back(dAngle);
-      // G4cout << "angle final = " << angle[hullSize - 1] << "\n";
+      angle1.push_back(dAngle);
+      angle2.push_back(dAngle+ newintPrime[hullSize-1].angle(newintPrime[0])/deg);
+      dAngle = dAngle + newintPrime[hullSize-1].angle(newintPrime[0])/deg;
+
+      G4cout << "angle1 [" << hullSize-1 << "] = " << angle1[hullSize-1] << "\n";
+      G4cout << "angle2 [" << hullSize-1 << "] = " << angle2[hullSize-1] << "\n";
     }
   }
-  
-  // for(G4int i = 0; i < hullSize; i++)
-  // {
-  //   angle[i] = ;
-  // }
 
-  // G4double 
   phirand = twopi*G4UniformRand()/deg;
+  G4cout << "phirand = " << phirand << "\n";
+
   G4double rRand;
 
   for(G4int i = 0; i < hullSize; i++)
   {
-    if(phirand <= angle[i])
+    if(phirand <= angle2[i] && phirand > angle1[i])
     {
-      rRand = G4UniformRand()*(intercept[i] / (1/sin(phirand) - slope[i]/cos(phirand)));
+      G4cout << "angle in region of angle " << i << " !!! \n";
+      rRand = G4UniformRand()*(intercept[i] / (1 - slope[i]/tan(phirand*deg)));
+      // G4cout << "rRand MUST BE = " << rRand << "\n";
     }
-    else{continue;}
+    // G4cout << "rRand = " << rRand << "\n";
   }
+
+  //! SO FAR CORRECT
+
+  // G4cout << "cos phi rand = " << cos(phirand*deg) << "\n";
+  // G4cout << "sin phi rand = " << sin(phirand*deg) << "\n";
 
   G4double x = rRand*cos(phirand);
   G4double y = rRand*sin(phirand);
 
-  G4ThreeVector dX = x*(planeXdef);
-  G4ThreeVector dY = y*(planeYdef);
+  G4ThreeVector dX = x*(planeXdef)/planeXdef.mag();
+  G4ThreeVector dY = y*(planeYdef)/planeYdef.mag();
 
   G4ThreeVector finalCoor(dX + dY + origin);
-  fParticleGun->SetParticleMomentumDirection(finalCoor - pos2);
+  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(finalCoor - pos2));
   fParticleGun->GeneratePrimaryVertex(event); 
 
   //! Conversion from OX'Y' to OXYZ coordinates
-  // std::vector<G4ThreeVector> p;
+//   std::vector<G4ThreeVector> p;
 
-  // for (G4int i = 0; i < hullSize; i++)
-  // {
-  //   // G4cout << "2D coordinates: \n(" << hull[i].x() << ", " << hull[i].y() << ") \n";
-  //   G4ThreeVector dX = (hull[i].x())*(planeXdef);
-  //   G4ThreeVector dY = (hull[i].y())*(planeYdef);
+//   for (G4int i = 0; i < hullSize; i++)
+//   {
+//     // G4cout << "2D coordinates: \n(" << hull[i].x() << ", " << hull[i].y() << ") \n";
+//     G4ThreeVector dX = (hull[i].x())*(planeXdef);
+//     G4ThreeVector dY = (hull[i].y())*(planeYdef);
 
-  //   p.push_back(dX + dY + origin);
+//     p.push_back(dX + dY + origin);
 
-  //   fParticleGun->SetParticleMomentumDirection(p[i] - pos2);
-	//   fParticleGun->GeneratePrimaryVertex(event);
-  // }
+//     fParticleGun->SetParticleMomentumDirection(p[i] - pos2);
+// 	  // fParticleGun->GeneratePrimaryVertex(event);
+//   }
 }

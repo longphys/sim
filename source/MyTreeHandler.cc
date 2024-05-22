@@ -32,7 +32,7 @@ MyTreeHandler::MyTreeHandler()
   fTree->Branch("PMTR", &fER, "PMTR/D");
 
   fTree->Branch("ComptonInteractions", &fcomptNr, "ComptonInteractions/L");
-  fTree->Branch("ComptonEnergyDeposition", &fcomptEDep);
+  fTree->Branch("ComptonEnergyDeposition", &fcomptEDep, "ComptonInteractions/L");
   fTree->Branch("BackScatteredComptonEnergyDeposition", &fbackEDep, "BackScatteredComptonEnergyDeposition/D");
 
   fxVer.clear();

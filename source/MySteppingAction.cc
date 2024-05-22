@@ -130,10 +130,10 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
 	fEventAction->AddInfo(StepInfo);
 	
 	// Checking the Ray tracing condition
-	if (NextVolumeName == "physPBox" or NextVolumeName == "physSBox")
-	{
-		track->SetTrackStatus(fStopAndKill);
-	}
+	// if (NextVolumeName == "physPBox" or NextVolumeName == "physSBox")
+	// {
+	// 	track->SetTrackStatus(fStopAndKill);
+	// }
 
   return;
 }
