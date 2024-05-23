@@ -10,7 +10,7 @@ MyPrimaryGenerator::~MyPrimaryGenerator()
 	delete fParticleGun;
 }
 
-//! Convex hull algorithm
+  //! Convex hull algorithm
 std::vector<G4TwoVector> hull;
 G4int hullSize;
 
@@ -57,7 +57,7 @@ void convexHull(G4TwoVector points[], G4int n){
 
 //! Ray tracing problem
 G4ThreeVector rayTrace(std::vector <G4ThreeVector> ver, G4ThreeVector origin, G4ThreeVector pos){
-
+ 
   std::vector <G4ThreeVector> dir;
   for(G4int i = 0; i < ver.size(); i++)
   {
