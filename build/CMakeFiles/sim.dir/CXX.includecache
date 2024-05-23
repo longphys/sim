@@ -32,6 +32,18 @@ G4SystemOfUnits.hh
 G4PhysicalConstants.hh
 ../include/G4PhysicalConstants.hh
 
+../include/MyEventAction.hh
+G4UserEventAction.hh
+../include/G4UserEventAction.hh
+G4Event.hh
+../include/G4Event.hh
+MyTreeHandler.hh
+../include/MyTreeHandler.hh
+globals.hh
+../include/globals.hh
+Randomize.hh
+../include/Randomize.hh
+
 ../include/MyPrimaryGenerator.hh
 G4VUserPrimaryGeneratorAction.hh
 ../include/G4VUserPrimaryGeneratorAction.hh
@@ -59,6 +71,28 @@ MyDetectorConstruction.hh
 ../include/MyDetectorConstruction.hh
 MyTreeHandler.hh
 ../include/MyTreeHandler.hh
+
+../include/MySteppingAction.hh
+G4UserSteppingAction.hh
+../include/G4UserSteppingAction.hh
+G4RunManager.hh
+../include/G4RunManager.hh
+G4Step.hh
+../include/G4Step.hh
+G4Event.hh
+../include/G4Event.hh
+G4LogicalVolume.hh
+../include/G4LogicalVolume.hh
+G4Track.hh
+../include/G4Track.hh
+MyDetectorConstruction.hh
+../include/MyDetectorConstruction.hh
+MyPrimaryGenerator.hh
+../include/MyPrimaryGenerator.hh
+MyEventAction.hh
+../include/MyEventAction.hh
+globals.hh
+../include/globals.hh
 
 ../include/MyTreeHandler.hh
 G4Types.hh
@@ -2170,6 +2204,8 @@ G4Transform3D.hh
 G4AffineTransform.hh
 /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4AffineTransform.hh
 
+/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserEventAction.hh
+
 /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserStackingAction.hh
 G4ClassificationOfNewTrack.hh
 /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ClassificationOfNewTrack.hh
@@ -2600,9 +2636,9 @@ G4Types.hh
 
 /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/windefs.hh
 
-/home/long/software/geant4/geant4build/sim/source/MyPrimaryGenerator.cc
-MyPrimaryGenerator.hh
-/home/long/software/geant4/geant4build/sim/source/MyPrimaryGenerator.hh
+/home/long/software/geant4/geant4build/sim/source/MySteppingAction.cc
+MySteppingAction.hh
+/home/long/software/geant4/geant4build/sim/source/MySteppingAction.hh
 
 /home/long/software/root/root-6.30.02/rootinstall/include/Bytes.h
 RtypesCore.h

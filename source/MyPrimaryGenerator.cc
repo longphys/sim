@@ -67,13 +67,13 @@ G4ThreeVector rayTrace(std::vector <G4ThreeVector> ver, G4ThreeVector origin, G4
     // fParticleGun->SetParticleMomentumDirection(dir[i]);
 	  // fParticleGun->GeneratePrimaryVertex(event);
 
-  G4cout << "vertices x = " << ver[i].getX() << "; " << "y = " << ver[i].getY() << "; " << "z = " << ver[i].getZ() << "\n";    
+  // G4cout << "vertices x = " << ver[i].getX() << "; " << "y = " << ver[i].getY() << "; " << "z = " << ver[i].getZ() << "\n";    
   }
   
   //! Normal vector of the plane
   G4ThreeVector normalDirCenter = origin - pos;
-  G4cout << "origin x = " << origin.getX() << "; " << "y = " << origin.getY() << "; " << "z = " << origin.getZ() << "\n";
-  G4cout << "pos x = " << pos.getX() << "; " << "y = " << pos.getY() << "; " << "z = " << pos.getZ() << "\n";
+  // G4cout << "origin x = " << origin.getX() << "; " << "y = " << origin.getY() << "; " << "z = " << origin.getZ() << "\n";
+  // G4cout << "pos x = " << pos.getX() << "; " << "y = " << pos.getY() << "; " << "z = " << pos.getZ() << "\n";
   // G4cout << "norm x = " << normalDirCenter.getX() << "; " << "y = " << normalDirCenter.getY() << "; " << "z = " << normalDirCenter.getZ() << "\n";
   
   //! Plane equation is: aPlane*x + bPlane*y + cPlane*z + dPlane = 0
@@ -339,17 +339,17 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   
 	G4Box* solidPBox = detectorConstruction->GetSolidPBox();
   G4Box* solidSBox = detectorConstruction->GetSolidSBox();
-	G4VPhysicalVolume* physPBox = detectorConstruction->GetPhysPBox();
+	// G4VPhysicalVolume* physPBox = detectorConstruction->GetPhysPBox();
 
 	G4double pBoxDepth = 2*solidPBox->GetXHalfLength();
   G4double sBoxDepth = 2*solidSBox->GetXHalfLength();
 	G4double bWidth = 2*solidPBox->GetYHalfLength();
 	G4double bHeight = 2*solidPBox->GetZHalfLength();
 
-	G4ThreeVector posPBox = physPBox->GetTranslation();
-  G4double XposPBox = posPBox.getX();
-  G4double YposPBox = posPBox.getY();
-  G4double ZposPBox = posPBox.getZ();
+	// G4ThreeVector posPBox = physPBox->GetTranslation();
+  G4double XposPBox = (detectorConstruction->GetPhysPBox()->GetTranslation()).getX();
+  G4double YposPBox = (detectorConstruction->GetPhysPBox()->GetTranslation()).getY();
+  G4double ZposPBox = (detectorConstruction->GetPhysPBox()->GetTranslation()).getZ();
 
 	G4double dWorld = detectorConstruction->GetSolidWorld()->GetXHalfLength();
 
@@ -384,7 +384,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 	}
   
   // G4ThreeVector pos2(pos2x, pos2y, pos2z);
-  G4ThreeVector pos2(dWorld/2. , dWorld/1.2 , dWorld/1.2);
+  G4ThreeVector pos2(500. , 500. , 500.);
 
   //! Vertices coordinates in 3D
   std::vector <G4ThreeVector> ver1;
@@ -584,28 +584,38 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 
   // G4ThreeVector finalCoor(dX + dY + origin);
 
-  std::vector <G4ThreeVector> verTest;
-  verTest.push_back(G4ThreeVector(dWorld, dWorld, dWorld));
-  verTest.push_back(G4ThreeVector(dWorld, -dWorld, dWorld));
-  verTest.push_back(G4ThreeVector(-dWorld, dWorld, dWorld));
-  verTest.push_back(G4ThreeVector(-dWorld, -dWorld, dWorld));
+  G4double XposMWorld = (detectorConstruction->GetPhysMWorld()->GetTranslation()).getX();
+  G4double YposMWorld = (detectorConstruction->GetPhysMWorld()->GetTranslation()).getY();
+  G4double ZposMWorld = (detectorConstruction->GetPhysMWorld()->GetTranslation()).getZ();
 
-  G4ThreeVector originTest(0., 0., dWorld);
+  G4double xMWorld = detectorConstruction->GetSolidMWorld()->GetXHalfLength();
+  G4double yMWorld = detectorConstruction->GetSolidMWorld()->GetYHalfLength();
+  G4double zMWorld = detectorConstruction->GetSolidMWorld()->GetZHalfLength();
+
+  std::vector <G4ThreeVector> verTest;
+  verTest.push_back(G4ThreeVector(XposMWorld + xMWorld, YposMWorld + yMWorld, ZposMWorld + zMWorld));
+  verTest.push_back(G4ThreeVector(XposMWorld + xMWorld, YposMWorld + yMWorld, ZposMWorld - zMWorld));
+  verTest.push_back(G4ThreeVector(XposMWorld + xMWorld, YposMWorld - yMWorld, ZposMWorld + zMWorld));
+  verTest.push_back(G4ThreeVector(XposMWorld + xMWorld, YposMWorld - yMWorld, ZposMWorld - zMWorld));
+  verTest.push_back(G4ThreeVector(XposMWorld - xMWorld, YposMWorld + yMWorld, ZposMWorld + zMWorld));
+  verTest.push_back(G4ThreeVector(XposMWorld - xMWorld, YposMWorld + yMWorld, ZposMWorld - zMWorld));
+  verTest.push_back(G4ThreeVector(XposMWorld - xMWorld, YposMWorld - yMWorld, ZposMWorld + zMWorld));
+  verTest.push_back(G4ThreeVector(XposMWorld - xMWorld, YposMWorld - yMWorld, ZposMWorld - zMWorld));
+
+  G4ThreeVector originTest(XposMWorld, YposMWorld, ZposMWorld);
 
   //! Input to rayTrace for cube
-  G4ThreeVector finalCoor1 = rayTrace(ver1, origin, pos1);
+  // G4ThreeVector finalCoor1 = rayTrace(ver1, origin, pos1);
   //? rayTrace(array of all vertices, origin of perpendicular plane, source position)
-
-  G4ThreeVector finalCoor2 = rayTrace(ver1, origin, pos2); // ray trace for source from world's edge
-
-  G4ThreeVector finalCoorTest = rayTrace(verTest, originTest, pos1);
 
   fParticleGun->SetParticleDefinition(G4ParticleTable::GetParticleTable()->FindParticle("gamma"));
   fParticleGun->SetParticleEnergy(0.6616553*MeV);
-  fParticleGun->SetParticlePosition(pos1);
-  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(finalCoor1 - pos1));
-  // fParticleGun->GeneratePrimaryVertex(event);
+  fParticleGun->SetParticlePosition(pos2);
+  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(rayTrace(ver1, originTest, pos2) - pos2));
+  fParticleGun->GeneratePrimaryVertex(event);
 
-  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(finalCoorTest - pos1));
+  G4ThreeVector pos3(-500., 500. , 500.);
+  fParticleGun->SetParticlePosition(pos3);
+  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(rayTrace(ver1, originTest, pos3) - pos3));
   fParticleGun->GeneratePrimaryVertex(event);
 }
