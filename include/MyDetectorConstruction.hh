@@ -39,7 +39,9 @@ public: // public to all classes
 	G4Box* GetSolidPBox() const { return solidPBox; }
   G4Box* GetSolidSBox() const { return solidSBox; } 
 	G4VPhysicalVolume* GetPhysPBox() const { return physPBox; }
- 
+
+	G4Box* GetSolidMWorld() const { return solidMWorld; }
+	G4VPhysicalVolume* GetPhysMWorld() const { return physMWorld; }
 	
 protected: // only inhereting classes can access
   G4LogicalVolume *fDEScoringVolume, *fDEScoringVolumeL, *fDEScoringVolumeR,
@@ -47,6 +49,9 @@ protected: // only inhereting classes can access
 
 	G4Box *solidWorld;
 	G4VPhysicalVolume *physWorld;
+
+  G4Box *solidMWorld;
+  G4VPhysicalVolume* physMWorld;
 
 	G4double RH = 50.; // Scintillator's inner-circle radius (mm)
 	// G4double HH = 0.75*RH;
