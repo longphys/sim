@@ -19,7 +19,7 @@
 
 /vis/scene/endOfEventAction accumulate
 
-/vis/scene/add/axes 0 0 0 200 mm
+/vis/scene/add/axes 0 0 0 20 mm
 
 /vis/geometry/set/colour logicAlBox 1 gray
 
