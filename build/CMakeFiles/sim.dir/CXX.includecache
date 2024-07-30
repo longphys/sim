@@ -17,6 +17,8 @@ G4Tubs.hh
 ../include/G4Tubs.hh
 G4Trd.hh
 ../include/G4Trd.hh
+G4Sphere.hh
+../include/G4Sphere.hh
 G4MultiUnion.hh
 ../include/G4MultiUnion.hh
 G4UnionSolid.hh
@@ -1712,6 +1714,22 @@ G4SmartVoxelProxy.icc
 
 /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SmartVoxelProxy.icc
 
+/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Sphere.hh
+G4GeomTypes.hh
+/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4GeomTypes.hh
+G4USphere.hh
+/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4USphere.hh
+CLHEP/Units/PhysicalConstants.h
+-
+G4CSGSolid.hh
+/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4CSGSolid.hh
+G4Polyhedron.hh
+/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Polyhedron.hh
+G4Sphere.icc
+/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Sphere.icc
+
+/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Sphere.icc
+
 /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4StackManager.hh
 G4UserStackingAction.hh
 /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserStackingAction.hh
@@ -2129,6 +2147,14 @@ G4UItokenNum.hh
 /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UItokenNum.hh
 globals.hh
 /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/globals.hh
+
+/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4USphere.hh
+G4UAdapter.hh
+/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UAdapter.hh
+VecGeom/volumes/UnplacedSphere.h
+-
+G4Polyhedron.hh
+/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Polyhedron.hh
 
 /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UTrd.hh
 G4UAdapter.hh

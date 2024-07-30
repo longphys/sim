@@ -715,6 +715,8 @@ CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant
 CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SmartVoxelNode.icc
 CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SmartVoxelProxy.hh
 CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SmartVoxelProxy.icc
+CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Sphere.hh
+CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Sphere.icc
 CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4StackManager.hh
 CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4StackedTrack.hh
 CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Step.hh
@@ -756,6 +758,7 @@ CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant
 CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UImessenger.hh
 CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UIparameter.hh
 CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UItokenNum.hh
+CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4USphere.hh
 CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UTrd.hh
 CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UTubs.hh
 CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UnionSolid.hh
@@ -966,6 +969,8 @@ CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Region.icc
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4RotationMatrix.hh
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SandiaTable.hh
+CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Sphere.hh
+CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Sphere.icc
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4String.hh
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4String.icc
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SurfBits.hh
@@ -981,6 +986,7 @@ CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Types.hh
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UAdapter.hh
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UBox.hh
+CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4USphere.hh
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UTrd.hh
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UTubs.hh
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UnionSolid.hh
@@ -1413,6 +1419,8 @@ CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/ge
 CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SmartVoxelNode.icc
 CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SmartVoxelProxy.hh
 CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SmartVoxelProxy.icc
+CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Sphere.hh
+CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Sphere.icc
 CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4StackManager.hh
 CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4StackedTrack.hh
 CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Step.hh
@@ -1454,6 +1462,7 @@ CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/ge
 CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UImessenger.hh
 CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UIparameter.hh
 CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UItokenNum.hh
+CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4USphere.hh
 CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UTrd.hh
 CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UTubs.hh
 CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UnionSolid.hh
@@ -1809,6 +1818,8 @@ CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/gean
 CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SmartVoxelNode.icc
 CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SmartVoxelProxy.hh
 CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SmartVoxelProxy.icc
+CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Sphere.hh
+CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Sphere.icc
 CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4StackManager.hh
 CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4StackedTrack.hh
 CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Step.hh
@@ -1850,6 +1861,7 @@ CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/gean
 CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UImessenger.hh
 CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UIparameter.hh
 CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UItokenNum.hh
+CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4USphere.hh
 CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UTrd.hh
 CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UTubs.hh
 CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UnionSolid.hh

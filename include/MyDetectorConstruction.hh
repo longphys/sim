@@ -6,6 +6,7 @@
 #include "G4Box.hh"
 #include "G4Tubs.hh"
 #include "G4Trd.hh"
+#include "G4Sphere.hh"
 #include "G4MultiUnion.hh"
 #include "G4UnionSolid.hh"
 
@@ -34,6 +35,8 @@ public: // public to all classes
 
 	G4double GetRH() const { return RH; }
 	G4double GetHH() const { return HH; }
+	G4double GetRC() const { return RC; }
+	G4double GetHC() const { return HC; }
 	G4double GettrapA() const { return trapA; }
 
 	G4Box* GetSolidWorld() const { return solidWorld; }
@@ -53,6 +56,8 @@ protected: // only inhereting classes can access
   G4double RH = 5.*cm;
   // G4double HH = 75.;
   G4double HH = 7.5*cm;
+  G4double RC = 78*mm/2;
+	G4double HC = 15*mm;
   G4double trapA = 2.0*RH/sqrt(3); // hexagon side
 
 	G4Box* solidPBox, *solidSBox;
