@@ -3,12 +3,12 @@
 void MyEventAction::BeginOfEventAction(const G4Event* event)
 	{
 		fDEdep = 0.;
-		fDEdepL = 0.;
-		fDEdepR = 0.;
+		fDEdep1 = 0.;
+		fDEdep2 = 0.;
 		
 		fEdep = 0.;
-		fEdepL = 0.;
-		fEdepR = 0.;
+		fEdep1 = 0.;
+		fEdep2 = 0.;
 
 		fcomptCount = 0;
 		backEDep = 0.;
@@ -31,8 +31,6 @@ void MyEventAction::EndOfEventAction(const G4Event* event)
 		// 	G4cout << "; Delta E: " << fDEdep << "MeV; E: " << fEdep << "MeV" << "\n"
 		// 	G4cout << "\n" << "----- End of event " << EventsID +1 << " -----" << "\n";
 		// }
-
-		
 		
 		// Condition for recording Back-Scattered Comptons
 		if (fDEdep > 0. && aBSCheck == true)
@@ -63,6 +61,6 @@ void MyEventAction::EndOfEventAction(const G4Event* event)
 		// comptEDep[0] << "; backEDep: " << backEDep << "\n";
 		
 		MyTreeHandler* aTreeHandler = MyTreeHandler::GetInstance();
-    	aTreeHandler->Push(EventsID, fDEdep, fDEdepL, fDEdepR, fEdep, 
-		fEdepL, fEdepR, fcomptCount, comptEDep, backEDep);
+    	aTreeHandler->Push(EventsID, fDEdep, fDEdep1, fDEdep2, fEdep, 
+		fEdep1, fEdep2, fcomptCount, comptEDep, backEDep);
 	}

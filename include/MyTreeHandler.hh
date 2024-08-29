@@ -22,8 +22,8 @@ class MyTreeHandler
                 return fTreeHandlerPtr;
             }
         }
-        G4int Push(int64_t eventNr, G4double dE, G4double dEL, 
-        G4double dER, G4double E, G4double EL, G4double ER, int64_t comptNr, 
+        G4int Push(int64_t eventNr, G4double dE, G4double dE1, 
+        G4double dE2, G4double E, G4double E1, G4double E2, int64_t comptNr, 
         std::vector <G4double> comptEDep, G4double backEDep);
         G4int Open();
         G4int Close();
@@ -38,8 +38,8 @@ class MyTreeHandler
         TTree* fTree;
         int64_t fEventNr;
 
-        G4double fdE, fdEL, fdER,
-        fE, fEL, fER, fbackEDep;
+        G4double fdE, fdE1, fdE2,
+        fE, fE1, fE2, fbackEDep;
         
         int64_t fcomptNr;
         std::vector <G4double> fcomptEDep;

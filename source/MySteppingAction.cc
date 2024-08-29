@@ -3,11 +3,11 @@
 MySteppingAction::MySteppingAction(MyEventAction* eventAction) : G4UserSteppingAction(),
   fEventAction(eventAction),
   fEScoringVolume(0),
-  fEScoringVolumeL(0),
-  fEScoringVolumeR(0),
+  fEScoringVolume1(0),
+  fEScoringVolume2(0),
   fDEScoringVolume(0),
-  fDEScoringVolumeL(0),
-  fDEScoringVolumeR(0)
+  fDEScoringVolume1(0),
+  fDEScoringVolume2(0)
 {}
 
 MySteppingAction::~MySteppingAction()
@@ -25,14 +25,14 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
   	fDEScoringVolume = detectorConstruction->GetScoringVolumeDE();
   }
 
-	if (!fDEScoringVolumeL) 
+	if (!fDEScoringVolume1) 
 	{
-  	fDEScoringVolumeL = detectorConstruction->GetScoringVolumeDEL();
+  	fDEScoringVolume1 = detectorConstruction->GetScoringVolumeDE1();
   }
 	
-	if (!fDEScoringVolumeR) 
+	if (!fDEScoringVolume2) 
 	{
-  	fDEScoringVolumeR = detectorConstruction->GetScoringVolumeDER();
+  	fDEScoringVolume2 = detectorConstruction->GetScoringVolumeDE2();
   }
 	
   if (!fEScoringVolume) 
@@ -40,14 +40,14 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
   	fEScoringVolume = detectorConstruction->GetScoringVolumeE();   
   }
 
-	if (!fEScoringVolumeL) 
+	if (!fEScoringVolume1) 
 	{ 
-  	fEScoringVolumeL = detectorConstruction->GetScoringVolumeEL();   
+  	fEScoringVolume1 = detectorConstruction->GetScoringVolumeE1();   
   }
 	
-	if (!fEScoringVolumeR) 
+	if (!fEScoringVolume2) 
 	{ 
-  	fEScoringVolumeR = detectorConstruction->GetScoringVolumeER();   
+  	fEScoringVolume2 = detectorConstruction->GetScoringVolumeE2();   
   }
 
 	G4LogicalVolume* volume = step->GetPreStepPoint()->GetPhysicalVolume()->GetLogicalVolume();
@@ -103,11 +103,11 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
     }
 		fEventAction->AddDEdep(EdepStep);
   }
-	else if (volume == fDEScoringVolumeL)
+	else if (volume == fDEScoringVolume1)
   {
     fEventAction->AddDEdepL(EdepStep);
   }
-	else if (volume == fDEScoringVolumeR)
+	else if (volume == fDEScoringVolume2)
   {
     fEventAction->AddDEdepR(EdepStep);
   }
@@ -115,11 +115,11 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
   {
     fEventAction->AddEdep(EdepStep);
   }
-	else if (volume == fEScoringVolumeL)
+	else if (volume == fEScoringVolume1)
   {
     fEventAction->AddEdepL(EdepStep);
   }
-  else if (volume == fEScoringVolumeR)
+  else if (volume == fEScoringVolume2)
   {
     fEventAction->AddEdepR(EdepStep);
   }

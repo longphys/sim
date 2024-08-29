@@ -9,23 +9,23 @@ MyTreeHandler::MyTreeHandler()
     fTree = new TTree("dEEtree", "dEEtree");
     fEventNr = -1;
     fdE = -1.0;
-    fdEL = -1.0;
-    fdER = -1.0;
+    fdE1 = -1.0;
+    fdE2 = -1.0;
     fE = -1.0;
-    fEL = -1.0;
-    fER = -1.0;
+    fE1 = -1.0;
+    fE2 = -1.0;
     fcomptNr = -1;
     fcomptEDep.clear();
     
     fTree->Branch("EventID", &fEventNr, "EventID/I");
     
     fTree->Branch("Scintillator", &fdE, "Scintillator/D");
-    fTree->Branch("ScintillatorL", &fdEL, "ScintillatorL/D");
-    fTree->Branch("ScintillatorR", &fdER, "ScintillatorR/D");
+    fTree->Branch("ScintillatorL", &fdE1, "ScintillatorL/D");
+    fTree->Branch("ScintillatorR", &fdE2, "ScintillatorR/D");
 
     fTree->Branch("PMT", &fE, "PMT/D");
-    fTree->Branch("PMTL", &fEL, "PMTL/D");
-    fTree->Branch("PMTR", &fER, "PMTR/D");
+    fTree->Branch("PMTL", &fE1, "PMTL/D");
+    fTree->Branch("PMTR", &fE2, "PMTR/D");
 
     fTree->Branch("ComptonInteractions", &fcomptNr, "ComptonInteractions/L");
     fTree->Branch("ComptonEnergyDeposition", &fcomptEDep);
@@ -38,19 +38,19 @@ G4int MyTreeHandler::Open()
     return 0;
 }
 
-G4int MyTreeHandler::Push(int64_t eventNr, G4double dE, G4double dEL, 
-G4double dER, G4double E, G4double EL, G4double ER, int64_t comptNr, 
+G4int MyTreeHandler::Push(int64_t eventNr, G4double dE, G4double dE1, 
+G4double dE2, G4double E, G4double E1, G4double E2, int64_t comptNr, 
 std::vector <G4double> comptEDep, G4double backEDep)
 {
     fEventNr = eventNr;
 
     fdE = dE;
-    fdEL = dEL;
-    fdER = dER;
+    fdE1 = dE1;
+    fdE2 = dE2;
     
     fE = E;
-    fEL = EL;
-    fER = ER;
+    fE1 = E1;
+    fE2 = E2;
 
     fcomptNr = comptNr;
     fcomptEDep = comptEDep;

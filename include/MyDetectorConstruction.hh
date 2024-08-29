@@ -26,12 +26,12 @@ public: // public to all classes
 	virtual G4VPhysicalVolume *Construct();
 	// Main function to construct geometry
 	G4LogicalVolume* GetScoringVolumeDE() const { return fDEScoringVolume; }
-	G4LogicalVolume* GetScoringVolumeDEL() const { return fDEScoringVolumeL; }
-	G4LogicalVolume* GetScoringVolumeDER() const { return fDEScoringVolumeR; }
+	G4LogicalVolume* GetScoringVolumeDE1() const { return fDEScoringVolume1; }
+	G4LogicalVolume* GetScoringVolumeDE2() const { return fDEScoringVolume2; }
 
 	G4LogicalVolume* GetScoringVolumeE() const { return fEScoringVolume; }
-	G4LogicalVolume* GetScoringVolumeEL() const { return fEScoringVolumeL; }
-	G4LogicalVolume* GetScoringVolumeER() const { return fEScoringVolumeR; }
+	G4LogicalVolume* GetScoringVolumeE1() const { return fEScoringVolume1; }
+	G4LogicalVolume* GetScoringVolumeE2() const { return fEScoringVolume2; }
 
 	G4double GetRH() const { return RH; }
 	G4double GetHH() const { return HH; }
@@ -46,8 +46,8 @@ public: // public to all classes
  
 	
 protected: // only inhereting classes can access
-  G4LogicalVolume *fDEScoringVolume, *fDEScoringVolumeL, *fDEScoringVolumeR,
-  *fEScoringVolume, *fEScoringVolumeL, *fEScoringVolumeR;
+  G4LogicalVolume *fDEScoringVolume, *fDEScoringVolume1, *fDEScoringVolume2,
+  *fEScoringVolume, *fEScoringVolume1, *fEScoringVolume2;
 
 	G4Box *solidWorld;
 	G4VPhysicalVolume *physWorld;

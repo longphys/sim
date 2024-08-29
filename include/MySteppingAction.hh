@@ -28,8 +28,8 @@ public:
 private:
   MyEventAction* fEventAction;
 
-  G4LogicalVolume *fDEScoringVolume, *fDEScoringVolumeL, *fDEScoringVolumeR, 
-  *fEScoringVolume, *fEScoringVolumeL, *fEScoringVolumeR;
+  G4LogicalVolume *fDEScoringVolume, *fDEScoringVolume1, *fDEScoringVolume2, 
+  *fEScoringVolume, *fEScoringVolume1, *fEScoringVolume2;
 
  
 };

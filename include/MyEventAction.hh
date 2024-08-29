@@ -18,18 +18,18 @@ public:
 	virtual void EndOfEventAction(const G4Event* event);
 
 	void AddDEdep(G4double dedep) { fDEdep += dedep; }
-	void AddDEdepL(G4double dedep) { fDEdepL += dedep; }
-	void AddDEdepR(G4double dedep) { fDEdepR += dedep; }
+	void AddDEdepL(G4double dedep) { fDEdep1 += dedep; }
+	void AddDEdepR(G4double dedep) { fDEdep2 += dedep; }
 
 	void AddEdep(G4double edep) { fEdep += edep; }
-	void AddEdepL(G4double edep) { fEdepL += edep; }
-	void AddEdepR(G4double edep) { fEdepR += edep; }
+	void AddEdepL(G4double edep) { fEdep1 += edep; }
+	void AddEdepR(G4double edep) { fEdep2 += edep; }
 
 	void AddComptCount() { fcomptCount += 1; }
 	void AddInfo(G4String StepInfo) { AllStepInfo += '\n' + StepInfo; }
 	void SwitchBS() { aBSCheck = true; }
 private:
-	G4double fEdep, fEdepL, fEdepR, fDEdep, fDEdepL, fDEdepR, backEDep;
+	G4double fEdep, fEdep1, fEdep2, fDEdep, fDEdep1, fDEdep2, backEDep;
 	
 	G4int fcomptCount;
 	G4String AllStepInfo;
