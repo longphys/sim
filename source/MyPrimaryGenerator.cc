@@ -24,12 +24,13 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 	G4double zDis = zPar - (HH+HC)/2;
 
 	G4ParticleTable *particleTable = G4ParticleTable::GetParticleTable();
-	G4ParticleDefinition *particle = particleTable->FindParticle("neutron");
+	G4ParticleDefinition *particle = particleTable->FindParticle("gamma");
 
 	G4ThreeVector pos1(0., 0., -zPar); // source position
 	
 	fParticleGun->SetParticlePosition(pos1);
   fParticleGun->SetParticleDefinition(particle);
+  fParticleGun->SetParticleEnergy(1.*MeV);
 
 	G4double random = G4UniformRand();
 	

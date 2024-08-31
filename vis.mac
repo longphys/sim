@@ -37,5 +37,5 @@
 /vis/geometry/set/colour logicScint5 1 red
 /vis/geometry/set/colour logicScint6 1 red
 
-/vis/geometry/set/colour logicPBox 1 cyan
-/vis/geometry/set/colour logicSBox 1 orange
+#/vis/geometry/set/colour logicPBox 1 cyan
+#/vis/geometry/set/colour logicSBox 1 orange
