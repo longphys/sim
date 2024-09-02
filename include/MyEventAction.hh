@@ -8,6 +8,11 @@
 #include "globals.hh"
 #include "Randomize.hh"
 
+#include "G4Run.hh"
+#include "G4RunManager.hh"
+
+#include "MyRunAction.hh"
+
 class MyEventAction : public G4UserEventAction
 {
 public:
@@ -43,6 +48,13 @@ private:
 	G4String AllStepInfo;
 	G4bool aBSCheck;
 	std::vector <G4double> comptEDep;
+
+  const G4Run* run
+  = static_cast<const G4Run*>
+  (G4RunManager::GetRunManager()->GetCurrentRun());
+
+  int events = 0;
+  int nofEvents = run->GetNumberOfEvent();
 };
 
 #endif
