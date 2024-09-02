@@ -207,12 +207,14 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
   }
 
 	// Verbosity
-	StepInfo = "--- Particle: " + ParticleName + "; Process Name: " + ProcessName + " ---" + "\n" +
-	"Parent ID: " + ParentID + "; Track ID: " + TrackID + "; Step Number: " + StepNumber + "\n" 
-	"Volume Name: " + VolumeName + "; Next Volume Name: " + NextVolumeName + "\n" +
-	"Total Energy: " + TotalEnergy + "(MeV); TotalKineticEnergy: " + TotalKineticEnergy + "\n" +
-  "(MeV); TotalEnergyAfter: " + TotalEnergyAfter + "(MeV); E: " + EdepStep + "MeV" + "\n";
-	fEventAction->AddInfo(StepInfo);
+  if (VolumeName == "physScint1" && EdepStep > 100.*keV){
+    StepInfo = "--- Particle: " + ParticleName + "; Process Name: " + ProcessName + " ---" + "\n" +
+    "Parent ID: " + ParentID + "; Track ID: " + TrackID + "; Step Number: " + StepNumber + "\n" 
+    "Volume Name: " + VolumeName + "; Next Volume Name: " + NextVolumeName + "\n" +
+    "Total Energy: " + TotalEnergy + "(MeV); TotalKineticEnergy: " + TotalKineticEnergy + "\n" +
+    "(MeV); TotalEnergyAfter: " + TotalEnergyAfter + "(MeV); E: " + EdepStep + "MeV" + "\n";
+    fEventAction->AddInfo(StepInfo);
+  }
 	
 	// Checking the Ray tracing condition
 	// if (NextVolumeName == "physPBox" or NextVolumeName == "physSBox")

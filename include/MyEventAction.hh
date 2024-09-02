@@ -49,12 +49,7 @@ private:
 	G4bool aBSCheck;
 	std::vector <G4double> comptEDep;
 
-  const G4Run* run
-  = static_cast<const G4Run*>
-  (G4RunManager::GetRunManager()->GetCurrentRun());
-
-  int events = 0;
-  int nofEvents = run->GetNumberOfEvent();
+  double events = 0.;
 };
 
 #endif

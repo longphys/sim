@@ -34,7 +34,7 @@ void MyEventAction::EndOfEventAction(const G4Event* event)
 		// if (fDEdep > 0.)
 		// {
 		// 	G4cout << "Compton Scattering Interactions: " << fcomptCount << "\n";
-			// G4cout << AllStepInfo << "\n";
+    // G4cout << AllStepInfo << "\n";
 		// 	G4cout << "Event Number: " << EventsID +1 << "\n";
 		// 	G4cout << "; Delta E: " << fDEdep << "MeV; E: " << fEdep << "MeV" << "\n"
 		// 	G4cout << "\n" << "----- End of event " << EventsID +1 << " -----" << "\n";
@@ -60,21 +60,27 @@ void MyEventAction::EndOfEventAction(const G4Event* event)
 		// {
 		// 	comptEDep.push_back(-1.);
 		// }
+
 		G4cout << "Event ID: "<< EventsID << "\n";
-    G4cout << "NofEvents: " << nofEvents << "\n";
+    // G4cout.flush();
 
-    // int barWidth = 70;
-    // std::cout << "[";
-    // int pos = barWidth * events;
-    // for (int i = 0; i < barWidth; ++i) {
-    //     if (i < pos) std::cout << "=";
-    //     else if (i == pos) std::cout << ">";
-    //     else std::cout << " ";
-    // }
-    // std::cout << "] " << int(events * 100.0) << " %\r";
-    // std::cout.flush();
+    const G4Run* run
+    = static_cast<const G4Run*>
+    (G4RunManager::GetRunManager()->GetCurrentRun());
+    double nofEvents = run->GetNumberOfEventToBeProcessed();
 
-    // events += 1; // for demonstration only
+    int barWidth = 50;
+    std::cout << "[";
+    int pos = barWidth * events/nofEvents;
+    for (int i = 0; i < barWidth; ++i) {
+        if (i < pos) std::cout << "=";
+        else if (i == pos) std::cout << ">";
+        else std::cout << " ";
+    }
+    std::cout << "] " << int(events/nofEvents * 100.0) << " %\r";
+    std::cout.flush();
+
+    events += (1.); // for demonstration only
 
 		// G4cout << "Random:" << (2*((rand() % 10) % 2) - 1) << "\n";
 		// G4cout << "Event Number: " << EventsID << "; fDEdep: " << fDEdep <<

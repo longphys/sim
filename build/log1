@@ -1,0 +1,2542 @@
+Visualization Manager instantiating with verbosity "warnings (3)"...
+Visualization Manager initialising...
+Registering graphics systems...
+
+You have successfully registered the following graphics systems.
+Registered graphics systems are:
+  ASCIITree (ATree)
+  DAWNFILE (DAWNFILE)
+  G4HepRepFile (HepRepFile)
+  RayTracer (RayTracer)
+  VRML2FILE (VRML2FILE)
+  gMocrenFile (gMocrenFile)
+  TOOLSSG_OFFSCREEN (TSG_OFFSCREEN)
+  TOOLSSG_OFFSCREEN (TSG_OFFSCREEN, TSG_FILE)
+  OpenGLImmediateQt (OGLIQt, OGLI)
+  OpenGLStoredQt (OGLSQt, OGL, OGLS)
+  RayTracerX (RayTracerX)
+  TOOLSSG_QT_GLES (TSG_QT_GLES, TSGQt, TSG)
+
+Registering model factories...
+
+You have successfully registered the following model factories.
+Registered model factories:
+  generic
+  drawByAttribute
+  drawByCharge
+  drawByOriginVolume
+  drawByParticleID
+  drawByEncounteredVolume
+
+Registered models:
+  None
+
+Registered filter factories:
+  attributeFilter
+  chargeFilter
+  originVolumeFilter
+  particleFilter
+  encounteredVolumeFilter
+
+Registered filters:
+  None
+
+You have successfully registered the following user vis actions.
+Run Duration User Vis Actions: none
+End of Event User Vis Actions: none
+End of Run User Vis Actions: none
+
+Some /vis commands (optionally) take a string to specify colour.
+"/vis/list" to see available colours.
+### HadronInelasticQBBC Construct Process:
+    Emin(FTFP)= 3 GeV; Emax(FTFP)= 100000 GeV
+    Emin(BERT)= 1 GeV; Emax(BERT)= 6 GeV; Emax(BERTpions)= 12 GeV;
+    Emin(BIC) = 0 GeV; Emax(BIC)= 1.5 GeV.
+Attributes available for modeling and filtering with
+  "/vis/modeling/trajectories/create/drawByAttribute" and
+  "/vis/filtering/trajectories/create/attributeFilter" commands:
+G4TrajectoriesModel:
+  Event ID (EventID): G4int
+  Run ID (RunID): G4int
+G4SmoothTrajectory:
+  Charge (Ch): unit: e+ (G4double)
+  Track ID (ID): G4int
+  Initial kinetic energy (IKE): G4BestUnit (G4double)
+  Initial momentum magnitude (IMag): G4BestUnit (G4double)
+  Initial momentum (IMom): G4BestUnit (G4ThreeVector)
+  No. of points (NTP): G4int
+  PDG Encoding (PDG): G4int
+  Parent ID (PID): G4int
+  Particle Name (PN): G4String
+G4SmoothTrajectoryPoint:
+  Auxiliary Point Position (Aux): G4BestUnit (G4ThreeVector)
+  Step Position (Pos): G4BestUnit (G4ThreeVector)
+WARNING: Trajectory storing has been requested.  This action may be
+  reversed with "/tracking/storeTrajectory 0".
+WARNING: The vis manager will keep up to 100 events.
+  This may use a lot of memory.
+  It may be changed with, e.g., "/vis/scene/endOfEventAction accumulate 10".
+ Changing export format to "jpg"
+=======================================================================
+======                 Electromagnetic Physics Parameters      ========
+=======================================================================
+LPM effect enabled                                 1
+Enable creation and use of sampling tables         0
+Apply cuts on all EM processes                     0
+Use combined TransportationWithMsc                 Disabled
+Use general process                                1
+Enable linear polarisation for gamma               0
+Enable photoeffect sampling below K-shell          1
+Enable sampling of quantum entanglement            0
+X-section factor for integral approach             0.8
+Min kinetic energy for tables                      100 eV 
+Max kinetic energy for tables                      100 TeV
+Number of bins per decade of a table               7
+Verbose level                                      1
+Verbose level for worker thread                    0
+Bremsstrahlung energy threshold above which 
+  primary e+- is added to the list of secondary    100 TeV
+Bremsstrahlung energy threshold above which primary
+  muon/hadron is added to the list of secondary    100 TeV
+Lowest triplet kinetic energy                      1 MeV
+Enable sampling of gamma linear polarisation       0
+5D gamma conversion model type                     0
+5D gamma conversion model on isolated ion          0
+Livermore data directory                           epics_2017
+=======================================================================
+======                 Ionisation Parameters                   ========
+=======================================================================
+Step function for e+-                              (0.2, 1 mm)
+Step function for muons/hadrons                    (0.2, 0.1 mm)
+Step function for light ions                       (0.2, 0.1 mm)
+Step function for general ions                     (0.2, 0.1 mm)
+Lowest e+e- kinetic energy                         1 keV
+Lowest muon/hadron kinetic energy                  1 keV
+Use ICRU90 data                                    0
+Fluctuations of dE/dx are enabled                  1
+Type of fluctuation model for leptons and hadrons  Urban
+Use built-in Birks satuaration                     0
+Build CSDA range enabled                           0
+Use cut as a final range enabled                   0
+Enable angular generator interface                 0
+Max kinetic energy for CSDA tables                 1 GeV
+Max kinetic energy for NIEL computation            0 eV 
+Linear loss limit                                  0.01
+Read data from file for e+e- pair production by mu 0
+=======================================================================
+======                 Multiple Scattering Parameters          ========
+=======================================================================
+Type of msc step limit algorithm for e+-           1
+Type of msc step limit algorithm for muons/hadrons 0
+Msc lateral displacement for e+- enabled           1
+Msc lateral displacement for muons and hadrons     0
+Urban msc model lateral displacement alg96         1
+Range factor for msc step limit for e+-            0.04
+Range factor for msc step limit for muons/hadrons  0.2
+Geometry factor for msc step limitation of e+-     2.5
+Safety factor for msc step limit for e+-           0.6
+Skin parameter for msc step limitation of e+-      1
+Lambda limit for msc step limit for e+-            1 mm
+Use Mott correction for e- scattering              0
+Factor used for dynamic computation of angular 
+  limit between single and multiple scattering     1
+Fixed angular limit between single 
+  and multiple scattering                          3.1416 rad
+Upper energy limit for e+- multiple scattering     100 MeV
+Type of electron single scattering model           0
+Type of nuclear form-factor                        1
+Screening factor                                   1
+=======================================================================
+
+phot:  for gamma SubType=12 BuildTable=0
+      LambdaPrime table from 200 keV to 100 TeV in 61 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+ LivermorePhElectric : Emin=    0 eV  Emax=  100 TeV  SauterGavrila Fluo
+
+compt:  for gamma SubType=13 BuildTable=1
+      Lambda table from 100 eV  to 1 MeV, 7 bins/decade, spline: 1
+      LambdaPrime table from 1 MeV to 100 TeV in 56 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       Klein-Nishina : Emin=    0 eV  Emax=  100 TeV
+
+conv:  for gamma SubType=14 BuildTable=1
+      Lambda table from 1.022 MeV to 100 TeV, 18 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+     BetheHeitlerLPM : Emin=    0 eV  Emax=  100 TeV  ModifiedTsai
+
+Rayl:  for gamma SubType=11 BuildTable=1
+      Lambda table from 100 eV  to 150 keV, 7 bins/decade, spline: 0
+      LambdaPrime table from 150 keV to 100 TeV in 62 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   LivermoreRayleigh : Emin=    0 eV  Emax=  100 TeV  CullenGenerator
+
+msc:  for e-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 MeV Nbins=42 100 eV  - 100 MeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+        WentzelVIUni : Emin=  100 MeV Emax=  100 TeV Nbins=42 100 MeV - 100 TeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+
+eIoni:  for e-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha : Emin=    0 eV  Emax=  100 TeV
+
+eBrem:  for e-  XStype:4  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      LPM flag: 1 for E > 1 GeV,  VertexHighEnergyTh(GeV)= 100000
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB : Emin=    0 eV  Emax=    1 GeV  ModifiedTsai
+            eBremLPM : Emin=    1 GeV Emax=  100 TeV  ModifiedTsai
+
+CoulombScat:  for e- XStype:1 SubType=1 BuildTable=1
+      Lambda table from 100 MeV to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=  100 MeV Emax=  100 TeV
+
+msc:  for e+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 MeV Nbins=42 100 eV  - 100 MeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+        WentzelVIUni : Emin=  100 MeV Emax=  100 TeV Nbins=42 100 MeV - 100 TeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+
+eIoni:  for e+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha : Emin=    0 eV  Emax=  100 TeV
+
+eBrem:  for e+  XStype:4  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      LPM flag: 1 for E > 1 GeV,  VertexHighEnergyTh(GeV)= 100000
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB : Emin=    0 eV  Emax=    1 GeV  ModifiedTsai
+            eBremLPM : Emin=    1 GeV Emax=  100 TeV  ModifiedTsai
+
+annihil:  for e+ XStype:2 SubType=5 BuildTable=0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg : Emin=    0 eV  Emax=  100 TeV
+
+CoulombScat:  for e+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from 100 MeV to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=  100 MeV Emax=  100 TeV
+
+msc:  for proton  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for proton  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=    2 MeV
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV
+
+hBrems:  for proton  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for proton  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 17x1001; from 7.50618 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for proton XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for GenericIon  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+ionIoni:  for GenericIon  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.02
+      Stopping Power data for 17 ion/material pairs
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon : Emin=    0 eV  Emax=    2 MeV
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV
+
+msc:  for alpha  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+ionIoni:  for alpha  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon : Emin=    0 eV  Emax=7.9452 MeV
+          BetheBloch : Emin=7.9452 MeV Emax=  100 TeV
+
+msc:  for anti_proton  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for anti_proton  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=    2 MeV
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV
+
+hBrems:  for anti_proton  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for anti_proton  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 17x1001; from 7.50618 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for anti_proton XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for kaon+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for kaon+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=1.05231 MeV
+          BetheBloch : Emin=1.05231 MeV Emax=  100 TeV
+
+hBrems:  for kaon+  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for kaon+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 18x1001; from 3.94942 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for kaon+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for kaon-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for kaon-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=1.05231 MeV
+          BetheBloch : Emin=1.05231 MeV Emax=  100 TeV
+
+hBrems:  for kaon-  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for kaon-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 18x1001; from 3.94942 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for kaon- XStype:1 SubType=1 BuildTable=1
+      Used Lambda table of kaon+
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for mu+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+muIoni:  for mu+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=  200 keV
+        MuBetheBloch : Emin=  200 keV Emax=  100 TeV
+
+muBrems:  for mu+  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+muPairProd:  for mu+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 21x1001; from 0.85 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for mu+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for mu-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+muIoni:  for mu-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=  200 keV
+        MuBetheBloch : Emin=  200 keV Emax=  100 TeV
+
+muBrems:  for mu-  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+muPairProd:  for mu-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 21x1001; from 0.85 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for mu- XStype:1 SubType=1 BuildTable=1
+      Used Lambda table of mu+
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for pi+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for pi+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=297.505 keV
+          BetheBloch : Emin=297.505 keV Emax=  100 TeV
+
+hBrems:  for pi+  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for pi+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 20x1001; from 1.11656 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for pi+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for pi-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for pi-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=297.505 keV
+          BetheBloch : Emin=297.505 keV Emax=  100 TeV
+
+hBrems:  for pi-  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for pi-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 20x1001; from 1.11656 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for pi- XStype:1 SubType=1 BuildTable=1
+      Used Lambda table of pi+
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+====================================================================
+                  HADRONIC PROCESSES SUMMARY (verbose level 1)
+
+---------------------------------------------------
+                           Hadronic Processes for B-
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+
+  Process: B-Inelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+
+---------------------------------------------------
+                           Hadronic Processes for D-
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+
+  Process: D-Inelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+
+---------------------------------------------------
+                           Hadronic Processes for GenericIon
+
+  Process: ionInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+
+
+  Process: ionElastic
+        Model:          NNDiffuseElastic: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+
+
+---------------------------------------------------
+                           Hadronic Processes for He3
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+
+
+  Process: He3Inelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:     G4ParticleInelasticXS: 0 eV  ---> 25.6 PeV
+
+
+---------------------------------------------------
+                           Hadronic Processes for alpha
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+
+
+  Process: alphaInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:     G4ParticleInelasticXS: 0 eV  ---> 25.6 PeV
+
+
+---------------------------------------------------
+                           Hadronic Processes for anti_He3
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+
+  Process: anti_He3Inelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+
+  Process: hFritiofCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for anti_alpha
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+
+  Process: anti_alphaInelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+
+  Process: hFritiofCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for anti_deuteron
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+
+  Process: anti_deuteronInelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+
+  Process: hFritiofCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for anti_hypertriton
+
+  Process: hFritiofCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for anti_lambda
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+
+  Process: anti_lambdaInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+
+  Process: hFritiofCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for anti_neutron
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100.1 MeV
+        Model:              AntiAElastic: 100 MeV ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+
+  Process: anti_neutronInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+
+  Process: hFritiofCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for anti_proton
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100.1 MeV
+        Model:              AntiAElastic: 100 MeV ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+
+  Process: anti_protonInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+
+  Process: hFritiofCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for anti_triton
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+
+  Process: anti_tritonInelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+
+
+  Process: hFritiofCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for deuteron
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+
+
+  Process: dInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:     G4ParticleInelasticXS: 0 eV  ---> 25.6 PeV
+
+
+---------------------------------------------------
+                           Hadronic Processes for e+
+
+  Process: positronNuclear
+        Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
+
+
+---------------------------------------------------
+                           Hadronic Processes for e-
+
+  Process: electronNuclear
+        Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
+
+
+---------------------------------------------------
+                           Hadronic Processes for gamma
+
+  Process: photonNuclear
+        Model:               GammaNPreco: 0 eV  ---> 200 MeV
+        Model:            BertiniCascade: 199 MeV ---> 6 GeV
+        Model:           TheoFSGenerator: 3 GeV ---> 100 TeV
+     Cr_sctns:            GammaNuclearXS: 0 eV  ---> 100 TeV
+
+
+---------------------------------------------------
+                           Hadronic Processes for kaon+
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+
+  Process: kaon+Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+
+---------------------------------------------------
+                           Hadronic Processes for kaon-
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+
+  Process: kaon-Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+
+  Process: hBertiniCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for lambda
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+
+  Process: lambdaInelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+
+---------------------------------------------------
+                           Hadronic Processes for mu+
+
+  Process: muonNuclear
+        Model:      G4MuonVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:     KokoulinMuonNuclearXS: 0 eV  ---> 100 TeV
+
+
+---------------------------------------------------
+                           Hadronic Processes for mu-
+
+  Process: muonNuclear
+        Model:      G4MuonVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:     KokoulinMuonNuclearXS: 0 eV  ---> 100 TeV
+
+
+  Process: muMinusCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for neutron
+
+  Process: hadElastic
+        Model:             hElasticCHIPS: 0 eV  ---> 100 TeV
+     Cr_sctns:        G4NeutronElasticXS: 0 eV  ---> 100 TeV
+
+
+  Process: neutronInelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 1 GeV ---> 6 GeV
+        Model:            Binary Cascade: 0 eV  ---> 1.5 GeV
+     Cr_sctns:      G4NeutronInelasticXS: 0 eV  ---> 100 TeV
+
+
+  Process: nCapture
+        Model:               nRadCapture: 0 eV  ---> 100 TeV
+     Cr_sctns:        G4NeutronCaptureXS: 0 eV  ---> 100 TeV
+
+
+---------------------------------------------------
+                           Hadronic Processes for pi+
+
+  Process: hadElastic
+        Model:           hElasticGlauber: 0 eV  ---> 100 TeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+
+
+  Process: pi+Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 1 GeV ---> 12 GeV
+        Model:            Binary Cascade: 0 eV  ---> 1.5 GeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+
+
+---------------------------------------------------
+                           Hadronic Processes for pi-
+
+  Process: hadElastic
+        Model:           hElasticGlauber: 0 eV  ---> 100 TeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+
+
+  Process: pi-Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 1 GeV ---> 12 GeV
+        Model:            Binary Cascade: 0 eV  ---> 1.5 GeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+
+
+  Process: hBertiniCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for proton
+
+  Process: hadElastic
+        Model:             hElasticCHIPS: 0 eV  ---> 100 TeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+
+
+  Process: protonInelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 1 GeV ---> 6 GeV
+        Model:            Binary Cascade: 0 eV  ---> 1.5 GeV
+     Cr_sctns:     G4ParticleInelasticXS: 0 eV  ---> 100 TeV
+
+
+---------------------------------------------------
+                           Hadronic Processes for sigma-
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+
+  Process: sigma-Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+
+
+  Process: hBertiniCaptureAtRest
+
+---------------------------------------------------
+                           Hadronic Processes for triton
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+
+
+  Process: tInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:     G4ParticleInelasticXS: 0 eV  ---> 25.6 PeV
+
+
+================================================================
+=======================================================================
+======       Pre-compound/De-excitation Physics Parameters     ========
+=======================================================================
+Type of pre-compound inverse x-section              3
+Pre-compound model active                           1
+Pre-compound excitation low energy                  100 keV
+Pre-compound excitation high energy                 30 MeV
+Type of de-excitation inverse x-section             3
+Type of de-excitation factory                       Evaporation+GEM
+Number of de-excitation channels                    68
+Min excitation energy                               10 eV 
+Min energy per nucleon for multifragmentation       200 GeV
+Limit excitation energy for Fermi BreakUp           20 MeV
+Level density (1/MeV)                               0.075
+Use simple level density model                      1
+Use discrete excitation energy of the residual      1
+Time limit for long lived isomeres                  1 ns 
+Isomer production flag                              1
+Internal e- conversion flag                         1
+Store e- internal conversion data                   0
+Correlated gamma emission flag                      0
+Max 2J for sampling of angular correlations         10
+=======================================================================
+G4VisManager: Using G4TrajectoryDrawByCharge as fallback trajectory model.
+See commands in /vis/modeling/trajectories/ for other options.
+
+-------------------Begin of Run----------------------
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 2; Track ID: 6; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.76582211023003(MeV); TotalKineticEnergy: 0.0053583422032013051
+(MeV); TotalEnergyAfter: 938.2773713422032(MeV); E: 0.48845076802681642MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 8; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.39040388893397(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.1183908889339591MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 7; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.48937158295621(MeV); TotalKineticEnergy: 0.0056791426528868538
+(MeV); TotalEnergyAfter: 938.27769214265288(MeV); E: 0.21167944030330751MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 5; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 940.01970611719219(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 1.7476931171921706MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 4; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 942.64940977618312(MeV); TotalKineticEnergy: 2.2015665895959362
+(MeV); TotalEnergyAfter: 940.47357958959594(MeV); E: 2.1758301865871683MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 4; Step Number: 2
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 940.47357958959594(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 2.2015665895959362MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+WARNING: G4VisManager::EndOfEvent: Automatic event keeping suspended.
+
+  The number of events exceeds the maximum, 100, that may be kept by
+  the vis manager.
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 4; Track ID: 9; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.54715584604583(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.27514284604581007MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 4; Track ID: 8; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.39942810899481(MeV); TotalKineticEnergy: 0.0014894011006396646
+(MeV); TotalEnergyAfter: 938.2735024011007(MeV); E: 0.12592570789415669MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: C12; Process Name: ionIoni ---
+Parent ID: 1; Track ID: 4; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 11175.161107883645(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 11174.863387984389(MeV); E: 0.29771989925575326MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 3; Track ID: 7; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.66865779710577(MeV); TotalKineticEnergy: 0.0031363167774675627
+(MeV); TotalEnergyAfter: 938.27514931677752(MeV); E: 0.39350848032828295MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 3; Track ID: 6; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 941.41122145547479(MeV); TotalKineticEnergy: 0.67617950163874685
+(MeV); TotalEnergyAfter: 938.9481925016388(MeV); E: 2.4630289538360257MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 3; Track ID: 6; Step Number: 2
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.9481925016388(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.67617950163874685MeV
+
+Info: 
+Info: 
+--- Particle: C12; Process Name: ionIoni ---
+Parent ID: 1; Track ID: 3; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 11175.191131895823(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 11174.863387984389(MeV); E: 0.32774391143357207MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 3; Track ID: 9; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.38365392458525(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.11164092458523101MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 3; Track ID: 8; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.99446407423704(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.72245107423702848MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 2; Track ID: 13; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.39493107277644(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.12291807277642874MeV
+
+--- Particle: C12; Process Name: ionIoni ---
+Parent ID: 2; Track ID: 12; Step Number: 1
+Volume Name: physScint1; N
+xt Volume Name: physScint1
+Total Energy: 11174.965711695731(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 11174.863387984389(MeV); E: 0.10232371134225104MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 2; Track ID: 9; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.7454898738348(MeV); TotalKineticEnergy: 0.0050806822172240751
+(MeV); TotalEnergyAfter: 938.27709368221724(MeV); E: 0.4683961916175598MeV
+
+--- Particle: C12; Process Name: ionIoni ---
+Parent ID: 2; Track ID: 7; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 11175.337767716161(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 11174.863387984389(MeV); E: 0.47437973177147796MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: C12; Process Name: ionIoni ---
+Parent ID: 3; Track ID: 8; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 11175.289503872158(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 11174.863387984389(MeV); E: 0.4261158877689013MeV
+
+--- Particle: C12; Process Name: ionIoni ---
+Parent ID: 3; Track ID: 7; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 11175.598286399934(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 11174.863387984389(MeV); E: 0.73489841554510349MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 2; Track ID: 6; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.56966198577175(MeV); TotalKineticEnergy: 0.0034777526957682214
+(MeV); TotalEnergyAfter: 938.27549075269576(MeV); E: 0.29417123307596149MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: Be9; Process Name: ionIoni ---
+Parent ID: 1; Track ID: 5; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 8395.0092530477013(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 8392.7511060363049(MeV); E: 2.2581470113964315MeV
+
+--- Particle: alpha; Process Name: ionIoni ---
+Parent ID: 1; Track ID: 4; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 3731.1583910264808(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 3727.3790000000004(MeV); E: 3.7793910264804254MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 3; Track ID: 6; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 940.22714640961169(MeV); TotalKineticEnergy: 0.0045363260394262195
+(MeV); TotalEnergyAfter: 938.27654932603946(MeV); E: 1.9505970835722499MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 5; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.39632775184702(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.12431475184700957MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 4; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 939.40740499171329(MeV); TotalKineticEnergy: 0.019872643571415161
+(MeV); TotalEnergyAfter: 938.29188564357139(MeV); E: 1.1155193481418619MeV
+
+--- Particle: C12; Process Name: ionIoni ---
+Parent ID: 1; Track ID: 3; Step Number: 1
+Volume Name: physScint1; Nex
+ Volume Name: physScint1
+Total Energy: 11175.089946220904(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 11174.863387984389(MeV); E: 0.22655823651439277MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: C12; Process Name: ionIoni ---
+Parent ID: 2; Track ID: 7; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 11175.271355639457(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 11174.863387984389(MeV); E: 0.4079676550682052MeV
+
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 4; Track ID: 7; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.57794887777777(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.3059358777777561MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 6; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.37308546003521(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.10107246003519776MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 5; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.52121614246573(MeV); TotalKineticEnergy: 0.0015704672665220742
+(MeV); TotalEnergyAfter: 938.27358346726658(MeV); E: 0.24763267519919499MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 4; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.51506336770876(MeV); TotalKineticEnergy: 0.0036110455203055558
+(MeV); TotalEnergyAfter: 938.27562404552032(MeV); E: 0.23943932218844166MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 3; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 945.81497528261605(MeV); TotalKineticEnergy: 5.6256360976723103
+(MeV); TotalEnergyAfter: 943.89764909767234(MeV); E: 1.9173261849437209MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 3; Step Number: 2
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 943.89764909767234(MeV); TotalKineticEnergy: 3.6669991111089386
+(MeV); TotalEnergyAfter: 941.93901211110892(MeV); E: 1.9586369865633719MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 3; Step Number: 3
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 941.93901211110892(MeV); TotalKineticEnergy: 1.3413588374777552
+(MeV); TotalEnergyAfter: 939.61337183747776(MeV); E: 2.3256402736311834MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 3; Step Number: 4
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 939.61337183747776(MeV); TotalKineticEnergy: 0.020568675368349831
+(MeV); TotalEnergyAfter: 938.29258167536841(MeV); E: 1.3207901621094054MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 6; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.56892586613424(MeV); TotalKineticEnergy: 0.008784951626316817
+(MeV); TotalEnergyAfter: 938.28079795162637(MeV); E: 0.28812791450790426MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 5; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 939.25382064356609(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.98180764356607142MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+I
+fo: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 5; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.95250862231626(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.6804956223162435MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 4; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.77239438061736(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.50038138061734116MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 3; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 942.63611837498877(MeV); TotalKineticEnergy: 2.2279692633569388
+(MeV); TotalEnergyAfter: 940.49998226335697(MeV); E: 2.1361361116318145MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 3; Step Number: 2
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 940.49998226335697(MeV); TotalKineticEnergy: 0.015296930698700084
+(MeV); TotalEnergyAfter: 938.28730993069871(MeV); E: 2.2126723326582387MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 3; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.92278056149223(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.65076756149221637MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: C12; Process Name: ionIoni ---
+Parent ID: 1; Track ID: 3; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 11175.110281232008(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 11174.863387984389(MeV); E: 0.24689324761857279MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 3; Track ID: 7; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.63731995381363(MeV); TotalKineticEnergy: 0.0031416332865636942
+(MeV); TotalEnergyAfter: 938.27515463328655(MeV); E: 0.36216532052705142MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 3; Track ID: 6; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.48913508671399(MeV); TotalKineticEnergy: 0.0034468040076715833
+(MeV); TotalEnergyAfter: 938.27545980400771(MeV); E: 0.21367528270629935MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: e-; Process Name: eIoni ---
+Parent ID: 7; Track ID: 8; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 2.9544412874154231(MeV); TotalKineticEnergy: 1.8891737560330164
+(MeV); TotalEnergyAfter: 2.4001726660330163(MeV); E: 0.55426862138240662MeV
+
+--- Particle: e-; Process Name: eIoni ---
+Parent ID: 7; Track ID: 8; Step Number: 2
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 2.4001726660330163(MeV); TotalKineticEnergy: 1.2817233764701221
+(MeV); TotalEnergyAfter: 1.7927222864701222(MeV); E: 0.60745037956289427MeV
+
+--- Particle: e-; Process Name: eIoni ---
+Parent ID: 7; Track ID: 8; Step Number: 3
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 1.7927222864701222(MeV); TotalKineticEnergy: 0.88160401056912585
+(MeV); TotalEnergyAfter: 1.3926029205691259(MeV); E: 0.40011936590099634MeV
+
+--- Particle: e-; Process Name: eIoni ---
+Parent ID: 7; Track ID: 8; Step Number: 4
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 1.3926029205691259(MeV); TotalKineticEnergy: 0.5166207936375975
+(MeV); TotalEnergyAfter: 1.0276197036
+75976(MeV); E: 0.3649832169315283MeV
+
+--- Particle: e-; Process Name: eIoni ---
+Parent ID: 7; Track ID: 8; Step Number: 5
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 1.0276197036375976(MeV); TotalKineticEnergy: 0.09348055358027324
+(MeV); TotalEnergyAfter: 0.60447946358027327(MeV); E: 0.42314024005732426MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 3; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.64022172447221(MeV); TotalKineticEnergy: 0.015892260571758299
+(MeV); TotalEnergyAfter: 938.28790526057173(MeV); E: 0.35231646390043869MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 7; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 939.58006084452904(MeV); TotalKineticEnergy: 0.011144811055445736
+(MeV); TotalEnergyAfter: 938.2831578110555(MeV); E: 1.2969030334735825MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 6; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 941.40542058802544(MeV); TotalKineticEnergy: 0.74246693546316278
+(MeV); TotalEnergyAfter: 939.01447993546321(MeV); E: 2.3909406525622576MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 6; Step Number: 2
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 939.01447993546321(MeV); TotalKineticEnergy: 0.0081969137366173506
+(MeV); TotalEnergyAfter: 938.2802099137366(MeV); E: 0.73427002172654543MeV
+
+--- Particle: C12; Process Name: ionIoni ---
+Parent ID: 1; Track ID: 5; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 11175.704290099156(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 11174.863387984389(MeV); E: 0.84090211476723198MeV
+
+--- Particle: C12; Process Name: ionIoni ---
+Parent ID: 1; Track ID: 4; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 11175.803819639874(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 11174.863387984389(MeV); E: 0.94043165548464458MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 3; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 943.8924856736694(MeV); TotalKineticEnergy: 3.6627281904247466
+(MeV); TotalEnergyAfter: 941.9347411904248(MeV); E: 1.9577444832446362MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 3; Step Number: 2
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 941.9347411904248(MeV); TotalKineticEnergy: 1.3471780441036034
+(MeV); TotalEnergyAfter: 939.61919104410367(MeV); E: 2.3155501463211432MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 3; Step Number: 3
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 939.61919104410367(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 1.3471780441036034MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 6; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.66512328451267(MeV); TotalKineticEnergy: 0.0040426288346120942
+(MeV); TotalEnergyAfter: 938.27605562883468(MeV); E: 0.38906765567804674MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: e-;
+Process Name: eIoni ---
+Parent ID: 6; Track ID: 8; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 3.3791207340939686(MeV); TotalKineticEnergy: 2.1637224185978443
+(MeV); TotalEnergyAfter: 2.6747213285978444(MeV); E: 0.70439940549612445MeV
+
+--- Particle: e-; Process Name: eIoni ---
+Parent ID: 6; Track ID: 8; Step Number: 2
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 2.6747213285978444(MeV); TotalKineticEnergy: 1.3788229981982725
+(MeV); TotalEnergyAfter: 1.8898219081982726(MeV); E: 0.78489942039957172MeV
+
+--- Particle: e-; Process Name: eIoni ---
+Parent ID: 6; Track ID: 8; Step Number: 3
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 1.8898219081982726(MeV); TotalKineticEnergy: 0.89443679610829196
+(MeV); TotalEnergyAfter: 1.405435706108292(MeV); E: 0.48438620208998051MeV
+
+--- Particle: e-; Process Name: eIoni ---
+Parent ID: 6; Track ID: 8; Step Number: 4
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 1.405435706108292(MeV); TotalKineticEnergy: 0.53739833875342125
+(MeV); TotalEnergyAfter: 1.0483972487534212(MeV); E: 0.35703845735487072MeV
+
+--- Particle: e-; Process Name: eIoni ---
+Parent ID: 6; Track ID: 8; Step Number: 5
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 1.0483972487534212(MeV); TotalKineticEnergy: 0.22799659411610479
+(MeV); TotalEnergyAfter: 0.73899550411610471(MeV); E: 0.30940174463731646MeV
+
+--- Particle: e-; Process Name: eIoni ---
+Parent ID: 6; Track ID: 8; Step Number: 6
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 0.73899550411610471(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 0.51099890999999997(MeV); E: 0.22799659411610479MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: C12; Process Name: ionIoni ---
+Parent ID: 1; Track ID: 4; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 11175.113106763647(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 11174.863387984389(MeV); E: 0.24971877925781882MeV
+
+Info: 
+Info: 
+Info: 
+--- Particle: C12; Process Name: ionIoni ---
+Parent ID: 1; Track ID: 4; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 11176.768317311233(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 11174.863387984387(MeV); E: 1.9049293268453766MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 3; Track ID: 7; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 944.0534583396178(MeV); TotalKineticEnergy: 3.7595269355094634
+(MeV); TotalEnergyAfter: 942.0315399355095(MeV); E: 2.0219184041083262MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 3; Track ID: 7; Step Number: 2
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 942.0315399355095(MeV); TotalKineticEnergy: 1.5194227725122582
+(MeV); TotalEnergyAfter: 939.79143577251227(MeV); E: 2.2401041629972052MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 3; Track ID: 7; Step Number: 3
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 939.79143577251227(MeV); TotalKineticEnergy: 0.0055327788427916857
+(MeV); TotalEnergyAfter: 938.27754577884275(MeV); E: 1.5138899936694665MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 5; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.70966905793284(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.43765605793282703MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 4; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.8204501760614(MeV); TotalKineticEn
+rgy: 0.0034726404764046093
+(MeV); TotalEnergyAfter: 938.2754856404764(MeV); E: 0.54496453558497937MeV
+
+--- Particle: C12; Process Name: ionIoni ---
+Parent ID: 1; Track ID: 3; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 11175.052696967246(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 11174.863387984389(MeV); E: 0.18930898285725561MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 2; Track ID: 5; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 941.39837857496889(MeV); TotalKineticEnergy: 0.73503565212088073
+(MeV); TotalEnergyAfter: 939.00704865212094(MeV); E: 2.3913299228479916MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 2; Track ID: 5; Step Number: 2
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 939.00704865212094(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.73503565212088073MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: e-; Process Name: eIoni ---
+Parent ID: 5; Track ID: 7; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 1.5550391519323767(MeV); TotalKineticEnergy: 0.47216838888443691
+(MeV); TotalEnergyAfter: 0.98316729888443688(MeV); E: 0.57187185304793975MeV
+
+--- Particle: e-; Process Name: eIoni ---
+Parent ID: 5; Track ID: 7; Step Number: 2
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 0.98316729888443688(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 0.51099890999999997(MeV); E: 0.47216838888443691MeV
+
+--- Particle: e-; Process Name: eIoni ---
+Parent ID: 5; Track ID: 6; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 2.0998817177952249(MeV); TotalKineticEnergy: 1.0920707282581505
+(MeV); TotalEnergyAfter: 1.6030696382581504(MeV); E: 0.49681207953707424MeV
+
+--- Particle: e-; Process Name: eIoni ---
+Parent ID: 5; Track ID: 6; Step Number: 2
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 1.6030696382581504(MeV); TotalKineticEnergy: 0.73812537037407178
+(MeV); TotalEnergyAfter: 1.2491242803740716(MeV); E: 0.35394535788407872MeV
+
+--- Particle: e-; Process Name: eIoni ---
+Parent ID: 5; Track ID: 6; Step Number: 3
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 1.2491242803740716(MeV); TotalKineticEnergy: 0.28891335151971814
+(MeV); TotalEnergyAfter: 0.79991226151971806(MeV); E: 0.44921201885435363MeV
+
+--- Particle: e-; Process Name: eIoni ---
+Parent ID: 5; Track ID: 6; Step Number: 4
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 0.79991226151971806(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 0.51099890999999997(MeV); E: 0.28891335151971814MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 3; Track ID: 8; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 939.46494321725936(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 1.1929302172593452MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 9; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.49821189200395(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.22619889200393573MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 8; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total En
+rgy: 938.56666387793268(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.29465087793266775MeV
+
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 1; Track ID: 4; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.99944795104443(MeV); TotalKineticEnergy: 0.013532627435918876
+(MeV); TotalEnergyAfter: 938.28554562743591(MeV); E: 0.71390232360849648MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 2; Track ID: 6; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.8375735134689(MeV); TotalKineticEnergy: 0.0028040179595264503
+(MeV); TotalEnergyAfter: 938.27481701795955(MeV); E: 0.5627564955093548MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: alpha; Process Name: ionIoni ---
+Parent ID: 1; Track ID: 6; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 3727.7319066003902(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 3727.3789999999999(MeV); E: 0.35290660039026989MeV
+
+--- Particle: alpha; Process Name: ionIoni ---
+Parent ID: 1; Track ID: 5; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 3727.8782145037967(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 3727.3789999999999(MeV); E: 0.499214503796793MeV
+
+--- Particle: alpha; Process Name: ionIoni ---
+Parent ID: 1; Track ID: 3; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 3731.2499093457955(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 3727.3789999999999(MeV); E: 3.8709093457955532MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 2; Track ID: 11; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.37366448976093(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.10165148976091132MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 2; Track ID: 10; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.37620602872153(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.10419302872151093MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 2; Track ID: 9; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.50340025014111(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.23138725014109696MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 2; Track ID: 8; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.74611142116885(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.47409842116883283MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 2; Track ID: 7; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 938.40522586979387(MeV); TotalKineticEnergy: 0.0055661766492279829
+(MeV); TotalEnergyAfter: 938.27757917664928(MeV); E: 0.12764669314462351MeV
+
+--- Particle: proton; Process Name: hIoni ---
+Parent ID: 2; Track ID: 6; Step Number: 1
+Volume Name: physScint1; Next Volume Name: physScint1
+Total Energy: 939.22910530512888(MeV); TotalKineticEnergy: 0
+(MeV); TotalEnergyAfter: 938.27201300000002(MeV); E: 0.95709230512886734MeV
+
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+
+nfo: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+Info: 
+--------------------End of Run-----------------------
+
+Total number of events: 1000
+100 events have been kept for refreshing and/or reviewing.
+  "/vis/reviewKeptEvents" to review one by one.
+  To see accumulated, "/vis/enable", then "/vis/viewer/flush" or "/vis/viewer/rebuild".
+WARNING: G4VisManager::EndOfRun: Automatic event keeping was suspended.
+
+  The number of events in the run exceeded the maximum, 100, that may be
+  kept by the vis manager.
+  The number of events kept by the vis manager can be changed with
+  "/vis/scene/endOfEventAction accumulate <N>", where N is the
+  maximum number you wish to allow.  N < 0 means "unlimited".
