@@ -19,7 +19,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 	G4double RH = 0.7*detectorConstruction->GetRH(); //! Get RH from Detector Construction (it is in milimeter)
 	G4double HH = detectorConstruction->GetHH();
   G4double HC = detectorConstruction->GetHC();
-	G4double zPar = 20.*cm;
+	G4double zPar = 50.*cm;
 	G4double zDis = zPar - (HH+HC)/2;
 
 	G4ParticleTable *particleTable = G4ParticleTable::GetParticleTable();

@@ -45,7 +45,7 @@ MyDetectorConstruction::MyDetectorConstruction()
 
 // Cell_World
 	
-	G4double dWorld = 40.*cm;
+	G4double dWorld = 100.*cm;
 
 	solidWorld = new G4Box("solidWorld", dWorld, dWorld, dWorld);
 	G4LogicalVolume *logicWorld = new G4LogicalVolume(solidWorld, worldMat, "logicWorld");
@@ -77,16 +77,16 @@ MyDetectorConstruction::MyDetectorConstruction()
 	G4LogicalVolume *logicAlBox2 = new G4LogicalVolume(solidAlBox2, Al, "logicAlBox2");
 	// G4VPhysicalVolume* physAlBox2 = new G4PVPlacement(0, G4ThreeVector(0., (RH + 2.5*cm) + 5*cm, -((trapA/sin(60*deg)/2) + (HH+HC)/2)), logicAlBox2, "physAlBox2", logicWorld, false, 0, true);
 
-//Source Al Box
-  G4Box* solidSourceAlBox = new G4Box("solidSourceAlBox", 2.*cm, 2.*cm, 2.*cm);
-  G4LogicalVolume* logicSourceAlBox = new G4LogicalVolume(solidSourceAlBox, Al, "logicSourceAlBox");
-  double zPar = (trapA/sin(60*deg)/2) + (HH+HC)/2;
-  // G4VPhysicalVolume* physSourceAlBox = new G4PVPlacement(0, G4ThreeVector(0., 0., -zPar), logicSourceAlBox, "physSourceAlBox", logicAirBox, false, 0, true);
+//! Source Steel Box
+  G4Box* solidSourceSteelBox = new G4Box("solidSourceSteelBox", 10.*cm, 10.*cm, 10.*cm);
+  G4LogicalVolume* logicSourceSteelBox = new G4LogicalVolume(solidSourceSteelBox, Steel, "logicSourceSteelBox");
+  double zPar = 50.*cm;
+  G4VPhysicalVolume* physSourceSteelBox = new G4PVPlacement(0, G4ThreeVector(0., 0., -zPar), logicSourceSteelBox, "physSourceSteelBox", logicWorld, false, 0, true);
 
-//Source Air Box
-  G4Box* solidSourceAirBox = new G4Box("solidSourceAirBox", 0.5*cm, 0.5*cm, 0.5*cm);
+//! Source Air Box
+  G4Box* solidSourceAirBox = new G4Box("solidSourceAirBox", 9.5*cm, 9.5*cm, 9.5*cm);
   G4LogicalVolume* logicSourceAirBox = new G4LogicalVolume(solidSourceAirBox, worldMat, "logicSourceAirBox");
-  // G4VPhysicalVolume* physSourceAirBox = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicSourceAirBox, "physSourceAirBox", logicSourceAlBox, false, 0, true);
+  G4VPhysicalVolume* physSourceAirBox = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicSourceAirBox, "physSourceAirBox", logicSourceSteelBox, false, 0, true);
 
 //Source Al Sphere
   G4Sphere* solidSourceAlSphere = new G4Sphere("solidSourceAlSphere", 0.5*cm, 2.*cm, 0*degree, 360*degree, 0*degree, 360*degree);
@@ -212,10 +212,18 @@ G4MultiUnion* solidScint = new G4MultiUnion("solidScint");
 	fDEScoringVolume = logicScint;
 	fDEScoringVolume1 = logicScint1;
 	fDEScoringVolume2 = logicScint2;
+	fDEScoringVolume3 = logicScint3;
+	fDEScoringVolume4 = logicScint4;
+	fDEScoringVolume5 = logicScint5;
+	fDEScoringVolume6 = logicScint6;
 	
 	fEScoringVolume = logicPMT;
 	fEScoringVolume1 = logicPMT1;
 	fEScoringVolume2 = logicPMT2;
+	fEScoringVolume3 = logicPMT3;
+	fEScoringVolume4 = logicPMT4;
+	fEScoringVolume5 = logicPMT5;
+	fEScoringVolume6 = logicPMT6;
 }
 
 MyDetectorConstruction::~MyDetectorConstruction()

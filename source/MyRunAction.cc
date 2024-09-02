@@ -23,7 +23,6 @@ void MyRunAction::EndOfRunAction(const G4Run* run)
 	<< "\n";
 	
 	G4int nofEvents = run->GetNumberOfEvent();
-	if (nofEvents == 0) return;
 	
 	G4cout 
 	<< "\n"

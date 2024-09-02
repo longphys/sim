@@ -28,10 +28,18 @@ public: // public to all classes
 	G4LogicalVolume* GetScoringVolumeDE() const { return fDEScoringVolume; }
 	G4LogicalVolume* GetScoringVolumeDE1() const { return fDEScoringVolume1; }
 	G4LogicalVolume* GetScoringVolumeDE2() const { return fDEScoringVolume2; }
+	G4LogicalVolume* GetScoringVolumeDE3() const { return fDEScoringVolume3; }
+	G4LogicalVolume* GetScoringVolumeDE4() const { return fDEScoringVolume4; }
+	G4LogicalVolume* GetScoringVolumeDE5() const { return fDEScoringVolume5; }
+	G4LogicalVolume* GetScoringVolumeDE6() const { return fDEScoringVolume6; }
 
 	G4LogicalVolume* GetScoringVolumeE() const { return fEScoringVolume; }
 	G4LogicalVolume* GetScoringVolumeE1() const { return fEScoringVolume1; }
 	G4LogicalVolume* GetScoringVolumeE2() const { return fEScoringVolume2; }
+	G4LogicalVolume* GetScoringVolumeE3() const { return fEScoringVolume3; }
+	G4LogicalVolume* GetScoringVolumeE4() const { return fEScoringVolume4; }
+	G4LogicalVolume* GetScoringVolumeE5() const { return fEScoringVolume5; }
+	G4LogicalVolume* GetScoringVolumeE6() const { return fEScoringVolume6; }
 
 	G4double GetRH() const { return RH; }
 	G4double GetHH() const { return HH; }
@@ -46,8 +54,12 @@ public: // public to all classes
  
 	
 protected: // only inhereting classes can access
-  G4LogicalVolume *fDEScoringVolume, *fDEScoringVolume1, *fDEScoringVolume2,
-  *fEScoringVolume, *fEScoringVolume1, *fEScoringVolume2;
+  G4LogicalVolume *fDEScoringVolume, *fDEScoringVolume1, *fDEScoringVolume2, 
+  *fDEScoringVolume3, *fDEScoringVolume4, 
+  *fDEScoringVolume5, *fDEScoringVolume6,
+  *fEScoringVolume, *fEScoringVolume1, *fEScoringVolume2,
+  *fEScoringVolume3, *fEScoringVolume4,
+  *fEScoringVolume5, *fEScoringVolume6;
 
 	G4Box *solidWorld;
 	G4VPhysicalVolume *physWorld;
