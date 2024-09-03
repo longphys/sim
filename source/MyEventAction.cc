@@ -2,22 +2,11 @@
 
 void MyEventAction::BeginOfEventAction(const G4Event* event)
 	{
-		fDEdep = 0.;
-		fDEdep1 = 0.;
-		fDEdep2 = 0.;
-		fDEdep3 = 0.;
-		fDEdep4 = 0.;
-		fDEdep5 = 0.;
-		fDEdep6 = 0.;
+    for(int i = 0; i < 7; i++){
+      fDEdep[i] = 0.;
+      fEdep[i] = 0.;
+    }
 		
-		fEdep = 0.;
-		fEdep1 = 0.;
-		fEdep2 = 0.;
-		fEdep3 = 0.;
-		fEdep4 = 0.;
-		fEdep5 = 0.;
-		fEdep6 = 0.;
-
 		fcomptCount = 0;
 		backEDep = 0.;
 
@@ -47,22 +36,21 @@ void MyEventAction::EndOfEventAction(const G4Event* event)
 		// }
 
 		//! Condition for recording Compton Scattering Count and Dep
-		// if (fcomptCount > 0)
-		// {
-		// 	comptEDep.resize(fcomptCount);
-		// 	for (G4int i = 0; i <= fcomptCount - 1; i++)
-		// 	{
-		// 		comptEDep[i] = 0.;
-		// 	}
-		// 	comptEDep[fcomptCount - 1] = fDEdep;
-		// }
-		// else
-		// {
-		// 	comptEDep.push_back(-1.);
-		// }
+		if (fcomptCount > 0)
+		{
+			comptEDep.resize(fcomptCount);
+			for (G4int i = 0; i <= fcomptCount - 1; i++)
+			{
+				comptEDep[i] = 0.;
+			}
+			comptEDep[fcomptCount - 1] = fDEdep[0]; //! Middle detector
+		}
+		else
+		{
+			comptEDep.push_back(-1.);
+		}
 
-		G4cout << "Event ID: "<< EventsID << "\n";
-    // G4cout.flush();
+		// G4cout << "Event ID: "<< EventsID << "\n";
 
     const G4Run* run
     = static_cast<const G4Run*>
@@ -77,10 +65,10 @@ void MyEventAction::EndOfEventAction(const G4Event* event)
         else if (i == pos) std::cout << ">";
         else std::cout << " ";
     }
-    std::cout << "] " << int(events/nofEvents * 100.0) << " %\r";
+    std::cout << "] " << int(events/nofEvents * 100.0) << "%\r";
     std::cout.flush();
 
-    events += (1.); // for demonstration only
+    events += 1; // for demonstration only
 
 		// G4cout << "Random:" << (2*((rand() % 10) % 2) - 1) << "\n";
 		// G4cout << "Event Number: " << EventsID << "; fDEdep: " << fDEdep <<
@@ -90,6 +78,5 @@ void MyEventAction::EndOfEventAction(const G4Event* event)
 		// comptEDep[0] << "; backEDep: " << backEDep << "\n";
 		
 		MyTreeHandler* aTreeHandler = MyTreeHandler::GetInstance();
-    	aTreeHandler->Push(EventsID, fDEdep, fDEdep1, fDEdep2, fDEdep3, fDEdep4, fDEdep5, fDEdep6, fEdep, 
-		fEdep1, fEdep2, fEdep3, fEdep4, fEdep5, fEdep6, fcomptCount, comptEDep, backEDep);
+    	aTreeHandler->Push(EventsID, fDEdep, fEdep, fcomptCount, comptEDep, backEDep);
 	}
