@@ -2,11 +2,14 @@
 
 void MyEventAction::BeginOfEventAction(const G4Event* event)
 	{
-    for(int i = 0; i < 7; i++){
-      fDEdep[i] = 0.;
-      fEdep[i] = 0.;
-    }
+    // for(int i = 0; i < 7; i++){
+    //   fDEdep[i] = 0.;
+    //   fEdep[i] = 0.;
+    // }
 		
+    fDEdep = 0.;
+    fEdep = 0.;
+    
 		fcomptCount = 0;
 		backEDep = 0.;
 
@@ -54,7 +57,7 @@ void MyEventAction::EndOfEventAction(const G4Event* event)
 			{
 				comptEDep[i] = 0.;
 			}
-			comptEDep[fcomptCount - 1] = fDEdep[0]; //! Middle detector
+			comptEDep[fcomptCount - 1] = fDEdep; //! Middle detector
 		}
 		else
 		{

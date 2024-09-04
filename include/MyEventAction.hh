@@ -22,11 +22,18 @@ public:
 	virtual void BeginOfEventAction(const G4Event* event);
 	virtual void EndOfEventAction(const G4Event* event);
 
+	// void AddDEdep(G4double edep, G4int NoDet){
+  //   fDEdep[NoDet] += edep;
+  // }
+	// void AddEdep(G4double edep, G4int NoDet){
+  //   fEdep[NoDet] += edep;
+  // }
+
 	void AddDEdep(G4double edep, G4int NoDet){
-    fDEdep[NoDet] += edep;
+    fDEdep += edep;
   }
 	void AddEdep(G4double edep, G4int NoDet){
-    fEdep[NoDet] += edep;
+    fEdep += edep;
   }
 
   void AddParEdep(G4double edep, G4String parName, G4int parentID){
@@ -71,11 +78,14 @@ private:
 	G4String AllStepInfo;
 	G4bool aBSCheck;
 	std::vector <G4double> comptEDep;
-  G4double fEdep[7], fDEdep[7];
+
+  // G4double fEdep[7], fDEdep[7];
+
+  G4double fEdep, fDEdep;
 	// std::vector <G4double> neutronEDep, protonEDep, gammaEDep, otherEDep;
   G4double neutronEDep, protonEDep, gammaEDep, otherEDep;
 
-  int events = 0;
+  // int events = 0;
 };
 
 #endif

@@ -8,10 +8,13 @@ MyTreeHandler::MyTreeHandler()
     fTree = new TTree("dEEtree", "dEEtree");
     fEventNr = -1;
 
-    for(int i = 0; i <= 6; i++){
-      fdE[i] = 0.;
-      fE[i] = 0.;
-    }
+    // for(int i = 0; i <= 6; i++){
+    //   fdE[i] = 0.;
+    //   fE[i] = 0.;
+    // }
+
+    fdE = 0.;
+    fE = 0.;
 
     fcomptNr = -1;
     fcomptEDep.clear();
@@ -28,7 +31,8 @@ MyTreeHandler::MyTreeHandler()
     
     fTree->Branch("EventID", &fEventNr, "EventID/I");
     
-    fTree->Branch("Scintillator", &fdE[0], "Scintillator/D");
+    fTree->Branch("Scintillator", &fdE, "Scintillator/D");
+    // fTree->Branch("Scintillator", &fdE[0], "Scintillator/D");
     // fTree->Branch("Scintillator1", &fdE[1], "Scintillator1/D");
     // fTree->Branch("Scintillator2", &fdE[2], "Scintillator2/D");
     // fTree->Branch("Scintillator3", &fdE[3], "Scintillator3/D");
@@ -36,7 +40,8 @@ MyTreeHandler::MyTreeHandler()
     // fTree->Branch("Scintillator5", &fdE[5], "Scintillator5/D");
     // fTree->Branch("Scintillator6", &fdE[6], "Scintillator6/D");
 
-    fTree->Branch("PMT", &fE[0], "PMT/D");
+    fTree->Branch("PMT", &fE, "PMT/D");
+    // fTree->Branch("PMT", &fE[0], "PMT/D");
     // fTree->Branch("PMT1", &fE[1], "PMT1/D");
     // fTree->Branch("PMT2", &fE[2], "PMT2/D");
     // fTree->Branch("PMT3", &fE[3], "PMT3/D");
@@ -48,10 +53,10 @@ MyTreeHandler::MyTreeHandler()
     // fTree->Branch("ComptonEnergyDeposition", &fcomptEDep);
     // fTree->Branch("BackScatteredComptonEnergyDeposition", &fbackEDep, "BackScatteredComptonEnergyDeposition/D");
 
-    fTree->Branch("NeutronEDep", &neutronEDep);
-    fTree->Branch("ProtonEDep", &protonEDep);
-    fTree->Branch("GammaEDep", &gammaEDep);
-    fTree->Branch("OtherEDep", &otherEDep);
+    // fTree->Branch("NeutronEDep", &neutronEDep);
+    // fTree->Branch("ProtonEDep", &protonEDep);
+    // fTree->Branch("GammaEDep", &gammaEDep);
+    // fTree->Branch("OtherEDep", &otherEDep);
 
     fTree->Branch("NeutronEDep", &neutronEDep, "NeutronEDep/D");
     fTree->Branch("ProtonEDep", &protonEDep, "ProtonEDep/D");
@@ -65,9 +70,11 @@ G4int MyTreeHandler::Open()
     return 0;
 }
 
-G4int MyTreeHandler::Push(int64_t eventNr, 
-        G4double dE[7], 
-        G4double E[7], 
+G4int MyTreeHandler::Push(int64_t eventNr,
+        G4double dE, 
+        G4double E, 
+        // G4double dE[7], 
+        // G4double E[7], 
         int64_t comptNr, 
         std::vector <G4double> comptEDep,
         G4double backEDep,
@@ -83,10 +90,13 @@ G4int MyTreeHandler::Push(int64_t eventNr,
 {
     fEventNr = eventNr;
 
-    for(int i = 0; i <= 6; i++){
-      fdE[i] = dE[i];
-      fE[i] = E[i];
-    }
+    // for(int i = 0; i <= 6; i++){
+    //   fdE[i] = dE[i];
+    //   fE[i] = E[i];
+    // }
+
+    fdE = dE;
+    fE = E;
 
     fcomptNr = comptNr;
     fcomptEDep = comptEDep;
