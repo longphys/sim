@@ -30,21 +30,34 @@ public:
   }
 
   void AddParEdep(G4double edep, G4String parName, G4int parentID){
+    // if(parName == "neutron"){
+    //   neutronEDep.resize(parentID+1, 0.);
+    //   neutronEDep[parentID] += edep;
+    // }
+    // else if(parName == "proton"){
+    //   protonEDep.resize(parentID+1, 0.);
+    //   protonEDep[parentID] += edep;
+    // }
+    // else if(parName == "gamma"){
+    //   gammaEDep.resize(parentID+1, 0.);
+    //   gammaEDep[parentID] += edep;
+    // }
+    // else{
+    //   otherEDep.resize(parentID+1, 0.);
+    //   otherEDep[parentID] += edep;
+    // }
+
     if(parName == "neutron"){
-      neutronEDep.resize(parentID+1, 0.);
-      neutronEDep[parentID] += edep;
+      neutronEDep += edep;
     }
     else if(parName == "proton"){
-      protonEDep.resize(parentID+1, 0.);
-      protonEDep[parentID] += edep;
+      protonEDep += edep;
     }
     else if(parName == "gamma"){
-      gammaEDep.resize(parentID+1, 0.);
-      gammaEDep[parentID] += edep;
+      gammaEDep += edep;
     }
     else{
-      otherEDep.resize(parentID+1, 0.);
-      otherEDep[parentID] += edep;
+      otherEDep += edep;
     }
   }
 
@@ -59,7 +72,8 @@ private:
 	G4bool aBSCheck;
 	std::vector <G4double> comptEDep;
   G4double fEdep[7], fDEdep[7];
-	std::vector <G4double> neutronEDep, protonEDep, gammaEDep, otherEDep;
+	// std::vector <G4double> neutronEDep, protonEDep, gammaEDep, otherEDep;
+  G4double neutronEDep, protonEDep, gammaEDep, otherEDep;
 
   int events = 0;
 };

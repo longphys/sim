@@ -49,7 +49,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/sim")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/sim"
-         OLD_RPATH "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib:/home/long/software/root/root-6.30.02/rootinstall/lib:"
+         OLD_RPATH "/home/long/software/geant4/geant4-v11.1.2/singleinstall/lib:/home/long/software/root/root-6.30.02/rootinstall/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/sim")

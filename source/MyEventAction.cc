@@ -11,10 +11,15 @@ void MyEventAction::BeginOfEventAction(const G4Event* event)
 		backEDep = 0.;
 
 		comptEDep.clear();
-    neutronEDep.clear();
-    protonEDep.clear();
-    gammaEDep.clear();
-    otherEDep.clear();
+    // neutronEDep.clear();
+    // protonEDep.clear();
+    // gammaEDep.clear();
+    // otherEDep.clear();
+
+    neutronEDep = 0.;
+    protonEDep = 0.;
+    gammaEDep = 0.;
+    otherEDep = 0.;
 			
 		aBSCheck = false;
 		AllStepInfo = "Info: ";

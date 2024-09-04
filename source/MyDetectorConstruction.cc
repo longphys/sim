@@ -115,7 +115,7 @@ MyDetectorConstruction::MyDetectorConstruction()
   h = (h + (HH + HC)/2)/2;
 
   G4VPhysicalVolume* physMWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicMWorld, "physMWorld", logicWorld, false, 0, true);
-  G4VPhysicalVolume* physMWorld1 = new G4PVPlacement(0, G4ThreeVector(0., 2.*RH, 0.), logicMWorld1, "physMWorld1", logicWorld, false, 0, true);
+  // G4VPhysicalVolume* physMWorld1 = new G4PVPlacement(0, G4ThreeVector(0., 2.*RH, 0.), logicMWorld1, "physMWorld1", logicWorld, false, 0, true);
   // G4VPhysicalVolume* physMWorld2 = new G4PVPlacement(0, G4ThreeVector(0., -2.*RH, 0.), logicMWorld2, "physMWorld2", logicWorld, false, 0, true);
   // G4VPhysicalVolume* physMWorld3 = new G4PVPlacement(0, G4ThreeVector((trapA+trapB)/2., RH, 0.), logicMWorld3, "physMWorld3", logicWorld, false, 0, true);
   // G4VPhysicalVolume* physMWorld4 = new G4PVPlacement(0, G4ThreeVector(-(trapA+trapB)/2., -RH, 0.), logicMWorld4, "physMWorld4", logicWorld, false, 0, true);
@@ -214,7 +214,7 @@ G4MultiUnion* solidScint = new G4MultiUnion("solidScint");
 
   G4Box* solidAlStick = new G4Box("AlStick", xMWorld, yAl, zMWorld);
 	G4LogicalVolume* logicAlStick = new G4LogicalVolume(solidAlStick, Al, "logicAlStick");
-	G4VPhysicalVolume* physAlStick = new G4PVPlacement(0, G4ThreeVector(0., -(yMWorld + yAl), 0.), logicAlStick, "physAlStick", logicWorld, false, 0, true);
+	// G4VPhysicalVolume* physAlStick = new G4PVPlacement(0, G4ThreeVector(0., -(yMWorld + yAl), 0.), logicAlStick, "physAlStick", logicWorld, false, 0, true);
 
 // Select scoring volume
 for(int i = 0; i <= 6; i++){

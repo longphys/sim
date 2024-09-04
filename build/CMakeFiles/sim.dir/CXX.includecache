@@ -14,25 +14,25 @@ TFile.h
 TTree.h
 ../include/TTree.h
 
-/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4GlobalConfig.hh
+/home/long/software/geant4/geant4-v11.1.2/singleinstall/include/Geant4/G4GlobalConfig.hh
 
-/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Types.hh
+/home/long/software/geant4/geant4-v11.1.2/singleinstall/include/Geant4/G4Types.hh
 G4GlobalConfig.hh
-/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4GlobalConfig.hh
+/home/long/software/geant4/geant4-v11.1.2/singleinstall/include/Geant4/G4GlobalConfig.hh
 complex
 -
 tls.hh
-/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/tls.hh
+/home/long/software/geant4/geant4-v11.1.2/singleinstall/include/Geant4/tls.hh
 
-/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ios.hh
+/home/long/software/geant4/geant4-v11.1.2/singleinstall/include/Geant4/G4ios.hh
 G4Types.hh
-/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Types.hh
+/home/long/software/geant4/geant4-v11.1.2/singleinstall/include/Geant4/G4Types.hh
 iostream
 -
 
-/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/tls.hh
+/home/long/software/geant4/geant4-v11.1.2/singleinstall/include/Geant4/tls.hh
 G4GlobalConfig.hh
-/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4GlobalConfig.hh
+/home/long/software/geant4/geant4-v11.1.2/singleinstall/include/Geant4/G4GlobalConfig.hh
 
 /home/long/software/geant4/geant4build/sim/source/MyTreeHandler.cc
 MyTreeHandler.hh

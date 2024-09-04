@@ -79,9 +79,8 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
   }
 
   //! Conditions for particles
-  if (VolumeName == "physScint"){
+  if (volume == fDEScoringVolume[0]){
     fEventAction->AddParEdep(EdepStep, ParticleName, ParentID);
-    // std::cout << "~~~~~~~~~~Take data~~~~~~~~~~~~\n";
   }
 
 	//! EDep conditions
