@@ -11,6 +11,10 @@ void MyEventAction::BeginOfEventAction(const G4Event* event)
 		backEDep = 0.;
 
 		comptEDep.clear();
+    neutronEDep.clear();
+    protonEDep.clear();
+    gammaEDep.clear();
+    otherEDep.clear();
 			
 		aBSCheck = false;
 		AllStepInfo = "Info: ";
@@ -18,6 +22,8 @@ void MyEventAction::BeginOfEventAction(const G4Event* event)
 void MyEventAction::EndOfEventAction(const G4Event* event)
 	{
 		G4int EventsID = event->GetEventID();
+
+		G4cout << "Event ID: "<< EventsID << "\n";
 		
 		//! Conditions for verbosity
 		// if (fDEdep > 0.)
@@ -50,25 +56,23 @@ void MyEventAction::EndOfEventAction(const G4Event* event)
 			comptEDep.push_back(-1.);
 		}
 
-		// G4cout << "Event ID: "<< EventsID << "\n";
+    // const G4Run* run
+    // = static_cast<const G4Run*>
+    // (G4RunManager::GetRunManager()->GetCurrentRun());
+    // double nofEvents = run->GetNumberOfEventToBeProcessed();
 
-    const G4Run* run
-    = static_cast<const G4Run*>
-    (G4RunManager::GetRunManager()->GetCurrentRun());
-    double nofEvents = run->GetNumberOfEventToBeProcessed();
+    // int barWidth = 50;
+    // std::cout << "[";
+    // int pos = barWidth * events/nofEvents;
+    // for (int i = 0; i < barWidth; ++i) {
+    //     if (i < pos) std::cout << "=";
+    //     else if (i == pos) std::cout << ">";
+    //     else std::cout << " ";
+    // }
+    // std::cout << "] " << int(events/nofEvents * 100.0) << "%\r";
+    // std::cout.flush();
 
-    int barWidth = 50;
-    std::cout << "[";
-    int pos = barWidth * events/nofEvents;
-    for (int i = 0; i < barWidth; ++i) {
-        if (i < pos) std::cout << "=";
-        else if (i == pos) std::cout << ">";
-        else std::cout << " ";
-    }
-    std::cout << "] " << int(events/nofEvents * 100.0) << "%\r";
-    std::cout.flush();
-
-    events += 1; // for demonstration only
+    // events += 1; // for demonstration only
 
 		// G4cout << "Random:" << (2*((rand() % 10) % 2) - 1) << "\n";
 		// G4cout << "Event Number: " << EventsID << "; fDEdep: " << fDEdep <<
@@ -78,5 +82,5 @@ void MyEventAction::EndOfEventAction(const G4Event* event)
 		// comptEDep[0] << "; backEDep: " << backEDep << "\n";
 		
 		MyTreeHandler* aTreeHandler = MyTreeHandler::GetInstance();
-    	aTreeHandler->Push(EventsID, fDEdep, fEdep, fcomptCount, comptEDep, backEDep);
+    	aTreeHandler->Push(EventsID, fDEdep, fEdep, fcomptCount, comptEDep, backEDep, neutronEDep, protonEDep, gammaEDep, otherEDep);
 	}

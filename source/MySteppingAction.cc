@@ -71,14 +71,17 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
 	// 	}
 	// }
 
-
   //! Conditions for counting compt
-  if (volume == fDEScoringVolume[0])
-  {
-    if (ProcessName == "compt" && TrackID == 1)
-    {
+  if (volume == fDEScoringVolume[0]){
+    if (ProcessName == "compt" && TrackID == 1){
       fEventAction->AddComptCount();
     }
+  }
+
+  //! Conditions for particles
+  if (VolumeName == "physScint"){
+    fEventAction->AddParEdep(EdepStep, ParticleName, ParentID);
+    // std::cout << "~~~~~~~~~~Take data~~~~~~~~~~~~\n";
   }
 
 	//! EDep conditions
@@ -92,14 +95,14 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
   }
   
 	// Information
-  if (VolumeName == "physScint1" && EdepStep > 100.*keV){
+  // if (VolumeName == "physScint1" && EdepStep > 100.*keV){
     StepInfo = "--- Particle: " + ParticleName + "; Process Name: " + ProcessName + " ---" + "\n" +
     "Parent ID: " + ParentID + "; Track ID: " + TrackID + "; Step Number: " + StepNumber + "\n" 
     "Volume Name: " + VolumeName + "; Next Volume Name: " + NextVolumeName + "\n" +
     "Total Energy: " + TotalEnergy + "(MeV); TotalKineticEnergy: " + TotalKineticEnergy + "\n" +
     "(MeV); TotalEnergyAfter: " + TotalEnergyAfter + "(MeV); E: " + EdepStep + "MeV" + "\n";
     fEventAction->AddInfo(StepInfo);
-  }
+  // }
 	
 	// Checking the Ray tracing condition
 	// if (NextVolumeName == "physPBox" or NextVolumeName == "physSBox")

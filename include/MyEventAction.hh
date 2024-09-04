@@ -22,11 +22,30 @@ public:
 	virtual void BeginOfEventAction(const G4Event* event);
 	virtual void EndOfEventAction(const G4Event* event);
 
-	void AddDEdep(G4double dedep, G4int NoDet){
-    fDEdep[NoDet] += dedep;
+	void AddDEdep(G4double edep, G4int NoDet){
+    fDEdep[NoDet] += edep;
   }
 	void AddEdep(G4double edep, G4int NoDet){
     fEdep[NoDet] += edep;
+  }
+
+  void AddParEdep(G4double edep, G4String parName, G4int parentID){
+    if(parName == "neutron"){
+      neutronEDep.resize(parentID+1, 0.);
+      neutronEDep[parentID] += edep;
+    }
+    else if(parName == "proton"){
+      protonEDep.resize(parentID+1, 0.);
+      protonEDep[parentID] += edep;
+    }
+    else if(parName == "gamma"){
+      gammaEDep.resize(parentID+1, 0.);
+      gammaEDep[parentID] += edep;
+    }
+    else{
+      otherEDep.resize(parentID+1, 0.);
+      otherEDep[parentID] += edep;
+    }
   }
 
 	void AddComptCount() { fcomptCount += 1; }
@@ -40,6 +59,7 @@ private:
 	G4bool aBSCheck;
 	std::vector <G4double> comptEDep;
   G4double fEdep[7], fDEdep[7];
+	std::vector <G4double> neutronEDep, protonEDep, gammaEDep, otherEDep;
 
   int events = 0;
 };
