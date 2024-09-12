@@ -22,19 +22,19 @@ public:
 	virtual void BeginOfEventAction(const G4Event* event);
 	virtual void EndOfEventAction(const G4Event* event);
 
-	// void AddDEdep(G4double edep, G4int NoDet){
-  //   fDEdep[NoDet] += edep;
-  // }
-	// void AddEdep(G4double edep, G4int NoDet){
-  //   fEdep[NoDet] += edep;
-  // }
-
 	void AddDEdep(G4double edep, G4int NoDet){
-    fDEdep += edep;
+    fDEdep[NoDet] += edep;
   }
 	void AddEdep(G4double edep, G4int NoDet){
-    fEdep += edep;
+    fEdep[NoDet] += edep;
   }
+
+	// void AddDEdep(G4double edep){
+  //   fDEdep += edep;
+  // }
+	// void AddEdep(G4double edep){
+  //   fEdep += edep;
+  // }
 
   void AddParEdep(G4double edep, G4String parName, G4int parentID){
     // if(parName == "neutron"){
@@ -48,6 +48,14 @@ public:
     // else if(parName == "gamma"){
     //   gammaEDep.resize(parentID+1, 0.);
     //   gammaEDep[parentID] += edep;
+    // }
+    // else if(parName == "alpha"){
+    //   alphaEDep.resize(parentID+1, 0.);
+    //   alphaEDep[parentID] += edep;
+    // }
+    // else if(parName == "C12"){
+    //   C12EDep.resize(parentID+1, 0.);
+    //   C12EDep[parentID] += edep;
     // }
     // else{
     //   otherEDep.resize(parentID+1, 0.);
@@ -63,6 +71,12 @@ public:
     else if(parName == "gamma"){
       gammaEDep += edep;
     }
+    else if(parName == "alpha"){
+      alphaEDep += edep;
+    }
+    else if(parName == "C12"){
+      C12EDep += edep;
+    }
     else{
       otherEDep += edep;
     }
@@ -70,22 +84,25 @@ public:
 
 	void AddComptCount() { fcomptCount += 1; }
 	void AddInfo(G4String StepInfo) { AllStepInfo += '\n' + StepInfo; }
+
 	void SwitchBS() { aBSCheck = true; }
+
+  void CheckProton() { protonCheck = true; }
+
 private:
 	G4double backEDep;
 	
 	G4int fcomptCount;
 	G4String AllStepInfo;
-	G4bool aBSCheck;
+	G4bool aBSCheck, protonCheck;
 	std::vector <G4double> comptEDep;
 
-  // G4double fEdep[7], fDEdep[7];
+  G4double fEdep[7], fDEdep[7];
+  // G4double fEdep, fDEdep;
 
-  G4double fEdep, fDEdep;
-	// std::vector <G4double> neutronEDep, protonEDep, gammaEDep, otherEDep;
-  G4double neutronEDep, protonEDep, gammaEDep, otherEDep;
+	// std::vector <G4double> neutronEDep, protonEDep, gammaEDep, alphaEDep, C12EDep, otherEDep;
+  G4double neutronEDep, protonEDep, gammaEDep, alphaEDep, C12EDep, otherEDep;
 
-  // int events = 0;
 };
 
 #endif

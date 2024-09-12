@@ -177,11 +177,11 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/long/software/geant4/geant4-v11.1.2/singleinstall/lib/cmake/Geant4/Geant4ConfigVersion.cmake"
+			"path" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4/Geant4ConfigVersion.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/long/software/geant4/geant4-v11.1.2/singleinstall/lib/cmake/Geant4/Geant4Config.cmake"
+			"path" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4/Geant4Config.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -190,7 +190,7 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/long/software/geant4/geant4-v11.1.2/singleinstall/lib/cmake/Geant4/Geant4PackageCache.cmake"
+			"path" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4/Geant4PackageCache.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -224,15 +224,15 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/long/software/geant4/geant4-v11.1.2/singleinstall/lib/cmake/Geant4/G4EXPATShim.cmake"
+			"path" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4/G4EXPATShim.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/long/software/geant4/geant4-v11.1.2/singleinstall/lib/cmake/Geant4/PTL/PTLConfigVersion.cmake"
+			"path" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4/PTL/PTLConfigVersion.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/long/software/geant4/geant4-v11.1.2/singleinstall/lib/cmake/Geant4/PTL/PTLConfig.cmake"
+			"path" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4/PTL/PTLConfig.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -271,11 +271,11 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/long/software/geant4/geant4-v11.1.2/singleinstall/lib/cmake/Geant4/PTL/PTLTargets.cmake"
+			"path" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4/PTL/PTLTargets.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/long/software/geant4/geant4-v11.1.2/singleinstall/lib/cmake/Geant4/PTL/PTLTargets-release.cmake"
+			"path" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4/PTL/PTLTargets-release.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -354,7 +354,7 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/long/software/geant4/geant4-v11.1.2/singleinstall/lib/cmake/Geant4/G4X11Shim.cmake"
+			"path" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4/G4X11Shim.cmake"
 		},
 		{
 			"isExternal" : true,
@@ -562,19 +562,19 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/long/software/geant4/geant4-v11.1.2/singleinstall/lib/cmake/Geant4/Modules/IntelCompileFeatures.cmake"
+			"path" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4/Modules/IntelCompileFeatures.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/long/software/geant4/geant4-v11.1.2/singleinstall/lib/cmake/Geant4/Modules/MSVCCompileFeatures.cmake"
+			"path" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4/Modules/MSVCCompileFeatures.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/long/software/geant4/geant4-v11.1.2/singleinstall/lib/cmake/Geant4/Geant4LibraryDepends.cmake"
+			"path" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4/Geant4LibraryDepends.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/long/software/geant4/geant4-v11.1.2/singleinstall/lib/cmake/Geant4/Geant4LibraryDepends-release.cmake"
+			"path" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4/Geant4LibraryDepends-release.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -588,7 +588,7 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/home/long/software/geant4/geant4-v11.1.2/singleinstall/lib/cmake/Geant4/UseGeant4.cmake"
+			"path" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4/UseGeant4.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",
