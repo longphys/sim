@@ -15,8 +15,7 @@
 #include "globals.hh"
 
 class MyEventAction;
-
-class G4LogicalVolume;
+// class G4LogicalVolume;
 
 class MySteppingAction : public G4UserSteppingAction
 {

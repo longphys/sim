@@ -83,6 +83,11 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
     fEventAction->AddParEdep(EdepStep, ParticleName, ParentID);
   }
 
+  // for(int i = 0; i < 7; i++){
+  //   if (volume == fDEScoringVolume[i]){
+  //     fEventAction->AddParEdep(EdepStep, ParticleName, ParentID, i);
+  //   }
+  // }
 	//! EDep conditions
   for(int i = 0; i < 7; i++){
     if(volume == fDEScoringVolume[i]){
@@ -93,15 +98,13 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
     }
   }
   
-	// Information
-  // if (VolumeName == "physScint1" && EdepStep > 100.*keV){
+	//! Information
     StepInfo = "--- Particle: " + ParticleName + "; Process Name: " + ProcessName + " ---" + "\n" +
     "Parent ID: " + ParentID + "; Track ID: " + TrackID + "; Step Number: " + StepNumber + "\n" 
     "Volume Name: " + VolumeName + "; Next Volume Name: " + NextVolumeName + "\n" +
     "Total Energy: " + TotalEnergy + "(MeV); TotalKineticEnergy: " + TotalKineticEnergy + "\n" +
     "(MeV); TotalEnergyAfter: " + TotalEnergyAfter + "(MeV); E: " + EdepStep + "MeV" + "\n";
     fEventAction->AddInfo(StepInfo);
-  // }
 	
 	// Checking the Ray tracing condition
 	// if (NextVolumeName == "physPBox" or NextVolumeName == "physSBox")

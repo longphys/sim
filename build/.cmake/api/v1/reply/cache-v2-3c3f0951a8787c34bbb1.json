@@ -3843,7 +3843,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "X11_Xss_INCLUDE_PATH-NOTFOUND"
+			"value" : "/usr/include"
 		},
 		{
 			"name" : "X11_Xss_LIB",
@@ -3859,7 +3859,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "X11_Xss_LIB-NOTFOUND"
+			"value" : "/usr/lib/x86_64-linux-gnu/libXss.so"
 		},
 		{
 			"name" : "X11_Xt_INCLUDE_PATH",
@@ -3955,7 +3955,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "X11_Xv_INCLUDE_PATH-NOTFOUND"
+			"value" : "/usr/include"
 		},
 		{
 			"name" : "X11_Xv_LIB",
@@ -3971,7 +3971,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "X11_Xv_LIB-NOTFOUND"
+			"value" : "/usr/lib/x86_64-linux-gnu/libXv.so"
 		},
 		{
 			"name" : "X11_Xxf86misc_INCLUDE_PATH",
@@ -4019,7 +4019,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "X11_Xxf86vm_INCLUDE_PATH-NOTFOUND"
+			"value" : "/usr/include"
 		},
 		{
 			"name" : "X11_Xxf86vm_LIB",
@@ -4035,7 +4035,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "X11_Xxf86vm_LIB-NOTFOUND"
+			"value" : "/usr/lib/x86_64-linux-gnu/libXxf86vm.so"
 		},
 		{
 			"name" : "X11_dpms_INCLUDE_PATH",

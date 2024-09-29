@@ -23,8 +23,8 @@ class MyTreeHandler
             }
         }
         G4int Push(int64_t eventNr,
-        G4double dE[7], 
-        G4double E[7], 
+        std::vector <G4double> dE,
+        std::vector <G4double> E, 
         // G4double dE,
         // G4double E,
         int64_t comptNr, 
@@ -59,8 +59,10 @@ class MyTreeHandler
         TTree* fTree;
         int64_t fEventNr;
 
-        G4double fdE[7];
-        G4double fE[7];
+        // G4double fdE[7];
+        // G4double fE[7];
+        std::vector <G4double> fdE;
+        std::vector <G4double> fE;
 
         // G4double fdE;
         // G4double fE;

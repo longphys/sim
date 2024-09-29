@@ -36,32 +36,7 @@ public:
   //   fEdep += edep;
   // }
 
-  void AddParEdep(G4double edep, G4String parName, G4int parentID){
-    // if(parName == "neutron"){
-    //   neutronEDep.resize(parentID+1, 0.);
-    //   neutronEDep[parentID] += edep;
-    // }
-    // else if(parName == "proton"){
-    //   protonEDep.resize(parentID+1, 0.);
-    //   protonEDep[parentID] += edep;
-    // }
-    // else if(parName == "gamma"){
-    //   gammaEDep.resize(parentID+1, 0.);
-    //   gammaEDep[parentID] += edep;
-    // }
-    // else if(parName == "alpha"){
-    //   alphaEDep.resize(parentID+1, 0.);
-    //   alphaEDep[parentID] += edep;
-    // }
-    // else if(parName == "C12"){
-    //   C12EDep.resize(parentID+1, 0.);
-    //   C12EDep[parentID] += edep;
-    // }
-    // else{
-    //   otherEDep.resize(parentID+1, 0.);
-    //   otherEDep[parentID] += edep;
-    // }
-
+  void AddParEdep(G4double edep, G4String parName, G4int NoDet){
     if(parName == "neutron"){
       neutronEDep += edep;
     }
@@ -80,6 +55,25 @@ public:
     else{
       otherEDep += edep;
     }
+
+    // if(parName == "neutron"){
+    //   neutronEDep[NoDet] += edep;
+    // }
+    // else if(parName == "proton"){
+    //   protonEDep[NoDet] += edep;
+    // }
+    // else if(parName == "gamma"){
+    //   gammaEDep[NoDet] += edep;
+    // }
+    // else if(parName == "alpha"){
+    //   alphaEDep[NoDet] += edep;
+    // }
+    // else if(parName == "C12"){
+    //   C12EDep[NoDet] += edep;
+    // }
+    // else{
+    //   otherEDep[NoDet] += edep;
+    // }
   }
 
 	void AddComptCount() { fcomptCount += 1; }
@@ -97,7 +91,8 @@ private:
 	G4bool aBSCheck, protonCheck;
 	std::vector <G4double> comptEDep;
 
-  G4double fEdep[7], fDEdep[7];
+  std::vector <G4double> fEdep, fDEdep;
+  // G4double fEdep[7], fDEdep[7];
   // G4double fEdep, fDEdep;
 
 	// std::vector <G4double> neutronEDep, protonEDep, gammaEDep, alphaEDep, C12EDep, otherEDep;

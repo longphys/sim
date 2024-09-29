@@ -2,10 +2,10 @@
 
 void MyEventAction::BeginOfEventAction(const G4Event* event)
 	{
-    for(int i = 0; i < 7; i++){
-      fDEdep[i] = 0.;
-      fEdep[i] = 0.;
-    }
+    fDEdep.clear();
+    fDEdep.resize(7,0.);
+    fEdep.clear();
+    fEdep.resize(7,0.);
 		
     // fDEdep = 0.;
     // fEdep = 0.;
@@ -16,11 +16,17 @@ void MyEventAction::BeginOfEventAction(const G4Event* event)
 		comptEDep.clear();
 
     // neutronEDep.clear();
+    // neutronEDep.resize(7,0.);
     // protonEDep.clear();
+    // protonEDep.resize(7,0.);
     // gammaEDep.clear();
+    // gammaEDep.resize(7,0.);
     // alphaEDep.clear();
+    // alphaEDep.resize(7,0.);
     // C12EDep.clear();
+    // C12EDep.resize(7,0.);
     // otherEDep.clear();
+    // otherEDep.resize(7,0.);
 
     neutronEDep = 0.;
     protonEDep = 0.;
@@ -36,15 +42,20 @@ void MyEventAction::BeginOfEventAction(const G4Event* event)
 	}
 void MyEventAction::EndOfEventAction(const G4Event* event)
 	{
-		G4int EventsID = event->GetEventID();
+		int EventsID = event->GetEventID();
 
-		G4cout << "++++++++++++++++EVENT ID: "<< EventsID << "+++++++++++++++++++++\n";
-		
+    if( (EventsID % 10000) == 0){
+      std::cout << "EVENT ID: "<< EventsID << "\n";
+    }
+
+    // if( EventsID == 10000){
+      // G4cout << "EVENT ID: "<< EventsID << "\n";
+    // }
 		//! Conditions for verbosity
 		// if (fDEdep > 0.)
 		// {
 		// 	G4cout << "Compton Scattering Interactions: " << fcomptCount << "\n";
-    G4cout << AllStepInfo << "\n";
+    // G4cout << AllStepInfo << "\n";
 		// 	G4cout << "Event Number: " << EventsID +1 << "\n";
 		// 	G4cout << "; Delta E: " << fDEdep << "MeV; E: " << fEdep << "MeV" << "\n"
 		// 	G4cout << "\n" << "----- End of event " << EventsID +1 << " -----" << "\n";
