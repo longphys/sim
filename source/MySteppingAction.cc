@@ -79,15 +79,15 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
   }
 
   //! Conditions for particles
-  if (volume == fDEScoringVolume[0]){
-    fEventAction->AddParEdep(EdepStep, ParticleName, ParentID);
-  }
-
-  // for(int i = 0; i < 7; i++){
-  //   if (volume == fDEScoringVolume[i]){
-  //     fEventAction->AddParEdep(EdepStep, ParticleName, ParentID, i);
-  //   }
+  // if (volume == fDEScoringVolume[0]){
+  //   fEventAction->AddParEdep(EdepStep, ParticleName, ParentID);
   // }
+
+  for(int i = 0; i < 7; i++){
+    if (volume == fDEScoringVolume[i]){
+      fEventAction->AddParEdep(EdepStep, ParticleName, i);
+    }
+  }
 	//! EDep conditions
   for(int i = 0; i < 7; i++){
     if(volume == fDEScoringVolume[i]){

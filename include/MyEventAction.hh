@@ -37,43 +37,43 @@ public:
   // }
 
   void AddParEdep(G4double edep, G4String parName, G4int NoDet){
-    if(parName == "neutron"){
-      neutronEDep += edep;
-    }
-    else if(parName == "proton"){
-      protonEDep += edep;
-    }
-    else if(parName == "gamma"){
-      gammaEDep += edep;
-    }
-    else if(parName == "alpha"){
-      alphaEDep += edep;
-    }
-    else if(parName == "C12"){
-      C12EDep += edep;
-    }
-    else{
-      otherEDep += edep;
-    }
-
     // if(parName == "neutron"){
-    //   neutronEDep[NoDet] += edep;
+    //   neutronEDep += edep;
     // }
     // else if(parName == "proton"){
-    //   protonEDep[NoDet] += edep;
+    //   protonEDep += edep;
     // }
     // else if(parName == "gamma"){
-    //   gammaEDep[NoDet] += edep;
+    //   gammaEDep += edep;
     // }
     // else if(parName == "alpha"){
-    //   alphaEDep[NoDet] += edep;
+    //   alphaEDep += edep;
     // }
     // else if(parName == "C12"){
-    //   C12EDep[NoDet] += edep;
+    //   C12EDep += edep;
     // }
     // else{
-    //   otherEDep[NoDet] += edep;
+    //   otherEDep += edep;
     // }
+
+    if(parName == "neutron"){
+      neutronEDep[NoDet] += edep;
+    }
+    else if(parName == "proton"){
+      protonEDep[NoDet] += edep;
+    }
+    else if(parName == "gamma"){
+      gammaEDep[NoDet] += edep;
+    }
+    else if(parName == "alpha"){
+      alphaEDep[NoDet] += edep;
+    }
+    else if(parName == "C12"){
+      C12EDep[NoDet] += edep;
+    }
+    else{
+      otherEDep[NoDet] += edep;
+    }
   }
 
 	void AddComptCount() { fcomptCount += 1; }
@@ -95,8 +95,8 @@ private:
   // G4double fEdep[7], fDEdep[7];
   // G4double fEdep, fDEdep;
 
-	// std::vector <G4double> neutronEDep, protonEDep, gammaEDep, alphaEDep, C12EDep, otherEDep;
-  G4double neutronEDep, protonEDep, gammaEDep, alphaEDep, C12EDep, otherEDep;
+	std::vector <G4double> neutronEDep, protonEDep, gammaEDep, alphaEDep, C12EDep, otherEDep;
+  // G4double neutronEDep, protonEDep, gammaEDep, alphaEDep, C12EDep, otherEDep;
 
 };
 

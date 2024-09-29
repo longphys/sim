@@ -17,25 +17,25 @@ MyTreeHandler::MyTreeHandler()
     fcomptNr = -1;
     fcomptEDep.clear();
 
-    // neutronEDep.clear();
-    // neutronEDep.resize(7,0.);
-    // protonEDep.clear();
-    // protonEDep.resize(7,0.);
-    // gammaEDep.clear();
-    // gammaEDep.resize(7,0.);
-    // alphaEDep.clear();
-    // alphaEDep.resize(7,0.);
-    // C12EDep.clear();
-    // C12EDep.resize(7,0.);
-    // otherEDep.clear();
-    // otherEDep.resize(7,0.);
+    neutronEDep.clear();
+    neutronEDep.resize(7,0.);
+    protonEDep.clear();
+    protonEDep.resize(7,0.);
+    gammaEDep.clear();
+    gammaEDep.resize(7,0.);
+    alphaEDep.clear();
+    alphaEDep.resize(7,0.);
+    C12EDep.clear();
+    C12EDep.resize(7,0.);
+    otherEDep.clear();
+    otherEDep.resize(7,0.);
 
-    neutronEDep = 0.;
-    protonEDep = 0.;
-    gammaEDep = 0.;
-    alphaEDep = 0.;
-    C12EDep = 0.;
-    otherEDep = 0.;
+    // neutronEDep = 0.;
+    // protonEDep = 0.;
+    // gammaEDep = 0.;
+    // alphaEDep = 0.;
+    // C12EDep = 0.;
+    // otherEDep = 0.;
     
     fTree->Branch("EventID", &fEventNr, "EventID/I");
     
@@ -93,19 +93,19 @@ G4int MyTreeHandler::Push(int64_t eventNr,
         std::vector <G4double> comptEDep,
         G4double backEDep,
 
-        // std::vector <G4double> neutronE,
-        // std::vector <G4double> protonE,
-        // std::vector <G4double> gammaE,
-        // std::vector <G4double> alphaE,
-        // std::vector <G4double> C12E,
-        // std::vector <G4double> otherE
+        std::vector <G4double> neutronE,
+        std::vector <G4double> protonE,
+        std::vector <G4double> gammaE,
+        std::vector <G4double> alphaE,
+        std::vector <G4double> C12E,
+        std::vector <G4double> otherE
 
-        G4double neutronE,
-        G4double protonE,
-        G4double gammaE,
-        G4double alphaE,
-        G4double C12E,
-        G4double otherE
+        // G4double neutronE,
+        // G4double protonE,
+        // G4double gammaE,
+        // G4double alphaE,
+        // G4double C12E,
+        // G4double otherE
         )
 {
     fEventNr = eventNr;

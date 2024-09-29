@@ -14,17 +14,15 @@ void read()
   TTree* tree1 =  (TTree*) file1->Get("dEEtree");
 
   // histogram options
-  int binSim = 1300;
-  int binExp = 700;
-  double xminSim = 0.;
-  double xmaxSim = 1.3;
-  double xminExp = 100;
-  double xmaxExp = 800;
+  double xmin = 0.;
+  double xmax = 15.;
 
-  TH1D* hist1 = new TH1D("hist1", "Simulation", binSim, xminSim, xmaxSim);
-  TH1D* hist2 = new TH1D("hist2", "Simulation", binSim, xminSim, xmaxSim);
-  TH1D* hist3 = new TH1D("hist3", "Simulation", binSim, xminSim, xmaxSim);
-  TH1D* hist4 = new TH1D("hist4", "Simulation", binSim, xminSim, xmaxSim);
+  int bin = (xmax - xmin)*100;
+
+  TH1D* hist1 = new TH1D("hist1", "Simulation", bin, xmin, xmax);
+  TH1D* hist2 = new TH1D("hist2", "Simulation", bin, xmin, xmax);
+  TH1D* hist3 = new TH1D("hist3", "Simulation", bin, xmin, xmax);
+  TH1D* hist4 = new TH1D("hist4", "Simulation", bin, xmin, xmax);
 
   TCanvas* c1 = new TCanvas("c1", "c1", 1500, 1000);
   int cols = 2;
@@ -36,24 +34,26 @@ void read()
   hist1->GetXaxis()->SetTitle("Energy(Mev)");
   hist1->GetYaxis()->SetTitle("Count");
   
-  tree1->Draw("Scintillator[0]>>hist1");
+  // tree1->Draw("Scintillator[0]>>hist1");
+  tree1->Draw("OtherEDep[0]>>hist1", "AlphaEDep[0]>0", "same");
 
   c1->cd(2);
   hist2->GetXaxis()->SetTitle("Energy(Mev)");
   hist2->GetYaxis()->SetTitle("Count");
   
-  tree1->Draw("Scintillator[1]>>hist2");
+  // tree1->Draw("Scintillator[1]>>hist2");
+  tree1->Draw("ProtonEDep[1]>>hist2", "ProtonEDep[1]>0", "same");
 
   c1->cd(3);
   hist3->GetXaxis()->SetTitle("Energy(Mev)");
   hist3->GetYaxis()->SetTitle("Count");
   
-  tree1->Draw("Scintillator[2]>>hist3");
+  // tree1->Draw("Scintillator[2]>>hist3");
+  tree1->Draw("ProtonEDep[2]>>hist3", "ProtonEDep[2]>0", "same");
 
   c1->cd(4);
   hist4->GetXaxis()->SetTitle("Energy(Mev)");
   hist4->GetYaxis()->SetTitle("Count");
   
   tree1->Draw("Scintillator[3]>>hist4");
-
 }

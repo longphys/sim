@@ -3,6 +3,7 @@
     "C_Cpp.errorSquiggles": "enabled",
     "C_Cpp.default.compilerPath": "/usr/bin/g++",
     "files.associations": {
-      "*.icc": "cpp"
+      "*.icc": "cpp",
+      "read.C": "cpp"
     }
 }

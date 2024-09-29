@@ -31,19 +31,19 @@ class MyTreeHandler
         std::vector <G4double> comptEDep,
         G4double backEDep,
 
-        // std::vector <G4double> neutronE,
-        // std::vector <G4double> protonE,
-        // std::vector <G4double> gammaE,
-        // std::vector <G4double> alphaE,
-        // std::vector <G4double> C12E,
-        // std::vector <G4double> otherE
+        std::vector <G4double> neutronE,
+        std::vector <G4double> protonE,
+        std::vector <G4double> gammaE,
+        std::vector <G4double> alphaE,
+        std::vector <G4double> C12E,
+        std::vector <G4double> otherE
 
-        G4double neutronE,
-        G4double protonE,
-        G4double gammaE,
-        G4double alphaE,
-        G4double C12E,
-        G4double otherE
+        // G4double neutronE,
+        // G4double protonE,
+        // G4double gammaE,
+        // G4double alphaE,
+        // G4double C12E,
+        // G4double otherE
         );
         
         G4int Open();
@@ -72,19 +72,19 @@ class MyTreeHandler
         int64_t fcomptNr;
         std::vector <G4double> fcomptEDep;
 
-        // std::vector <G4double> neutronEDep;
-        // std::vector <G4double> protonEDep;
-        // std::vector <G4double> gammaEDep;
-        // std::vector <G4double> alphaEDep;
-        // std::vector <G4double> C12EDep;
-        // std::vector <G4double> otherEDep;
+        std::vector <G4double> neutronEDep;
+        std::vector <G4double> protonEDep;
+        std::vector <G4double> gammaEDep;
+        std::vector <G4double> alphaEDep;
+        std::vector <G4double> C12EDep;
+        std::vector <G4double> otherEDep;
 
-        G4double neutronEDep;
-        G4double protonEDep;
-        G4double gammaEDep;
-        G4double alphaEDep;
-        G4double C12EDep;
-        G4double otherEDep;
+        // G4double neutronEDep;
+        // G4double protonEDep;
+        // G4double gammaEDep;
+        // G4double alphaEDep;
+        // G4double C12EDep;
+        // G4double otherEDep;
 };
 
 #endif
