@@ -1271,7 +1271,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/home/long/software/geant4/geant4-v11.1.2/singleinstall/lib/cmake/Geant4/Geant4Config.cmake][v11.1.2()]"
+			"value" : "[/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4/Geant4Config.cmake][v11.1.2()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_OpenGL",
@@ -1427,7 +1427,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/home/long/software/geant4/geant4-v11.1.2/singleinstall/lib/cmake/Geant4"
+			"value" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4"
 		},
 		{
 			"name" : "OPENGL_EGL_INCLUDE_DIR",
@@ -2439,7 +2439,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/home/long/software/geant4/geant4-v11.1.2/singleinstall/lib/cmake/Geant4/PTL"
+			"value" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4/PTL"
 		},
 		{
 			"name" : "Qt5Core_DIR",

@@ -8,6 +8,8 @@ MyRunAction::~MyRunAction()
 
 void MyRunAction::BeginOfRunAction(const G4Run*)
 {
+  timer->Start();
+
 	MyTreeHandler* aTreeHandler = MyTreeHandler::GetInstance();
 	aTreeHandler->Open();
 	G4cout
@@ -31,4 +33,7 @@ void MyRunAction::EndOfRunAction(const G4Run* run)
 	
 	MyTreeHandler* aTreeHandler = MyTreeHandler::GetInstance();
   	aTreeHandler->Close();
+
+  timer->Stop();
+  std::cout << "Time elapsed: " << timer->GetRealElapsed() << "(s)\n";
 }
