@@ -11,6 +11,11 @@ MyDetectorConstruction::MyDetectorConstruction()
 	BC404->AddElement(nist->FindOrBuildElement("H"),1100);
 	G4double pDens = BC404->GetDensity()/(kg/mm3);
 
+  //! Setting Birk's constant
+  // BC404->GetIonisation()->SetBirksConstant(0.126*mm/MeV);
+  // BC404->GetIonisation()->SetBirksConstant(0.155*mm/MeV);
+  BC404->GetIonisation()->SetBirksConstant(0.088*mm/MeV);
+
 // Define Lead
 
 	G4Material *Lead = nist->FindOrBuildMaterial("G4_Pb");

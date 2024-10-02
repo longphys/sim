@@ -96,4 +96,6 @@ void readNeutronSim()
   hist2->GetXaxis()->SetTitle("Energy(Mev)");
   hist2->GetYaxis()->SetTitle("Count");
   hist2->Draw();
+  
+  std::cout << "\ntime: " << timer->RealTime() << " seconds\n";
 }

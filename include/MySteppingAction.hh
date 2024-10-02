@@ -24,6 +24,8 @@ public:
 	virtual ~MySteppingAction();
 
     virtual void UserSteppingAction(const G4Step*);
+    
+    G4double BirksAttenuation(const G4Step*);
 private:
   MyEventAction* fEventAction;
 
