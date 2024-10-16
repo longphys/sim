@@ -82,13 +82,16 @@ public:
 	void SwitchBS() { aBSCheck = true; }
 
   void CheckProton() { protonCheck = true; }
+  void CheckGamma() { gammaCheck = true; }
+  void CheckAlpha() { alphaCheck = true; }
+  void CheckC12() { c12Check = true; }
 
 private:
 	G4double backEDep;
 	
 	G4int fcomptCount;
 	G4String AllStepInfo;
-	G4bool aBSCheck, protonCheck;
+	G4bool aBSCheck, protonCheck, gammaCheck, alphaCheck, c12Check;
 	std::vector <G4double> comptEDep;
 
   std::vector <G4double> fEdep, fDEdep;
@@ -98,6 +101,7 @@ private:
 	std::vector <G4double> neutronEDep, protonEDep, gammaEDep, alphaEDep, C12EDep, otherEDep;
   // G4double neutronEDep, protonEDep, gammaEDep, alphaEDep, C12EDep, otherEDep;
 
+  G4int count = 0;
 };
 
 #endif

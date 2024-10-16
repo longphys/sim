@@ -4,6 +4,13 @@ MyDetectorConstruction::MyDetectorConstruction()
 {	
 	G4NistManager *nist = G4NistManager::Instance();
 
+  //! Deuterium
+  // G4Isotope* D  = new G4Isotope("Deuteron", 1, 2, 2.0141018* g/mole);
+  // G4Element* elD = new G4Element("Deuterium","elD", 1);
+  // elD->AddIsotope(D, 1);
+  // G4Material* matD = new G4Material("matD", 0.00018* g/cm3, 1);
+  // matD->AddElement(elD, 1);
+
 // Define BC404
 
 	G4Material *BC404 = new G4Material("BC404", 1.032*g/cm3, 2);
@@ -12,9 +19,15 @@ MyDetectorConstruction::MyDetectorConstruction()
 	G4double pDens = BC404->GetDensity()/(kg/mm3);
 
   //! Setting Birk's constant
-  // BC404->GetIonisation()->SetBirksConstant(0.126*mm/MeV);
-  // BC404->GetIonisation()->SetBirksConstant(0.155*mm/MeV);
-  BC404->GetIonisation()->SetBirksConstant(0.088*mm/MeV);
+  double Birks_BC400 = 0.207;
+  double Birks_BC404 = 0.155;
+  double Birks_BC408 = 0.088;
+  double Birks_Polystyrene = 0.126;
+  double Birks_test = 0.0486;
+  double Birks_test1 = 0.08;
+  double Birks_test2 = 0.055;
+  
+  BC404->GetIonisation()->SetBirksConstant(Birks_test1*mm/MeV); //! TEST
 
 // Define Lead
 
@@ -38,7 +51,8 @@ MyDetectorConstruction::MyDetectorConstruction()
 
 // Material for World
 
-	G4Material *worldMat = nist->FindOrBuildMaterial("G4_Galactic");
+	// G4Material *worldMat = nist->FindOrBuildMaterial("G4_Galactic");
+	G4Material *worldMat = nist->FindOrBuildMaterial("G4_AIR");
 
 // Material for Scintillator
 
@@ -64,39 +78,14 @@ MyDetectorConstruction::MyDetectorConstruction()
   rotY2->rotateY(-120.*deg);
 
 //Al Box
-  G4Box* solidAlBox = new G4Box("solidAlBox", 27.*cm, 2*RH+2.*cm, 27.*cm);
+  G4Box* solidAlBox = new G4Box("solidAlBox", 32.*cm, 32.*cm, 52.*cm);
   G4LogicalVolume* logicAlBox = new G4LogicalVolume(solidAlBox, Al, "logicAlBox");
-  // G4VPhysicalVolume* physAlBox = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicAlBox, "physAlBox", logicWorld, false, 0, true);
+  G4VPhysicalVolume* physAlBox = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicAlBox, "physAlBox", logicWorld, false, 0, true);
 
 //Air Box
-  G4Box* solidAirBox = new G4Box("solidAirBox", 25.*cm, 2*RH, 25.*cm);
+  G4Box* solidAirBox = new G4Box("solidAirBox", 30.*cm, 30.*cm, 50.*cm);
   G4LogicalVolume* logicAirBox = new G4LogicalVolume(solidAirBox, worldMat, "logicAirBox");
-  // G4VPhysicalVolume* physAirBox = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicAirBox, "physAirBox", logicAlBox, false, 0, true);
-
-  G4Box* solidAlBox1 = new G4Box("solidAlBox1", 25.*cm, 1.*cm, 25.*cm);
-	G4LogicalVolume *logicAlBox1 = new G4LogicalVolume(solidAlBox1, Al, "logicAlBox1");
-	// G4VPhysicalVolume* physAlBox1 = new G4PVPlacement(0, G4ThreeVector(0., -(RH + 1.*cm), -((trapA/sin(60*deg)/2) + (HH+HC)/2)), logicAlBox1, "physAlBox1", logicWorld, false, 0, true);
-
-
-  G4Box* solidAlBox2 = new G4Box("solidAlBox2", 25.*cm, 2.5*cm, 25.*cm);
-	G4LogicalVolume *logicAlBox2 = new G4LogicalVolume(solidAlBox2, Al, "logicAlBox2");
-	// G4VPhysicalVolume* physAlBox2 = new G4PVPlacement(0, G4ThreeVector(0., (RH + 2.5*cm) + 5*cm, -((trapA/sin(60*deg)/2) + (HH+HC)/2)), logicAlBox2, "physAlBox2", logicWorld, false, 0, true);
-
-//! Source Steel Box
-  G4Box* solidSourceSteelBox = new G4Box("solidSourceSteelBox", 10.*cm, 10.*cm, 10.*cm);
-  G4LogicalVolume* logicSourceSteelBox = new G4LogicalVolume(solidSourceSteelBox, Steel, "logicSourceSteelBox");
-  double zPar = 50.*cm;
-  // G4VPhysicalVolume* physSourceSteelBox = new G4PVPlacement(0, G4ThreeVector(0., 0., -zPar), logicSourceSteelBox, "physSourceSteelBox", logicWorld, false, 0, true);
-
-//! Source Air Box
-  G4Box* solidSourceAirBox = new G4Box("solidSourceAirBox", (10.)*cm - 50.*um, (10.)*cm - 50.*um, (10.)*cm - 50.*um);
-  G4LogicalVolume* logicSourceAirBox = new G4LogicalVolume(solidSourceAirBox, worldMat, "logicSourceAirBox");
-  // G4VPhysicalVolume* physSourceAirBox = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicSourceAirBox, "physSourceAirBox", logicSourceSteelBox, false, 0, true);
-
-//Source Al Sphere
-  G4Sphere* solidSourceAlSphere = new G4Sphere("solidSourceAlSphere", 0.5*cm, 2.*cm, 0*degree, 360*degree, 0*degree, 360*degree);
-  G4LogicalVolume* logicSourceAlSphere = new G4LogicalVolume(solidSourceAlSphere, Al, "logicSourceAlSphere");
-  // G4VPhysicalVolume* physSourceAlSphere = new G4PVPlacement(0, G4ThreeVector(0., 0., -zPar), logicSourceAlSphere, "physSourceAlSphere", logicAirBox, false, 0, true);
+  G4VPhysicalVolume* physAirBox = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicAirBox, "physAirBox", logicAlBox, false, 0, true);
 
 // Module World
   G4double xMWorld = trapA;
@@ -119,8 +108,8 @@ MyDetectorConstruction::MyDetectorConstruction()
   G4double b = triSide/4;
   h = (h + (HH + HC)/2)/2;
 
-  G4VPhysicalVolume* physMWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicMWorld, "physMWorld", logicWorld, false, 0, true);
-  // G4VPhysicalVolume* physMWorld1 = new G4PVPlacement(0, G4ThreeVector(0., 2.*RH, 0.), logicMWorld1, "physMWorld1", logicWorld, false, 0, true);
+  G4VPhysicalVolume* physMWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicMWorld, "physMWorld", logicAirBox, false, 0, true);
+  G4VPhysicalVolume* physMWorld1 = new G4PVPlacement(0, G4ThreeVector(0., 2.*RH, 0.), logicMWorld1, "physMWorld1", logicWorld, false, 0, true);
   // G4VPhysicalVolume* physMWorld2 = new G4PVPlacement(0, G4ThreeVector(0., -2.*RH, 0.), logicMWorld2, "physMWorld2", logicWorld, false, 0, true);
   // G4VPhysicalVolume* physMWorld3 = new G4PVPlacement(0, G4ThreeVector((trapA+trapB)/2., RH, 0.), logicMWorld3, "physMWorld3", logicWorld, false, 0, true);
   // G4VPhysicalVolume* physMWorld4 = new G4PVPlacement(0, G4ThreeVector(-(trapA+trapB)/2., -RH, 0.), logicMWorld4, "physMWorld4", logicWorld, false, 0, true);

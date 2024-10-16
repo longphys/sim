@@ -16,16 +16,19 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   	= static_cast<const MyDetectorConstruction*>
   	(G4RunManager::GetRunManager()->GetUserDetectorConstruction());
 
-	G4double RH = 0.7*detectorConstruction->GetRH(); //! Get RH from Detector Construction (it is in milimeter)
+	G4double RH = detectorConstruction->GetRH(); //! Get RH from Detector Construction (it is in milimeter)
+	RH = 3.5/2*cm;
+	// RH = RH+5.0*cm;
 	G4double HH = detectorConstruction->GetHH();
   G4double HC = detectorConstruction->GetHC();
-	G4double zPar = 50.*cm;
-	G4double zDis = zPar - (HH+HC)/2;
+	G4double zPar = 37.*cm;
+	G4double zDis = zPar + (HH+HC)/2;
+	// G4double zDis = zPar - (HH+HC)/2;
 
 	G4ParticleTable *particleTable = G4ParticleTable::GetParticleTable();
 	G4ParticleDefinition *particle = particleTable->FindParticle("neutron");
 
-	G4ThreeVector pos1(0., 0., -zPar); // source position
+	G4ThreeVector pos1(0., 0., -zDis); // source position
 	
 	fParticleGun->SetParticlePosition(pos1);
   fParticleGun->SetParticleDefinition(particle);

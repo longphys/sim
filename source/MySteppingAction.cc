@@ -14,18 +14,29 @@ G4double MySteppingAction::BirksAttenuation(const G4Step* step)
   //Example of Birk attenuation law in organic scintillators.
   //adapted from Geant3 PHYS337. See MIN 80 (1970) 239-244
   //
+  
   const G4Material* material = step->GetTrack()->GetMaterial();
   G4double birk1       = material->GetIonisation()->GetBirksConstant();
-  G4double destep      = step->GetTotalEnergyDeposit();
-  G4double stepl       = step->GetStepLength();  
+  G4double birk2       = birk1/10;
+  G4double destep      = step->GetTotalEnergyDeposit()*MeV;
+  G4double stepl       = step->GetStepLength()*mm;  
   G4double charge      = step->GetTrack()->GetDefinition()->GetPDGCharge();
   //
   G4double response = destep;
-  G4double scintillator_efficiency = 1.0;
+  // G4double scintillator_efficiency = 0.965; //! BC404
+  // G4double scintillator_efficiency = 1.45; //! BC400
+  G4double scintillator_efficiency = 0.935; //! TEST1
+  // G4double scintillator_efficiency = 0.7; //! TEST2
+  // G4double scintillator_efficiency = 1.35; //! TEST1: birk2
 
-  if (birk1*destep*stepl*charge != 0.)
+  if (birk1!= 0. && destep > 0 && stepl > 0 && charge!=0 )
   {
-    response = scintillator_efficiency*destep/(1. + birk1*destep/stepl);
+    // if (abs(charge) >= 1.99){
+    //   birk1 = birk1*0.5;
+    // }
+    // else{}
+    response = (scintillator_efficiency*destep)/(1. + birk1*destep/stepl);
+    // response = (scintillator_efficiency*destep)/(1. + birk1*destep/stepl + birk2*(destep/stepl)*(destep/stepl));
   }
   return response;
 }
@@ -124,8 +135,8 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
   const G4Material* material = step->GetTrack()->GetMaterial();
   std::string materialName = material->GetName();
   G4double birk1       = material->GetIonisation()->GetBirksConstant();
-  G4double destep      = step->GetTotalEnergyDeposit();
-  G4double stepl       = step->GetStepLength();  
+  G4double destep      = step->GetTotalEnergyDeposit()*MeV;
+  G4double stepl       = step->GetStepLength()*mm;  
   G4double charge      = step->GetTrack()->GetDefinition()->GetPDGCharge();
   // G4cout << " Destep: " << EdepStep/keV << " keV"
   //       << " response after Birks: " << response/keV << " keV" << G4endl;
@@ -146,6 +157,20 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
     }
   }
 
+  //! Track PID
+  if (ParticleName == "proton"){
+    fEventAction->CheckProton();
+  }
+  if (ParticleName == "gamma"){
+    fEventAction->CheckGamma();
+  }
+  if (ParticleName == "alpha"){
+    fEventAction->CheckAlpha();
+  }
+  if (ParticleName == "C12"){
+    fEventAction->CheckC12();
+  }
+
 	//! Information
     StepInfo = "--- Particle: " + ParticleName + "; Process Name: " + ProcessName + " ---" + "\n" +
     "Parent ID: " + ParentID + "; Track ID: " + TrackID + "; Step Number: " + StepNumber + "\n" 
@@ -154,7 +179,7 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
     "TotalEnergyAfter: " + TotalEnergyAfter + "(MeV);" + "\n\n" + 
 
     "MaterialName: " + materialName + "; Birk's constant: " + birk1 + "\n" +
-    "Step length: " + stepl + "\n" +
+    "Step length: " + stepl + "; Particle charge: " + charge + "\n"+
     "E: " + EdepStep + "MeV; E(Birk): " + response/MeV + "MeV" + "\n";
     fEventAction->AddInfo(StepInfo);
 
