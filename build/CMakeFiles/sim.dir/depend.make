@@ -276,6 +276,7 @@ CMakeFiles/sim.dir/sim.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleins
 CMakeFiles/sim.dir/sim.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4StackedTrack.hh
 CMakeFiles/sim.dir/sim.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Step.hh
 CMakeFiles/sim.dir/sim.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Step.icc
+CMakeFiles/sim.dir/sim.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4StepLimiterPhysics.hh
 CMakeFiles/sim.dir/sim.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4StepPoint.hh
 CMakeFiles/sim.dir/sim.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4StepPoint.icc
 CMakeFiles/sim.dir/sim.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4StepStatus.hh
@@ -345,6 +346,8 @@ CMakeFiles/sim.dir/sim.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleins
 CMakeFiles/sim.dir/sim.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UTubs.hh
 CMakeFiles/sim.dir/sim.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UnionSolid.hh
 CMakeFiles/sim.dir/sim.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserEventAction.hh
+CMakeFiles/sim.dir/sim.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserLimits.hh
+CMakeFiles/sim.dir/sim.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserLimits.icc
 CMakeFiles/sim.dir/sim.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserRunAction.hh
 CMakeFiles/sim.dir/sim.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserStackingAction.hh
 CMakeFiles/sim.dir/sim.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserSteppingAction.hh
@@ -767,6 +770,8 @@ CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant
 CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UTubs.hh
 CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UnionSolid.hh
 CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserEventAction.hh
+CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserLimits.hh
+CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserLimits.icc
 CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserRunAction.hh
 CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserStackingAction.hh
 CMakeFiles/sim.dir/source/MyActionInitialization.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserSteppingAction.hh
@@ -994,6 +999,8 @@ CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UTrd.hh
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UTubs.hh
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UnionSolid.hh
+CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserLimits.hh
+CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserLimits.icc
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VFacet.hh
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VGraphicsScene.hh
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VPhysicalVolume.hh
@@ -1642,6 +1649,8 @@ CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/ge
 CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UTrd.hh
 CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UTubs.hh
 CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UnionSolid.hh
+CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserLimits.hh
+CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserLimits.icc
 CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserStackingAction.hh
 CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserSteppingAction.hh
 CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserTrackingAction.hh
@@ -2048,6 +2057,8 @@ CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/gean
 CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UTubs.hh
 CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UnionSolid.hh
 CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserEventAction.hh
+CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserLimits.hh
+CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserLimits.icc
 CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserRunAction.hh
 CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserStackingAction.hh
 CMakeFiles/sim.dir/source/MySteppingAction.cc.o: /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserSteppingAction.hh

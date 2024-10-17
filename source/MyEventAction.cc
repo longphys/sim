@@ -69,43 +69,10 @@ void MyEventAction::EndOfEventAction(const G4Event* event)
 		// }
 
     //! Check Particles
-    if (protonCheck == true){
-      // G4cout << "There is proton.\n";
-      // G4cout << "EDep total = " << fDEdep[0] << " (MeV)\n";
-      // G4cout << "EDep by proton = " << protonEDep[0] << " (MeV)\n";
-
-      if (neutronEDep[0] + protonEDep[0] != fDEdep[0]){
-        // G4cout << "\n-----EVENT ID: "<< EventsID << "-----\n";
-        // G4cout << AllStepInfo << "\n";
-        count++;
-        // G4cout << "count = " << count << "\n";
-      }
+    if (fDEdep[0] < 7. && fDEdep[0] > 5.){
+      // G4cout << "##### EVENT ID: "<< EventsID << " #####" << G4endl;
+      // G4cout << AllStepInfo << "\n";
     }
-
-    // if (gammaCheck == true){
-    //   G4cout << "There is gamma.\n";
-    //   G4cout << "EDep total = " << fDEdep[0] << " (MeV)\n";
-    //   G4cout << "EDep by gamma = " << gammaEDep[0] << " (MeV)\n";
-    // }
-
-    // if (alphaCheck == true){
-    //   G4cout << "There is alpha.\n";
-    //   G4cout << "EDep total = " << fDEdep[0] << " (MeV)\n";
-    //   G4cout << "EDep by alpha = " << alphaEDep[0] << " (MeV)\n";
-    // }
-
-    // if (c12Check == true){
-    //   G4cout << "There is C12.\n";
-    //   G4cout << "EDep total = " << fDEdep[0] << " (MeV)\n";
-    //   G4cout << "EDep by C12 = " << C12EDep[0] << " (MeV)\n";
-    // }
-
-    // if (neutronEDep[0] + protonEDep[0] + gammaEDep[0] + alphaEDep[0] + C12EDep[0] != fDEdep[0]){
-    //   // G4cout << "\n-----EVENT ID: "<< EventsID << "-----\n";
-    //   // G4cout << AllStepInfo << "\n";
-    //   count++;
-    //   G4cout << "count = " << count << "\n";
-    // }
 
 		//! Condition for recording Compton Scattering Count and Dep
 		if (fcomptCount > 0)

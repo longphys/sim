@@ -46,7 +46,6 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
     G4double y = a*sin(phirand);
     G4double z = zPar;
 
-
     fParticleGun->SetParticleMomentumDirection(G4ThreeVector(x, y, z));
     fParticleGun->GeneratePrimaryVertex(event);
 

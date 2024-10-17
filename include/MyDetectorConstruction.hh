@@ -16,6 +16,8 @@
 #include "G4SystemOfUnits.hh"
 #include "G4PhysicalConstants.hh"
 
+#include "G4UserLimits.hh"
+
 class MyDetectorConstruction : public G4VUserDetectorConstruction
 {
 public: // public to all classes

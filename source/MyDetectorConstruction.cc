@@ -13,21 +13,15 @@ MyDetectorConstruction::MyDetectorConstruction()
 
 // Define BC404
 
-	G4Material *BC404 = new G4Material("BC404", 1.032*g/cm3, 2);
-	BC404->AddElement(nist->FindOrBuildElement("C"),1000);
-	BC404->AddElement(nist->FindOrBuildElement("H"),1100);
+  G4Material *BC404 = nist->FindOrBuildMaterial("G4_PLASTIC_SC_VINYLTOLUENE");
+	// G4Material *BC404 = new G4Material("BC404", 1.032*g/cm3, 2);
+	// BC404->AddElementByNumberOfAtoms(nist->FindOrBuildElement("C"),9);
+	// BC404->AddElementByNumberOfAtoms(nist->FindOrBuildElement("H"),10);
+	// BC404->AddElement(nist->FindOrBuildElement("C"),1000);
+	// BC404->AddElement(nist->FindOrBuildElement("H"),1100);
 	G4double pDens = BC404->GetDensity()/(kg/mm3);
 
-  //! Setting Birk's constant
-  double Birks_BC400 = 0.207;
-  double Birks_BC404 = 0.155;
-  double Birks_BC408 = 0.088;
-  double Birks_Polystyrene = 0.126;
-  double Birks_test = 0.0486;
-  double Birks_test1 = 0.08;
-  double Birks_test2 = 0.055;
-  
-  BC404->GetIonisation()->SetBirksConstant(Birks_test1*mm/MeV); //! TEST
+  BC404->GetIonisation()->SetBirksConstant(0.126*mm/MeV);
 
 // Define Lead
 
@@ -77,15 +71,21 @@ MyDetectorConstruction::MyDetectorConstruction()
   G4RotationMatrix* rotY2 = new G4RotationMatrix();
   rotY2->rotateY(-120.*deg);
 
+// tape
+  G4Material* vinyl = nist->FindOrBuildMaterial("G4_POLYVINYL_CHLORIDE ");
+  G4Box* solidtape = new G4Box("solidAlBox", RH, 10.*cm, 0.125*mm);
+  G4LogicalVolume* logictape = new G4LogicalVolume(solidtape, vinyl, "logictape");
+  // G4VPhysicalVolume* phystape = new G4PVPlacement(0, G4ThreeVector(0., 0., -(RH+HH)/2.), logictape, "phystape", logicWorld, false, 0, true);
+
 //Al Box
-  G4Box* solidAlBox = new G4Box("solidAlBox", 32.*cm, 32.*cm, 52.*cm);
-  G4LogicalVolume* logicAlBox = new G4LogicalVolume(solidAlBox, Al, "logicAlBox");
-  G4VPhysicalVolume* physAlBox = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicAlBox, "physAlBox", logicWorld, false, 0, true);
+  // G4Box* solidAlBox = new G4Box("solidAlBox", 18.*cm, 20.*cm, 52.*cm);
+  // G4LogicalVolume* logicAlBox = new G4LogicalVolume(solidAlBox, Al, "logicAlBox");
+  // G4VPhysicalVolume* physAlBox = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicAlBox, "physAlBox", logicWorld, false, 0, true);
 
 //Air Box
-  G4Box* solidAirBox = new G4Box("solidAirBox", 30.*cm, 30.*cm, 50.*cm);
-  G4LogicalVolume* logicAirBox = new G4LogicalVolume(solidAirBox, worldMat, "logicAirBox");
-  G4VPhysicalVolume* physAirBox = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicAirBox, "physAirBox", logicAlBox, false, 0, true);
+  // G4Box* solidAirBox = new G4Box("solidAirBox", 15.*cm, 17.*cm, 50.*cm);
+  // G4LogicalVolume* logicAirBox = new G4LogicalVolume(solidAirBox, worldMat, "logicAirBox");
+  // G4VPhysicalVolume* physAirBox = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicAirBox, "physAirBox", logicAlBox, false, 0, true);
 
 // Module World
   G4double xMWorld = trapA;
@@ -108,8 +108,8 @@ MyDetectorConstruction::MyDetectorConstruction()
   G4double b = triSide/4;
   h = (h + (HH + HC)/2)/2;
 
-  G4VPhysicalVolume* physMWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicMWorld, "physMWorld", logicAirBox, false, 0, true);
-  G4VPhysicalVolume* physMWorld1 = new G4PVPlacement(0, G4ThreeVector(0., 2.*RH, 0.), logicMWorld1, "physMWorld1", logicWorld, false, 0, true);
+  G4VPhysicalVolume* physMWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicMWorld, "physMWorld", logicWorld, false, 0, true);
+  // G4VPhysicalVolume* physMWorld1 = new G4PVPlacement(0, G4ThreeVector(0., 2.*RH, 0.), logicMWorld1, "physMWorld1", logicWorld, false, 0, true);
   // G4VPhysicalVolume* physMWorld2 = new G4PVPlacement(0, G4ThreeVector(0., -2.*RH, 0.), logicMWorld2, "physMWorld2", logicWorld, false, 0, true);
   // G4VPhysicalVolume* physMWorld3 = new G4PVPlacement(0, G4ThreeVector((trapA+trapB)/2., RH, 0.), logicMWorld3, "physMWorld3", logicWorld, false, 0, true);
   // G4VPhysicalVolume* physMWorld4 = new G4PVPlacement(0, G4ThreeVector(-(trapA+trapB)/2., -RH, 0.), logicMWorld4, "physMWorld4", logicWorld, false, 0, true);
@@ -121,7 +121,7 @@ MyDetectorConstruction::MyDetectorConstruction()
 	G4Tubs *solidPMT = new G4Tubs("solidPMT", 0, RC, HC/2, 0.*deg, 360.*deg);
   G4LogicalVolume* logicPMT[7];
 	logicPMT[0] = new G4LogicalVolume(solidPMT, matPMT, "logicPMT");
-	G4VPhysicalVolume *physPMT = new G4PVPlacement(0, G4ThreeVector(0., 0., HH/2), logicPMT[0], "physPMT", logicMWorld, false, 0, true);
+	// G4VPhysicalVolume *physPMT = new G4PVPlacement(0, G4ThreeVector(0., 0., HH/2), logicPMT[0], "physPMT", logicMWorld, false, 0, true);
 
 	// Left PMT
 	logicPMT[1] = new G4LogicalVolume(solidPMT, matPMT, "logicPMT1");
@@ -169,6 +169,10 @@ G4MultiUnion* solidScint = new G4MultiUnion("solidScint");
 	logicScint[0] = new G4LogicalVolume(solidScint, BC404, "logicScint");
 	G4VPhysicalVolume *physScint = new G4PVPlacement(0, G4ThreeVector(0., 0., -HC/2.), logicScint[0], "physScint", logicMWorld, false, 0, true);
 	
+  G4double maxStep = 1.*mm;
+  G4UserLimits* myStepLimit = new G4UserLimits(maxStep);
+  // logicScint[0]->SetUserLimits(myStepLimit);
+  
 	logicScint[1] = new G4LogicalVolume(solidScint, BC404, "logicScint1");
 	G4VPhysicalVolume *physScint1 = new G4PVPlacement(0, G4ThreeVector(0., 0., -HC/2.), logicScint[1], "physScint1", logicMWorld1, false, 0, true);
 	
