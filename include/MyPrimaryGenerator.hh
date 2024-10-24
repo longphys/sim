@@ -26,6 +26,12 @@ public:
 	virtual void GeneratePrimaries(G4Event*);
 	// A "GeneratePrimaries" function from Geant4 Generator class (virtual, the same as that of "action.hh"), which will create primaries, which will be used by "action.cc" with an argument "G4Event"
 	
+	G4double getZSurface() const { return zSurface; }
+protected:
+
+  const G4double dis_from_surface = 4.4*cm;
+	const G4double zSurface = 37.*cm; //! mm
+  G4double zPar = zSurface + dis_from_surface;
 private:
 	G4ParticleGun* fParticleGun; // a Particle Gun
   struct Point{

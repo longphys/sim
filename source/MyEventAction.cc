@@ -19,6 +19,8 @@ void MyEventAction::BeginOfEventAction(const G4Event* event)
     neutronEDep.resize(7,0.);
     protonEDep.clear();
     protonEDep.resize(7,0.);
+    protonEDepRaw.clear();
+    protonEDepRaw.resize(7,0.);
     gammaEDep.clear();
     gammaEDep.resize(7,0.);
     alphaEDep.clear();
@@ -69,10 +71,26 @@ void MyEventAction::EndOfEventAction(const G4Event* event)
 		// }
 
     //! Check Particles
-    if (fDEdep[0] < 7. && fDEdep[0] > 5.){
+    if (fDEdep[0] < 0.8 && fDEdep[0] > 0.2){
       // G4cout << "##### EVENT ID: "<< EventsID << " #####" << G4endl;
       // G4cout << AllStepInfo << "\n";
     }
+
+    if (protonCheck == true){
+      countProtonTotal ++;
+      if (alphaCheck == true & c12Check == false){
+        countProtonAlpha++;
+      }
+      else{
+        countProton++;
+      }
+    }
+
+    // if((EventsID % 10000) == 0){  
+    //   std::cout << "only proton = " << countProton << "\n";
+    //   std::cout << "proton alpha double scattering = " << countProtonAlpha << "\n";
+    //   std::cout << "there is proton = " << countProtonTotal << "\n";
+    // }
 
 		//! Condition for recording Compton Scattering Count and Dep
 		if (fcomptCount > 0)
@@ -90,5 +108,5 @@ void MyEventAction::EndOfEventAction(const G4Event* event)
 		}
 		
 		MyTreeHandler* aTreeHandler = MyTreeHandler::GetInstance();
-    	aTreeHandler->Push(EventsID, fDEdep, fEdep, fcomptCount, comptEDep, backEDep, neutronEDep, protonEDep, gammaEDep, alphaEDep, C12EDep, otherEDep);
+    	aTreeHandler->Push(EventsID, fDEdep, fEdep, fcomptCount, comptEDep, backEDep, neutronEDep, protonEDep, protonEDepRaw, gammaEDep, alphaEDep, C12EDep, otherEDep);
 	}

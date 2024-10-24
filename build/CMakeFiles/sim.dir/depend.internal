@@ -285,6 +285,7 @@ CMakeFiles/sim.dir/sim.cc.o
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SteppingManager.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4String.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4String.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SubtractionSolid.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SurfBits.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SystemOfUnits.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4THitsCollection.hh
@@ -734,6 +735,7 @@ CMakeFiles/sim.dir/source/MyActionInitialization.cc.o
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SteppingManager.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4String.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4String.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SubtractionSolid.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SurfBits.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SystemOfUnits.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Threading.hh
@@ -894,6 +896,7 @@ CMakeFiles/sim.dir/source/MyActionInitialization.cc.o
  /home/long/software/root/root-6.30.02/rootinstall/include/strtok.h
 CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o
  ../include/MyDetectorConstruction.hh
+ ../include/MyPrimaryGenerator.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Geometry/BasicVector3D.h
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Geometry/Normal3D.h
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Geometry/Plane3D.h
@@ -901,9 +904,55 @@ CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Geometry/Transform3D.h
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Geometry/Transform3D.icc
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Geometry/Vector3D.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/DualRand.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/JamesRandom.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/MTwistEngine.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/MixMaxRng.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandBinomial.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandBinomial.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandBit.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandBit.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandBreitWigner.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandBreitWigner.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandChiSquare.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandChiSquare.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandExpZiggurat.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandExponential.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandExponential.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandFlat.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandFlat.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandGamma.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandGamma.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandGauss.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandGauss.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandGaussQ.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandGaussQ.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandGaussZiggurat.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandGeneral.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandGeneral.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandLandau.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandLandau.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandPoisson.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandPoisson.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandPoissonQ.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandPoissonQ.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandStudentT.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandStudentT.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/Random.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/Random.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandomEngine.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RandomEngine.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/Randomize.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RanecuEngine.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/Ranlux64Engine.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RanluxEngine.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RanluxppEngine.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Random/RanshiEngine.h
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Units/PhysicalConstants.h
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Units/SystemOfUnits.h
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Utility/defs.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Utility/memory.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Utility/thread_local.h
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Vector/AxisAngle.h
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Vector/AxisAngle.icc
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Vector/LorentzVector.h
@@ -924,50 +973,102 @@ CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/CLHEP/Vector/TwoVector.icc
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4AffineTransform.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4AffineTransform.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Allocator.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4AllocatorPool.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ApplicationState.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4AutoLock.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4AuxiliaryNavServices.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4AuxiliaryNavServices.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4BlockingList.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4BlockingList.icc
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4BooleanSolid.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4BooleanSolid.icc
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4BoundingEnvelope.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Box.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Box.icc
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4CSGSolid.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ClassificationOfNewTrack.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4DCofThisEvent.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4DataVector.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4DataVector.icc
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4DensityEffectCalculator.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4DisplacedSolid.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4DynamicParticle.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4DynamicParticle.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ElectronOccupancy.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Element.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ElementTable.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ElementVector.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4EnvironmentUtils.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Event.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4EventManager.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Exception.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ExceptionSeverity.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Exp.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ForceCondition.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4GPILSelection.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4GRSSolid.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4GRSSolid.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4GRSVolume.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4GRSVolume.icc
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4GeomConfig.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4GeomSplitter.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4GeomTypes.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4GlobalConfig.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4HCofThisEvent.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ICRU90StoppingData.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4IonTable.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4IonisParamElm.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4IonisParamMat.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Ions.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Isotope.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4IsotopeVector.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Log.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4LogicalVolume.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4LogicalVolume.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4LorentzVector.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Material.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4MaterialPropertiesIndex.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4MaterialPropertiesTable.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4MaterialPropertyVector.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4MaterialTable.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4MultiUnion.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4NavigationHistory.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4NavigationHistory.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4NavigationHistoryPool.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4NavigationLevel.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4NavigationLevel.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4NavigationLevelRep.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4NavigationLevelRep.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4NavigationLogger.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Navigator.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Navigator.icc
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4NistElementBuilder.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4NistManager.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4NistMaterialBuilder.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4NoProcess.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Normal3D.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4NormalNavigation.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4NormalNavigation.icc
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4OrderedTable.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4PDefManager.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4PVPlacement.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ParameterisedNavigation.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ParameterisedNavigation.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ParticleChange.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ParticleChange.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ParticleDefinition.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ParticleDefinition.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ParticleGun.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ParticleMomentum.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ParticleTable.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ParticleTable.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ParticleTableIterator.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4PhysicalConstants.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4PhysicsFreeVector.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4PhysicsModelCatalog.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4PhysicsTable.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4PhysicsTable.icc
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4PhysicsVector.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4PhysicsVector.icc
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4PhysicsVectorType.hh
@@ -975,18 +1076,64 @@ CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Point3D.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Polyhedron.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Pow.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4PrimaryParticle.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4PrimaryTransformer.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4PrimaryVertex.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ProcessManager.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ProcessManager.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ProcessType.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ProcessVector.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ProcessVector.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Profiler.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Profiler.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4RandomDirection.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ReferenceCountedHandle.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Region.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Region.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4RegularNavigation.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ReplicaNavigation.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ReplicaNavigation.icc
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4RotationMatrix.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4RunManager.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4RunManagerKernel.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SandiaTable.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SmartTrackStack.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SmartVoxelHeader.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SmartVoxelHeader.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SmartVoxelNode.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SmartVoxelNode.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SmartVoxelProxy.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SmartVoxelProxy.icc
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Sphere.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Sphere.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4StackManager.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4StackedTrack.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Step.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Step.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4StepPoint.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4StepPoint.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4StepStatus.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SteppingControl.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SteppingManager.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4String.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4String.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SubtractionSolid.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SurfBits.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SystemOfUnits.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Threading.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ThreeVector.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4TouchableHandle.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4TouchableHistory.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4TouchableHistory.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4TouchableHistoryHandle.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Track.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Track.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4TrackStack.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4TrackStatus.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4TrackVector.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4TrackingManager.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4TrackingMessenger.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4TrajectoryContainer.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Transform3D.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Trd.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Trd.icc
@@ -996,34 +1143,69 @@ CMakeFiles/sim.dir/source/MyDetectorConstruction.cc.o
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Types.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UAdapter.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UBox.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UIcommand.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UIdirectory.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UImessenger.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UIparameter.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UItokenNum.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4USphere.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UTrd.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UTubs.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UnionSolid.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserLimits.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserLimits.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserStackingAction.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserSteppingAction.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4UserTrackingAction.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VDigiCollection.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VExternalNavigation.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VFacet.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VGraphicsScene.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VHitsCollection.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VPVParameterisation.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VParticleChange.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VParticleChange.icc
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VPhysicalVolume.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VPhysicalVolume.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VPrimaryGenerator.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VProcess.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VSolid.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VSolid.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VSteppingVerbose.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VTouchable.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VTouchable.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VTrajectory.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VUserDetectorConstruction.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VUserEventInformation.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VUserPrimaryGeneratorAction.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VUserTrackInformation.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VVolumeMaterialScanner.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Vector3D.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VisExtent.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Visible.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Visible.icc
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VoxelLimits.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VoxelLimits.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VoxelNavigation.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4VoxelNavigation.icc
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Voxelizer.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Voxelizer.icc
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4ios.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/HepPolyhedron.h
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/PTL/Globals.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/PTL/Types.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/PTL/Utility.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/Randomize.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/evtdefs.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/geomdefs.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/geomwdefs.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/globals.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/pwdefs.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/rundefs.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/templates.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/tls.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/trkdefs.hh
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/trkgdefs.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/windefs.hh
  /home/long/software/geant4/geant4build/sim/source/MyDetectorConstruction.cc
 CMakeFiles/sim.dir/source/MyEventAction.cc.o
@@ -1616,6 +1798,7 @@ CMakeFiles/sim.dir/source/MyPrimaryGenerator.cc.o
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SteppingManager.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4String.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4String.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SubtractionSolid.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SurfBits.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SystemOfUnits.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Threading.hh
@@ -2021,6 +2204,7 @@ CMakeFiles/sim.dir/source/MySteppingAction.cc.o
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SteppingManager.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4String.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4String.icc
+ /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SubtractionSolid.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SurfBits.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4SystemOfUnits.hh
  /home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4/G4Threading.hh

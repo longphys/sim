@@ -21,6 +21,8 @@ MyTreeHandler::MyTreeHandler()
     neutronEDep.resize(7,0.);
     protonEDep.clear();
     protonEDep.resize(7,0.);
+    protonEDepRaw.clear();
+    protonEDepRaw.resize(7,0.);
     gammaEDep.clear();
     gammaEDep.resize(7,0.);
     alphaEDep.clear();
@@ -65,6 +67,7 @@ MyTreeHandler::MyTreeHandler()
 
     fTree->Branch("NeutronEDep", &neutronEDep);
     fTree->Branch("ProtonEDep", &protonEDep);
+    fTree->Branch("ProtonEDepRaw", &protonEDepRaw);
     fTree->Branch("GammaEDep", &gammaEDep);
     fTree->Branch("AlphaEDep", &alphaEDep);
     fTree->Branch("C12EDep", &C12EDep);
@@ -95,6 +98,7 @@ G4int MyTreeHandler::Push(int64_t eventNr,
 
         std::vector <G4double> neutronE,
         std::vector <G4double> protonE,
+        std::vector <G4double> protonERaw,
         std::vector <G4double> gammaE,
         std::vector <G4double> alphaE,
         std::vector <G4double> C12E,
@@ -122,6 +126,7 @@ G4int MyTreeHandler::Push(int64_t eventNr,
 
     neutronEDep = neutronE;
     protonEDep = protonE;
+    protonEDepRaw = protonERaw;
     gammaEDep = gammaE;
     alphaEDep = alphaE;
     C12EDep = C12E;

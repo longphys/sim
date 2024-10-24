@@ -76,6 +76,9 @@ public:
     }
   }
 
+  void AddRawProton(G4double edep, G4int NoDet){
+    protonEDepRaw[NoDet] += edep;
+  }   
 	void AddComptCount() { fcomptCount += 1; }
 	void AddInfo(G4String StepInfo) { AllStepInfo += '\n' + StepInfo; }
 
@@ -91,7 +94,7 @@ private:
 	
 	G4int fcomptCount;
 	G4String AllStepInfo;
-	G4bool aBSCheck, protonCheck, gammaCheck, alphaCheck, c12Check;
+	G4bool aBSCheck, protonCheck, gammaCheck, alphaCheck, c12Check = false;
 	std::vector <G4double> comptEDep;
 
   std::vector <G4double> fEdep, fDEdep;
@@ -100,8 +103,11 @@ private:
 
 	std::vector <G4double> neutronEDep, protonEDep, gammaEDep, alphaEDep, C12EDep, otherEDep;
   // G4double neutronEDep, protonEDep, gammaEDep, alphaEDep, C12EDep, otherEDep;
+	std::vector <G4double> protonEDepRaw;
 
-  G4int count = 0;
+  G4int countProtonTotal = 0;
+  G4int countProton = 0;
+  G4int countProtonAlpha = 0;
 };
 
 #endif

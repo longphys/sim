@@ -33,6 +33,7 @@ class MyTreeHandler
 
         std::vector <G4double> neutronE,
         std::vector <G4double> protonE,
+        std::vector <G4double> protonERaw,
         std::vector <G4double> gammaE,
         std::vector <G4double> alphaE,
         std::vector <G4double> C12E,
@@ -74,6 +75,7 @@ class MyTreeHandler
 
         std::vector <G4double> neutronEDep;
         std::vector <G4double> protonEDep;
+        std::vector <G4double> protonEDepRaw;
         std::vector <G4double> gammaEDep;
         std::vector <G4double> alphaEDep;
         std::vector <G4double> C12EDep;

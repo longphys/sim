@@ -6,7 +6,7 @@
 /vis/viewer/set/autoRefresh true
 /vis/drawVolume
 
-#/vis/geometry/set/visibility logicWorld 0 false
+/vis/geometry/set/visibility logicWorld 0 false
 /vis/geometry/set/visibility logicMWorld 0 false
 /vis/geometry/set/visibility logicMWorld1 0 false
 /vis/geometry/set/visibility logicMWorld2 0 false
@@ -24,7 +24,7 @@
 
 /vis/scene/endOfEventAction accumulate
 
-/vis/scene/add/axes 0 0 0 10 cm
+/vis/scene/add/axes 0 0 0 4.33 cm
 
 /vis/geometry/set/colour logicAlBox 0 0.8 0.8 1 .3
 /vis/geometry/set/colour logicAirBox 0 0.8 0.8 1 .3
@@ -36,6 +36,8 @@
 /vis/geometry/set/colour logicScint4 1 red
 /vis/geometry/set/colour logicScint5 1 red
 /vis/geometry/set/colour logicScint6 1 red
+
+/vis/geometry/set/colour logicTape 1 red
 
 #/vis/geometry/set/colour logicPBox 1 cyan
 #/vis/geometry/set/colour logicSBox 1 orange
