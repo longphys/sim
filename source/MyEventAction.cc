@@ -54,7 +54,11 @@ void MyEventAction::EndOfEventAction(const G4Event* event)
 		{
 			comptEDep.push_back(-1.);
 		}
-		G4cout << "Event ID: "<< EventsID << "\n";
+
+    if(EventsID % 100000 == 0.){
+      // G4cout << "Event ID: "<< EventsID << "\n";
+      std::cout << "Event ID: "<< EventsID << "\n";
+    }
 		// G4cout << "Random:" << (2*((rand() % 10) % 2) - 1) << "\n";
 		// G4cout << "Event Number: " << EventsID << "; fDEdep: " << fDEdep <<
 		// "; fDEdepL: " << fDEdepL << "; fDEdepR: " << fDEdepR << 

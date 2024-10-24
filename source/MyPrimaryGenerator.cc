@@ -73,16 +73,16 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   uz = cosTheta;
 
   //! Cs137
-	// fParticleGun->SetParticleEnergy(.6616553*MeV);
-  //! Co60
-  if(parE < 0.500331777697933){
-    fParticleGun->SetParticleEnergy(1.173492*MeV);
-  }
-  else{
-    fParticleGun->SetParticleEnergy(1.332228*MeV);
-  }
-  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
-  fParticleGun->GeneratePrimaryVertex(event);
+	fParticleGun->SetParticleEnergy(.6616553*MeV);
+  // //! Co60
+  // if(parE < 0.500331777697933){
+  //   fParticleGun->SetParticleEnergy(1.173492*MeV);
+  // }
+  // else{
+  //   fParticleGun->SetParticleEnergy(1.332228*MeV);
+  // }
+  // fParticleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
+  // fParticleGun->GeneratePrimaryVertex(event);
 
   // //! Na22 0.511 MeV Annihilation gamma
   // fParticleGun->SetParticleEnergy(0.511*MeV);
@@ -108,6 +108,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 
   //! Na22 1.2 MeV
   // fParticleGun->SetParticleEnergy(1.274537*MeV);
+  
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
   fParticleGun->GeneratePrimaryVertex(event);
   
