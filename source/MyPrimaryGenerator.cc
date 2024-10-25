@@ -17,9 +17,10 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   	(G4RunManager::GetRunManager()->GetUserDetectorConstruction());
 
 	G4double RH = detectorConstruction->GetRH(); //! Get RH from Detector Construction (it is in milimeter)
-  double pixel_side = 3.5;
+  double pixel_side = 3.0*cm;
 
-	RH = (3.5/2)*cm;
+	// RH = (pixel_side/2);
+	RH = (pixel_side/4);
   //? radius - 5. mm
   //? radius - 10. mm
   //? radius + 5.0*cm;
@@ -51,13 +52,13 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 
     double mean_test = 0.;
     // double stdDev_test = 1.0;
-    double stdDev_test = pixel_side/2.355;
+    // double stdDev_test = pixel_side/2.355;
     // std::cout << "RandGaus = " << G4RandGauss::shoot(mean_test, stdDev_test) << "\n";
 
     double beam_sizefactor = 5.;
     double beam_sizefactorY = 5.;
-    // G4double RHrand = RH*G4UniformRand()/beam_sizefactor; //! Uniform angle distribution
-    G4double RHrand = (RH)*abs( G4RandGauss::shoot(mean_test, stdDev_test) ); //! Gaussian angle distribution
+    G4double RHrand = RH*G4UniformRand(); //! Uniform angle distribution
+    // G4double RHrand = (RH)*abs( G4RandGauss::shoot(mean_test, stdDev_test) ); //! Gaussian angle distribution
     G4double phirand = twopi*G4UniformRand();
 
     G4double a = RHrand;

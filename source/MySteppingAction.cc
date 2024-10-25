@@ -80,8 +80,8 @@ G4double MySteppingAction::BirksAttenuation(const G4Step* step)
     if (destep > 0 && stepl > 0 && charge!=0 )
     {
       if (abs(charge) >= 2){
-        response = (scintillator_efficiency*destep)/(1. + birk1_alpha*destep/stepl);
-        // response = (scintillator_efficiency_alpha*destep)/(1. + birk1_alpha*destep/stepl + birk2*(destep/stepl)*(destep/stepl));
+        // response = (scintillator_efficiency*destep)/(1. + birk1_alpha*destep/stepl);
+        response = (scintillator_efficiency_alpha*destep)/(1. + birk1_alpha*destep/stepl + birk2*(destep/stepl)*(destep/stepl));
       }
       else{
         response = (scintillator_efficiency*destep)/(1. + birk1*destep/stepl);
@@ -247,8 +247,8 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
     // fEventAction->AddInfo(StepInfo);
 
 	
-	// Checking the Ray tracing condition
-	// if (NextVolumeName == "physPBox" or NextVolumeName == "physSBox")
+	//! Checking the Ray tracing condition
+	// if (NextVolumeName == "physScint" or NextVolumeName == "physScint1")
 	// {
 	// 	track->SetTrackStatus(fStopAndKill);
 	// }

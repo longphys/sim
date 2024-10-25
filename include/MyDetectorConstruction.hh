@@ -67,12 +67,13 @@ protected: // only inhereting classes can access
 
   // G4double mylar_thickness = 10.*mm;
   G4double mylar_thickness = 1.5*mm;
+  // G4double mylar_thickness = 0.5*mm;
   // G4double mylar_thickness = 1.0*mm;
   // G4double mylar_size_thickness = 1.5*mm;
   // G4double mylar_bottom_thickness = 1.5*mm;
 
   // double tape_thickness = 1.0*mm;
-  // double tape_thickness = 0.5*mm;
+  G4double tape_thickness = 0.15*mm;
   // double tape_thickness = 3.0*mm;
   // double tape_thickness = 2.0*mm;
   // double tape_thickness = 1.5*mm; //! minor bump near 4 MeV
@@ -83,7 +84,7 @@ protected: // only inhereting classes can access
   // double tape_thickness = 0.25*mm;
   // G4double tape_thickness = 0.3*mm;
   // G4double tape_thickness = .75*mm;
-  G4double tape_thickness = 0.15*mm;
+  // G4double tape_thickness = 0.15*mm;
 
 	G4double trapB_mylar = trapB + mylar_thickness*2; //! larger side of trapezoid
 	G4double trapA_mylar = trapB_mylar/2; //! larger side of trapezoid

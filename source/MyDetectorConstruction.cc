@@ -73,8 +73,12 @@ MyDetectorConstruction::MyDetectorConstruction()
   // G4VPhysicalVolume* physAirBox = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicAirBox, "physAirBox", logicAlBox, false, 0, true);
 
 // Module World
-  G4double xMWorld = trapB/2 + mylar_thickness + tape_thickness;
-  G4double yMWorld = h + mylar_thickness + tape_thickness;
+  // G4double xMWorld = trapB_mylar/2;
+  // G4double yMWorld = h_mylar;
+  // G4double zMWorld = (HH + HC)/2 + mylar_thickness;
+
+  G4double xMWorld = trapB_mylar/2 + tape_thickness;
+  G4double yMWorld = h_mylar + tape_thickness;
   G4double zMWorld = (HH + HC)/2 + mylar_thickness + tape_thickness;
 
   G4Box* solidMWorld = new G4Box("solidMWorld", xMWorld, yMWorld, zMWorld);
@@ -87,11 +91,12 @@ MyDetectorConstruction::MyDetectorConstruction()
   G4LogicalVolume* logicMWorld6 = new G4LogicalVolume(solidMWorld, worldMat, "logicMWorld6");
 
 	G4RotationMatrix* rotMWorld = new G4RotationMatrix();
-  rotMWorld->rotateX(-15.*deg);
-  // G4VPhysicalVolume* physMWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicMWorld, "physMWorld", logicWorld, false, 0, true);
-  G4VPhysicalVolume* physMWorld = new G4PVPlacement(rotMWorld, G4ThreeVector(0., -1.*cm, 0.), logicMWorld, "physMWorld", logicWorld, false, 0, true);
+  rotMWorld->rotateX(0.*deg);
+  // rotMWorld->rotateX(-15.*deg);
+  G4VPhysicalVolume* physMWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicMWorld, "physMWorld", logicWorld, false, 0, true);
+  // G4VPhysicalVolume* physMWorld = new G4PVPlacement(rotMWorld, G4ThreeVector(0., 1.0*cm, 0.), logicMWorld, "physMWorld", logicWorld, false, 0, true);
 
-  // G4VPhysicalVolume* physMWorld1 = new G4PVPlacement(0, G4ThreeVector(0., 2.*h, 0.), logicMWorld1, "physMWorld1", logicWorld, false, 0, true);
+  // G4VPhysicalVolume* physMWorld1 = new G4PVPlacement(0, G4ThreeVector(0., 2.*h_mylar, 0.), logicMWorld1, "physMWorld1", logicWorld, false, 0, true);
   // G4VPhysicalVolume* physMWorld2 = new G4PVPlacement(0, G4ThreeVector(0., -2.*h, 0.), logicMWorld2, "physMWorld2", logicWorld, false, 0, true);
   // G4VPhysicalVolume* physMWorld3 = new G4PVPlacement(0, G4ThreeVector((trapA+trapB)/2., h, 0.), logicMWorld3, "physMWorld3", logicWorld, false, 0, true);
   // G4VPhysicalVolume* physMWorld4 = new G4PVPlacement(0, G4ThreeVector(-(trapA+trapB)/2., -h, 0.), logicMWorld4, "physMWorld4", logicWorld, false, 0, true);
@@ -103,11 +108,12 @@ MyDetectorConstruction::MyDetectorConstruction()
 	G4Tubs *solidPMT = new G4Tubs("solidPMT", 0, RC, HC/2, 0.*deg, 360.*deg);
   G4LogicalVolume* logicPMT[7];
 	logicPMT[0] = new G4LogicalVolume(solidPMT, matPMT, "logicPMT");
-	// G4VPhysicalVolume *physPMT = new G4PVPlacement(0, G4ThreeVector(0., 0., HH/2), logicPMT[0], "physPMT", logicMWorld, false, 0, true);
+	G4VPhysicalVolume *physPMT = new G4PVPlacement(0, G4ThreeVector(0., 0., HH_mylar/2), logicPMT[0], "physPMT", logicMWorld, false, 0, true);
+	// G4VPhysicalVolume *physPMT = new G4PVPlacement(0, G4ThreeVector(0., 0., HH_mylar/2+tape_thickness), logicPMT[0], "physPMT", logicMWorld, false, 0, true);
 
 	// Left PMT
 	logicPMT[1] = new G4LogicalVolume(solidPMT, matPMT, "logicPMT1");
-	G4VPhysicalVolume *physPMT1 = new G4PVPlacement(0, G4ThreeVector(0., 0., HH/2), logicPMT[1], "physPMT1", logicMWorld1, false, 0, true);
+	G4VPhysicalVolume *physPMT1 = new G4PVPlacement(0, G4ThreeVector(0., 0., HH_mylar/2), logicPMT[1], "physPMT1", logicMWorld1, false, 0, true);
 
 	// Right PMT
 	logicPMT[2] = new G4LogicalVolume(solidPMT, matPMT, "logicPMT2");
@@ -177,6 +183,8 @@ G4MultiUnion* solidMylar = new G4MultiUnion("solidMylar");
   G4SubtractionSolid* solidMylar_subtracted = new G4SubtractionSolid("solidMylar_subtracted", solidMylar, solidScint);
 	G4LogicalVolume* logicMylar = new G4LogicalVolume(solidMylar_subtracted, mylar, "logicMylar");
 	G4VPhysicalVolume *physMylar = new G4PVPlacement(0, G4ThreeVector(0., 0., -HC/2.), logicMylar, "physMylar", logicMWorld, false, 0, true);
+	// G4LogicalVolume* logicMylar1 = new G4LogicalVolume(solidMylar_subtracted, mylar, "logicMylar1");
+	// G4VPhysicalVolume *physMylar1 = new G4PVPlacement(0, G4ThreeVector(0., 0., -HC/2.), logicMylar1, "physMylar1", logicMWorld1, false, 0, true);
   
 //! outer tape
 	G4Trd *solidTape1 = new G4Trd("solidTape1", trapB_tape/2, trapA_tape/2, HH_tape/2, HH_tape/2, h_tape/2);
@@ -198,7 +206,6 @@ G4MultiUnion* solidTape = new G4MultiUnion("solidTape");
 
   G4Material* vinyl = nist->FindOrBuildMaterial("G4_POLYVINYL_CHLORIDE");
   G4SubtractionSolid* solidTape_subtracted = new G4SubtractionSolid("solidTape_subtracted", solidTape, solidMylar);
-	// G4LogicalVolume* logicTape = new G4LogicalVolume(solidTape_subtracted, matTape, "logicTape");
 	G4LogicalVolume* logicTape = new G4LogicalVolume(solidTape_subtracted, vinyl, "logicTape");
 	// G4VPhysicalVolume *physTape = new G4PVPlacement(0, G4ThreeVector(0., 0., -HC/2.), logicTape, "physTape", logicMWorld, false, 0, true);
   
