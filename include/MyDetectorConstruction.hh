@@ -52,13 +52,13 @@ protected: // only inhereting classes can access
 	G4Box *solidWorld;
 	G4VPhysicalVolume *physWorld;
 
-	// G4double RH = 43.3; // Scintillator's inner-circle radius (mm)
-  G4double RH = 5.*cm;
-  // G4double HH = 75.;
-  G4double HH = 7.5*cm;
-  G4double RC = 78*mm/2;
-	G4double HC = 15*mm;
-  G4double trapA = 2.0*RH/sqrt(3); // hexagon side
+  G4double RH = 5.*cm; //! BC404 Hexagon circumventing circle radius (mm)
+  G4double HH = 7.5*cm; //! BC404 Hexagon thickness (mm)
+  G4double RC = 78*mm/2; //! PMT radius
+	G4double HC = 15*mm; //! PMT thickness
+  G4double trapA = RH; //! smaller side of trapezoid
+  G4double trapB = 2*RH; //! larger side of trapezoid
+  G4double h_trap = 8.66*cm/2; //! BC404 hexagon's inner-circle radius (mm)
 
 	G4Box* solidPBox, *solidSBox;
 	G4VPhysicalVolume* physPBox;

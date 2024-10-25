@@ -129,17 +129,17 @@ MyDetectorConstruction::MyDetectorConstruction()
 		
 // Scintillator
 
-	G4Trd *solidScint1 = new G4Trd("solidScint1", trapB/2, trapA/2, HH/2, HH/2, RH/2);
+	G4Trd *solidScint1 = new G4Trd("solidScint1", trapB/2, trapA/2, HH/2, HH/2, h_trap/2);
 
-	G4Trd *solidScint2 = new G4Trd("solidScint2", trapA/2, trapB/2, HH/2, HH/2, RH/2);
+	G4Trd *solidScint2 = new G4Trd("solidScint2", trapA/2, trapB/2, HH/2, HH/2, h_trap/2);
 
 	G4RotationMatrix rotMatr1 = G4RotationMatrix();
   rotMatr1.rotateX(90.*deg);
-  G4ThreeVector position1 = G4ThreeVector(0., -RH/2, 0.);
+  G4ThreeVector position1 = G4ThreeVector(0., -h_trap/2, 0.);
 
   G4RotationMatrix rotMatr2 = G4RotationMatrix();
   rotMatr2.rotateX(90.*deg);
-  G4ThreeVector position2 = G4ThreeVector(0., RH/2, 0.);
+  G4ThreeVector position2 = G4ThreeVector(0., h_trap/2, 0.);
   
   G4Transform3D tr1 = G4Transform3D(rotMatr1, position1);
   G4Transform3D tr2 = G4Transform3D(rotMatr2, position2);
