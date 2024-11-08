@@ -1,8 +1,0 @@
-/home/long/software/geant4/geant4build/sim/build/CMakeFiles/install/local.dir
-/home/long/software/geant4/geant4build/sim/build/CMakeFiles/install.dir
-/home/long/software/geant4/geant4build/sim/build/CMakeFiles/list_install_components.dir
-/home/long/software/geant4/geant4build/sim/build/CMakeFiles/rebuild_cache.dir
-/home/long/software/geant4/geant4build/sim/build/CMakeFiles/install/strip.dir
-/home/long/software/geant4/geant4build/sim/build/CMakeFiles/Simulation.dir
-/home/long/software/geant4/geant4build/sim/build/CMakeFiles/edit_cache.dir
-/home/long/software/geant4/geant4build/sim/build/CMakeFiles/sim.dir

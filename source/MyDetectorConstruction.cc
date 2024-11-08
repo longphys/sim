@@ -51,8 +51,6 @@ MyDetectorConstruction::MyDetectorConstruction()
 	G4LogicalVolume *logicWorld = new G4LogicalVolume(solidWorld, worldMat, "logicWorld");
 	physWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicWorld, "physWorld", 0, false, 0, true); 
 
-	G4double trapB = 4.0*RH/sqrt(3);
-
   G4RotationMatrix* rotY1 = new G4RotationMatrix();
   rotY1->rotateY(120.*deg);
   G4RotationMatrix* rotY2 = new G4RotationMatrix();
@@ -95,7 +93,7 @@ MyDetectorConstruction::MyDetectorConstruction()
 
 // Module World
   G4double xMWorld = trapA;
-  G4double yMWorld = RH;
+  G4double yMWorld = h_trap;
   G4double zMWorld = (HH + HC)/2;
 
   G4Box* solidMWorld = new G4Box("solidMWorld", xMWorld, yMWorld, zMWorld);
