@@ -42,7 +42,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 	fParticleGun->SetParticlePosition(pos1);
   fParticleGun->SetParticleDefinition(particle);
   fParticleGun->SetParticleEnergy(14.1*MeV);
-  // fParticleGun->SetParticleEnergy(0.1*MeV); //! gamma 100keV for testing beam size
+  // fParticleGun->SetParticleEnergy(1.*GeV); //! gamma 100keV for testing beam size
 	
   // for (G4int i = 0; i < 1; i++)
   // {

@@ -89,12 +89,18 @@ public:
   void CheckAlpha() { alphaCheck = true; }
   void CheckC12() { c12Check = true; }
 
+	void CheckScatterWindow() { scatterWindowCheck = true; }
+
 private:
 	G4double backEDep;
 	
 	G4int fcomptCount;
 	G4String AllStepInfo;
 	G4bool aBSCheck, protonCheck, gammaCheck, alphaCheck, c12Check = false;
+	
+	G4bool scatterWindowCheck = false;
+	G4int countScatterWindow = 0;
+	
 	std::vector <G4double> comptEDep;
 
   std::vector <G4double> fEdep, fDEdep;

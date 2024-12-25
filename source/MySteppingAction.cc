@@ -166,6 +166,12 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
     }
   }
 
+	 if (VolumeName == "physSurface"){
+    if (TotalEnergyAfter != TotalEnergy){
+      fEventAction->CheckScatterWindow();
+    }
+  }
+
   //! Conditions for particles
   // if (volume == fDEScoringVolume[0]){
   //   fEventAction->AddParEdep(EdepStep, ParticleName, ParentID);
@@ -235,16 +241,16 @@ void MySteppingAction::UserSteppingAction(const G4Step* step)
   }
 
 	//! Information
-    // StepInfo = "--- Particle: " + ParticleName + "; Process Name: " + ProcessName + " ---" + "\n" +
-    // "Parent ID: " + ParentID + "; Track ID: " + TrackID + "; Step Number: " + StepNumber + "\n" 
-    // "Volume Name: " + VolumeName + "; Next Volume Name: " + NextVolumeName + "\n" +
-    // "Total Energy: " + TotalEnergy + "(MeV); TotalKineticEnergy: " + TotalKineticEnergy + "(MeV);" + "\n" +
-    // "TotalEnergyAfter: " + TotalEnergyAfter + "(MeV);" + "\n\n" + 
+     StepInfo = "--- Particle: " + ParticleName + "; Process Name: " + ProcessName + " ---" + "\n" +
+     "Parent ID: " + ParentID + "; Track ID: " + TrackID + "; Step Number: " + StepNumber + "\n" 
+     "Volume Name: " + VolumeName + "; Next Volume Name: " + NextVolumeName + "\n" +
+     "Total Energy: " + TotalEnergy + "(MeV); TotalKineticEnergy: " + TotalKineticEnergy + "(MeV);" + "\n" +
+     "TotalEnergyAfter: " + TotalEnergyAfter + "(MeV);" + "\n\n" + 
 
-    // "MaterialName: " + materialName + "; Birk's constant: " + birk1 + "\n" +
-    // "Step length: " + stepl + "; Particle charge: " + charge + "\n"+
-    // "E: " + EdepStep + "MeV; E(Birk): " + response*MeV + "MeV" + "\n";
-    // fEventAction->AddInfo(StepInfo);
+     "MaterialName: " + materialName + "; Birk's constant: " + birk1 + "\n" +
+     "Step length: " + stepl + "; Particle charge: " + charge + "\n"+
+     "E: " + EdepStep + "MeV; E(Birk): " + response*MeV + "MeV" + "\n";
+     fEventAction->AddInfo(StepInfo);
 
 	
 	//! Checking the Ray tracing condition

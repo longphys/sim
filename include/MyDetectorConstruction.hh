@@ -52,8 +52,9 @@ protected: // only inhereting classes can access
 	G4Box *solidWorld;
 	G4VPhysicalVolume *physWorld;
   
+  G4double surfaceThickness = .012*mm;
   // G4double surfaceThickness = .025*mm;
-  G4double surfaceThickness = .075*mm;
+  // G4double surfaceThickness = .075*mm; // previous run
   // G4double surfaceThickness = .1*mm;
   // G4double surfaceThickness = .2*mm;
 

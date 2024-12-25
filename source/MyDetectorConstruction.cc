@@ -38,8 +38,8 @@ MyDetectorConstruction::MyDetectorConstruction()
 
 // Material for World
 
-	// G4Material *worldMat = nist->FindOrBuildMaterial("G4_Galactic");
-	G4Material *worldMat = nist->FindOrBuildMaterial("G4_AIR");
+	G4Material *worldMat = nist->FindOrBuildMaterial("G4_Galactic");
+	// G4Material *worldMat = nist->FindOrBuildMaterial("G4_AIR");
 
 // Material for Scintillator
 
@@ -231,8 +231,8 @@ G4MultiUnion* solidTape = new G4MultiUnion("solidTape");
 	
   // G4double maxStep = 0.5*mm;
   G4double maxStep = std::min(tape_thickness, mylar_thickness)/10;
-  G4UserLimits* myStepLimit = new G4UserLimits(maxStep);
-  // logicTape->SetUserLimits(myStepLimit);
+  G4UserLimits* myStepLimit = new G4UserLimits(100*nm);
+  // logicSurface->SetUserLimits(myStepLimit);
   // logicScint[0]->SetUserLimits(myStepLimit);
   
 	logicScint[1] = new G4LogicalVolume(solidScint, BC404, "logicScint1");

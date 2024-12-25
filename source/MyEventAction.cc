@@ -42,6 +42,7 @@ void MyEventAction::BeginOfEventAction(const G4Event* event)
     gammaCheck = false;
     alphaCheck = false;
     c12Check = false;
+    scatterWindowCheck = false;
 
 		AllStepInfo = "Info: ";
 	}
@@ -52,6 +53,8 @@ void MyEventAction::EndOfEventAction(const G4Event* event)
     if( (EventsID % 10000) == 0){
       std::cout << "EVENT ID: "<< EventsID << "\n";
     }
+    
+    std::cout << "Number of events interacting with Steel window: "<< countScatterWindow << "\n";
 
     // G4cout << "\n-----EVENT ID: "<< EventsID << "-----\n";
 		//! Conditions for verbosity
@@ -84,6 +87,10 @@ void MyEventAction::EndOfEventAction(const G4Event* event)
       else{
         countProton++;
       }
+    }
+    
+    if (scatterWindowCheck == true){
+    	countScatterWindow++;
     }
 
     // if((EventsID % 10000) == 0){  
