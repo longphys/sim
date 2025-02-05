@@ -182,7 +182,7 @@ G4MultiUnion* solidMylar = new G4MultiUnion("solidMylar");
   G4Material* vinyl2 = nist->FindOrBuildMaterial("G4_POLYVINYLIDENE_CHLORIDE");
   G4SubtractionSolid* solidMylar_subtracted = new G4SubtractionSolid("solidMylar_subtracted", solidMylar, solidScint);
 	G4LogicalVolume* logicMylar = new G4LogicalVolume(solidMylar_subtracted, mylar, "logicMylar");
-	G4VPhysicalVolume *physMylar = new G4PVPlacement(0, G4ThreeVector(0., 0., -HC/2.), logicMylar, "physMylar", logicMWorld, false, 0, true);
+	// G4VPhysicalVolume *physMylar = new G4PVPlacement(0, G4ThreeVector(0., 0., -HC/2.), logicMylar, "physMylar", logicMWorld, false, 0, true);
 	// G4LogicalVolume* logicMylar1 = new G4LogicalVolume(solidMylar_subtracted, mylar, "logicMylar1");
 	// G4VPhysicalVolume *physMylar1 = new G4PVPlacement(0, G4ThreeVector(0., 0., -HC/2.), logicMylar1, "physMylar1", logicMWorld1, false, 0, true);
   
@@ -220,7 +220,7 @@ G4MultiUnion* solidTape = new G4MultiUnion("solidTape");
 	const G4double zSurface = 37.*cm;
   G4double zPar = zSurface + dis_from_surface;
 
-  G4VPhysicalVolume *physSurface = new G4PVPlacement(0, G4ThreeVector(0., 0., -(zSurface + (HH+HC)/2 + solidSurface->GetZHalfLength())), logicSurface, "physSurface", logicWorld, false, 0, true);
+  // G4VPhysicalVolume *physSurface = new G4PVPlacement(0, G4ThreeVector(0., 0., -(zSurface + (HH+HC)/2 + solidSurface->GetZHalfLength())), logicSurface, "physSurface", logicWorld, false, 0, true);
 
 	// Scoring Scintillator
   G4LogicalVolume* logicScint[7];

@@ -54,7 +54,7 @@ void MyEventAction::EndOfEventAction(const G4Event* event)
       std::cout << "EVENT ID: "<< EventsID << "\n";
     }
     
-    std::cout << "Number of events interacting with Steel window: "<< countScatterWindow << "\n";
+    // std::cout << "Number of events interacting with Steel window: "<< countScatterWindow << "\n";
 
     // G4cout << "\n-----EVENT ID: "<< EventsID << "-----\n";
 		//! Conditions for verbosity

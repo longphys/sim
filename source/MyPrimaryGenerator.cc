@@ -19,8 +19,9 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
 	G4double RH = detectorConstruction->GetRH(); //! Get RH from Detector Construction (it is in milimeter)
   double pixel_side = 3.0*cm;
 
+	RH = pixel_side;
 	// RH = (pixel_side/2);
-	RH = (pixel_side/4);
+	// RH = (pixel_side/4);
   //? radius - 5. mm
   //? radius - 10. mm
   //? radius + 5.0*cm;
