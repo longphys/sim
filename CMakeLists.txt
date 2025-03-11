@@ -1,5 +1,5 @@
 # Minimum version of CMake
- cmake_minimum_required (VERSION 2.6 FATAL_ERROR)
+cmake_minimum_required (VERSION 2.6 FATAL_ERROR)
 
 # Project name
 project (Simulation)
