@@ -13,6 +13,7 @@
 #include "MyTreeHandler.hh"
 
 #include "QBBC.hh"
+#include "QGSP_INCLXX.hh"
 #include "G4StepLimiterPhysics.hh"
 
 MyTreeHandler* MyTreeHandler::fTreeHandlerPtr = NULL;
@@ -28,13 +29,13 @@ int main (int argc, char** argv)
 	//runManager->SetUserInitialization(new MyPhysicsList());
 
 	// Physics list is QBBC
-	G4VModularPhysicsList* physicsList = new QBBC;
+	// G4VModularPhysicsList* physicsList = new QBBC;
+	G4VModularPhysicsList* physicsList = new QGSP_INCLXX;
 	physicsList->SetVerboseLevel(0);
 	runManager->SetUserInitialization(physicsList);
-  G4StepLimiterPhysics* stepLimitPhys = new G4StepLimiterPhysics();
-  stepLimitPhys->SetApplyToAll(true);
-  physicsList->RegisterPhysics(stepLimitPhys);
-	// runManager->SetUserInitialization(new MyPhysicsList());
+  // G4StepLimiterPhysics* stepLimitPhys = new G4StepLimiterPhysics();
+  // stepLimitPhys->SetApplyToAll(true);
+  // physicsList->RegisterPhysics(stepLimitPhys);
 
 	runManager->SetUserInitialization(new MyDetectorConstruction());
 

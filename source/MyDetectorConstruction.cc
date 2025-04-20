@@ -93,7 +93,7 @@ MyDetectorConstruction::MyDetectorConstruction()
 	G4RotationMatrix* rotMWorld = new G4RotationMatrix();
   rotMWorld->rotateX(0.*deg);
   // rotMWorld->rotateX(-15.*deg);
-  G4VPhysicalVolume* physMWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicMWorld, "physMWorld", logicWorld, false, 0, true);
+  // G4VPhysicalVolume* physMWorld = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logicMWorld, "physMWorld", logicWorld, false, 0, true);
   // G4VPhysicalVolume* physMWorld = new G4PVPlacement(rotMWorld, G4ThreeVector(0., 1.0*cm, 0.), logicMWorld, "physMWorld", logicWorld, false, 0, true);
 
   // G4VPhysicalVolume* physMWorld1 = new G4PVPlacement(0, G4ThreeVector(0., 2.*h_mylar, 0.), logicMWorld1, "physMWorld1", logicWorld, false, 0, true);
@@ -276,9 +276,23 @@ G4MultiUnion* solidTape = new G4MultiUnion("solidTape");
 
   G4double yAl = 5.*mm;
 
-  G4Box* solidAlStick = new G4Box("AlStick", xMWorld, yAl, zMWorld);
-	G4LogicalVolume* logicAlStick = new G4LogicalVolume(solidAlStick, Al, "logicAlStick");
-	// G4VPhysicalVolume* physAlStick = new G4PVPlacement(0, G4ThreeVector(0., -(yMWorld + yAl), 0.), logicAlStick, "physAlStick", logicWorld, false, 0, true);
+  G4Material* Beryllium = nist->FindOrBuildMaterial("G4_Be");
+
+  double x_Beryllium_det = 10. *cm;
+  double y_Beryllium_det = 10. *cm;
+  double z_Beryllium_det = 3. *cm;
+  G4Box* solid_Beryllium_det = new G4Box("solid_Beryllium_det", x_Beryllium_det, y_Beryllium_det, z_Beryllium_det);
+	G4LogicalVolume* logic_Beryllium_det = new G4LogicalVolume(solid_Beryllium_det, Beryllium, "logic_Beryllium_det");
+	G4VPhysicalVolume* phys_Beryllium_det = new G4PVPlacement(0, G4ThreeVector(0., 0., -100.*cm), logic_Beryllium_det, "phys_Beryllium_det", logicWorld, false, 0, true);
+
+  G4Material* Silicon = nist->FindOrBuildMaterial("G4_Si");
+
+  double x_Silicon_det = 10. *cm;
+  double y_Silicon_det = 10. *cm;
+  double z_Silicon_det = 300. *um;
+  G4Box* solid_Silicon_det = new G4Box("solid_Silicon_det", x_Silicon_det, y_Silicon_det, z_Silicon_det);
+	G4LogicalVolume* logic_Silicon_det = new G4LogicalVolume(solid_Silicon_det, Silicon, "logic_Silicon_det");
+	G4VPhysicalVolume* phys_Silicon_det = new G4PVPlacement(0, G4ThreeVector(0., 0., 0.), logic_Silicon_det, "phys_Silicon_det", logicWorld, false, 0, true);
 
 // Select scoring volume
 for(int i = 0; i <= 6; i++){
