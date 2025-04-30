@@ -51,7 +51,7 @@ MyDetectorConstruction::MyDetectorConstruction()
 
 // Cell_World
 	
-	G4double dWorld = 100.*cm;
+	G4double dWorld = 500.*cm;
 
 	solidWorld = new G4Box("solidWorld", dWorld, dWorld, dWorld);
 	G4LogicalVolume *logicWorld = new G4LogicalVolume(solidWorld, worldMat, "logicWorld");

@@ -41,8 +41,8 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   double mean_test = 0.;
   // double stdDev_test = 1.0;
   double stdDev_test = pixel_side/2.355;
-  // G4double RHrand = RH*G4UniformRand(); //! Uniform angle distribution
-  G4double RHrand = (RH)*abs( G4RandGauss::shoot(mean_test, stdDev_test) ); //! Gaussian angle distribution
+  G4double RHrand = RH*G4UniformRand(); //! Uniform angle distribution
+  // G4double RHrand = (RH)*abs( G4RandGauss::shoot(mean_test, stdDev_test) ); //! Gaussian angle distribution
   G4double phirand = twopi*G4UniformRand();
 
   G4double a = RHrand;
