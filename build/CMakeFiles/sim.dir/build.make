@@ -233,6 +233,7 @@ sim: /home/long/software/geant4/geant4-v11.3.1-install/lib/libG4modeling.so
 sim: /home/long/software/geant4/geant4-v11.3.1-install/lib/libG4interfaces.so
 sim: /home/long/software/geant4/geant4-v11.3.1-install/lib/libG4mctruth.so
 sim: /home/long/software/geant4/geant4-v11.3.1-install/lib/libG4geomtext.so
+sim: /home/long/software/geant4/geant4-v11.3.1-install/lib/libG4gdml.so
 sim: /home/long/software/geant4/geant4-v11.3.1-install/lib/libG4error_propagation.so
 sim: /home/long/software/geant4/geant4-v11.3.1-install/lib/libG4readout.so
 sim: /home/long/software/geant4/geant4-v11.3.1-install/lib/libG4physicslists.so
@@ -269,6 +270,7 @@ sim: /home/long/software/root/root-install/lib/libROOTVecOps.so
 sim: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.13
 sim: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.13
 sim: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.13
+sim: /usr/local/lib/libxerces-c.so
 sim: /home/long/software/geant4/geant4-v11.3.1-install/lib/libG4analysis.so
 sim: /usr/lib/x86_64-linux-gnu/libexpat.so
 sim: /home/long/software/geant4/geant4-v11.3.1-install/lib/libG4zlib.so

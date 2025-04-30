@@ -824,6 +824,15 @@ X11_xkbfile_INCLUDE_PATH:PATH=X11_xkbfile_INCLUDE_PATH-NOTFOUND
 //Path to a library.
 X11_xkbfile_LIB:FILEPATH=X11_xkbfile_LIB-NOTFOUND
 
+//Xerces-C++ include directory
+XercesC_INCLUDE_DIR:PATH=/usr/local/include
+
+//Xerces-C++ libraries (debug)
+XercesC_LIBRARY_DEBUG:FILEPATH=XercesC_LIBRARY_DEBUG-NOTFOUND
+
+//Xerces-C++ libraries (release)
+XercesC_LIBRARY_RELEASE:FILEPATH=/usr/local/lib/libxerces-c.so
+
 //Path to a library.
 pkgcfg_lib_PC_EXPAT_expat:FILEPATH=/usr/lib/x86_64-linux-gnu/libexpat.so
 
@@ -1015,6 +1024,8 @@ FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 FIND_PACKAGE_MESSAGE_DETAILS_Vdt:INTERNAL=[/usr/include][/usr/lib/x86_64-linux-gnu/libvdt.so][v0.4()]
 //Details about finding X11
 FIND_PACKAGE_MESSAGE_DETAILS_X11:INTERNAL=[/usr/include][/usr/lib/x86_64-linux-gnu/libX11.so][c ][v()]
+//Details about finding XercesC
+FIND_PACKAGE_MESSAGE_DETAILS_XercesC:INTERNAL=[/usr/local/lib/libxerces-c.so][/usr/local/include][3.3.0][v3.3.0(3.3.0)]
 //ADVANCED property for variable: FREETYPE_INCLUDE_DIR_freetype2
 FREETYPE_INCLUDE_DIR_freetype2-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: FREETYPE_INCLUDE_DIR_ft2build
@@ -1459,6 +1470,12 @@ X11_xkbcommon_X11_LIB-ADVANCED:INTERNAL=1
 X11_xkbfile_INCLUDE_PATH-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: X11_xkbfile_LIB
 X11_xkbfile_LIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: XercesC_INCLUDE_DIR
+XercesC_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: XercesC_LIBRARY_DEBUG
+XercesC_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: XercesC_LIBRARY_RELEASE
+XercesC_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 __pkg_config_arguments_PC_EXPAT:INTERNAL=QUIET;expat
