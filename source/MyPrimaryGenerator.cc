@@ -34,6 +34,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   G4double parE = 1*G4UniformRand();
 
 	G4double random = G4UniformRand();
+	random = 0.1;
 	
   // for (G4int i = 0; i < 1; i++)
   // {
@@ -72,20 +73,25 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
   uy = sinTheta*std::sin(phi),
   uz = cosTheta;
 
+if(random < 1./3.){
   //! Cs137
-	// fParticleGun->SetParticleEnergy(.6616553*MeV);
-  // fParticleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
-  // fParticleGun->GeneratePrimaryVertex(event);
+	//fParticleGun->SetParticleEnergy(.6616553*MeV);
+	fParticleGun->SetParticleEnergy(100.*MeV);
+  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
+  fParticleGun->GeneratePrimaryVertex(event);
+}
+else if (random < 2./3.){  
   // //! Co60
-  // if(parE < 0.500331777697933){
-  //   fParticleGun->SetParticleEnergy(1.173492*MeV);
-  // }
-  // else{
-  //   fParticleGun->SetParticleEnergy(1.332228*MeV);
-  // }
-  // fParticleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
-  // fParticleGun->GeneratePrimaryVertex(event);
-
+  if(parE < 0.500331777697933){
+    fParticleGun->SetParticleEnergy(1.173492*MeV);
+  }
+  else{
+    fParticleGun->SetParticleEnergy(1.332228*MeV);
+  }
+  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(ux,uy,uz));
+  fParticleGun->GeneratePrimaryVertex(event);
+}
+else{
   //! Na22 1.2 MeV
   fParticleGun->SetParticleEnergy(1.274537*MeV);
   
@@ -107,4 +113,5 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *event)
     fParticleGun->SetParticleMomentumDirection(G4ThreeVector(-ux,-uy,-uz));
     fParticleGun->GeneratePrimaryVertex(event);
   }
+}
 }

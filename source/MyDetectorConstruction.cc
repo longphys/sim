@@ -148,15 +148,15 @@ G4MultiUnion* solidScint = new G4MultiUnion("solidScint");
   solidScint->AddNode(*solidScint2, tr2);
   solidScint->Voxelize();
 	// Scoring Scintillator
-	G4LogicalVolume *logicScint = new G4LogicalVolume(solidScint, BC404, "logicScint");
+	G4LogicalVolume *logicScint = new G4LogicalVolume(solidScint, matScint, "logicScint");
 	G4VPhysicalVolume *physScint = new G4PVPlacement(0, G4ThreeVector(0., 0., -HC/2.), logicScint, "physScint", logicMWorld, false, 0, true);
 	
 	//Left Scintillator
-	G4LogicalVolume *logicScintL = new G4LogicalVolume(solidScint, BC404, "logicScintL");
+	G4LogicalVolume *logicScintL = new G4LogicalVolume(solidScint, matScint, "logicScintL");
 	G4VPhysicalVolume *physScintL = new G4PVPlacement(0, G4ThreeVector(0., 0., -HC/2.), logicScintL, "physScintL", logicMWorldL, false, 0, true);
 	
 	//Right Scintillator
-	G4LogicalVolume *logicScintR = new G4LogicalVolume(solidScint, BC404, "logicScintR");
+	G4LogicalVolume *logicScintR = new G4LogicalVolume(solidScint, matScint, "logicScintR");
 	G4VPhysicalVolume *physScintR = new G4PVPlacement(0, G4ThreeVector(0., 0., -HC/2.), logicScintR, "physScintR", logicMWorldR, false, 0, true);
 
 	//Plastic Box
