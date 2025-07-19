@@ -13,11 +13,16 @@
 			"add_executable",
 			"install",
 			"target_link_libraries",
+			"set_target_properties",
+			"include",
+			"find_package",
 			"include_directories"
 		],
 		"files" : 
 		[
-			"CMakeLists.txt"
+			"CMakeLists.txt",
+			"/home/long/software/geant4/geant4-v11.3.2-install/lib/cmake/Geant4/Geant4LibraryDepends.cmake",
+			"/home/long/software/geant4/geant4-v11.3.2-install/lib/cmake/Geant4/Geant4Config.cmake"
 		],
 		"nodes" : 
 		[
@@ -43,13 +48,57 @@
 				"parent" : 0
 			},
 			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 19,
+				"parent" : 0
+			},
+			{
+				"file" : 2,
+				"parent" : 4
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 495,
+				"parent" : 5
+			},
+			{
+				"file" : 1,
+				"parent" : 6
+			},
+			{
 				"command" : 3,
+				"file" : 1,
+				"line" : 175,
+				"parent" : 7
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 235,
+				"parent" : 7
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 95,
+				"parent" : 7
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 87,
+				"parent" : 7
+			},
+			{
+				"command" : 6,
 				"file" : 0,
 				"line" : 14,
 				"parent" : 0
 			},
 			{
-				"command" : 3,
+				"command" : 6,
 				"file" : 0,
 				"line" : 25,
 				"parent" : 0
@@ -62,18 +111,11 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -g -g  "
-				},
-				{
-					"backtrace" : 3,
-					"fragment" : "-pthread"
+					"fragment" : " -g -g"
 				},
 				{
 					"backtrace" : 3,
 					"fragment" : "-fPIC"
-				},
-				{
-					"fragment" : "-std=gnu++17"
 				}
 			],
 			"defines" : 
@@ -85,14 +127,6 @@
 				{
 					"backtrace" : 3,
 					"define" : "G4UI_USE_QT"
-				},
-				{
-					"backtrace" : 3,
-					"define" : "G4UI_USE_TCSH"
-				},
-				{
-					"backtrace" : 3,
-					"define" : "G4VIS_USE_OPENGL"
 				},
 				{
 					"backtrace" : 3,
@@ -108,6 +142,10 @@
 				},
 				{
 					"backtrace" : 3,
+					"define" : "G4VIS_USE_TOOLSSG_QT_ZB"
+				},
+				{
+					"backtrace" : 3,
 					"define" : "PTL_BUILD_DLL"
 				},
 				{
@@ -120,31 +158,23 @@
 				},
 				{
 					"backtrace" : 3,
-					"define" : "QT_OPENGL_LIB"
-				},
-				{
-					"backtrace" : 3,
-					"define" : "QT_PRINTSUPPORT_LIB"
-				},
-				{
-					"backtrace" : 3,
 					"define" : "QT_WIDGETS_LIB"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 4,
-					"path" : "/home/long/software/root/root-6.30.02/rootinstall/include"
+					"backtrace" : 12,
+					"path" : "/home/long/software/root/root-6.36.00-install/include"
 				},
 				{
-					"backtrace" : 5,
-					"path" : "/home/long/software/geant4/geant4build/sim/include"
+					"backtrace" : 13,
+					"path" : "/home/long/software/geant4/geant4build/include"
 				},
 				{
 					"backtrace" : 3,
 					"isSystem" : true,
-					"path" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/include/Geant4"
+					"path" : "/home/long/software/geant4/geant4-v11.3.2-install/include/Geant4"
 				},
 				{
 					"backtrace" : 3,
@@ -170,16 +200,6 @@
 					"backtrace" : 3,
 					"isSystem" : true,
 					"path" : "/usr/include/x86_64-linux-gnu/qt5/QtWidgets"
-				},
-				{
-					"backtrace" : 3,
-					"isSystem" : true,
-					"path" : "/usr/include/x86_64-linux-gnu/qt5/QtOpenGL"
-				},
-				{
-					"backtrace" : 3,
-					"isSystem" : true,
-					"path" : "/usr/include/x86_64-linux-gnu/qt5/QtPrintSupport"
 				}
 			],
 			"language" : "CXX",
@@ -225,302 +245,302 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib:/home/long/software/root/root-6.30.02/rootinstall/lib:",
+				"fragment" : "-Wl,-rpath,/home/long/software/geant4/geant4-v11.3.2-install/lib:/home/long/software/root/root-6.36.00-install/lib:/usr/local/lib:",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4Tree.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4Tree.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4FR.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4FR.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4GMocren.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4GMocren.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4visHepRep.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4visHepRep.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4RayTracer.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4RayTracer.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4VRML.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4VRML.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4ToolsSG.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4ToolsSG.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4OpenGL.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4OpenGL.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4vis_management.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4vis_management.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4modeling.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4modeling.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4interfaces.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4interfaces.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4persistency.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4mctruth.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4error_propagation.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4geomtext.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4readout.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4gdml.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4physicslists.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4error_propagation.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4run.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4readout.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4event.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4physicslists.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4tracking.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4run.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4parmodels.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4event.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4processes.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4tracking.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4digits_hits.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4parmodels.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4track.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4processes.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4particles.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4digits_hits.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4geometry.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4track.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4materials.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4particles.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4graphics_reps.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4geometry.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libCore.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4materials.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libImt.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4graphics_reps.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libRIO.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libCore.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libNet.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libImt.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libHist.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libRIO.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libGraf.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libNet.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libGraf3d.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libHist.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libGpad.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libGraf.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libROOTDataFrame.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libGraf3d.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libTree.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libGpad.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libTreePlayer.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libROOTDataFrame.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libRint.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libTree.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libPostscript.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libTreePlayer.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libMatrix.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libRint.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libPhysics.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libPostscript.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libMathCore.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libMatrix.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libThread.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libPhysics.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libMultiProc.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libMathCore.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libROOTVecOps.so",
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libThread.so",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libMultiProc.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/home/long/software/root/root-6.36.00-install/lib/libROOTVecOps.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
 				"fragment" : "-lrt",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libXmu.so",
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.13",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libXext.so",
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.13",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libXt.so",
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.13",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libICE.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libSM.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libX11.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libGL.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5OpenGL.so.5.12.8",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5PrintSupport.so.5.12.8",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8",
+				"backtrace" : 9,
+				"fragment" : "/usr/local/lib/libxerces-c.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4analysis.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4analysis.so",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 10,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libexpat.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4zlib.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4zlib.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4intercoms.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4intercoms.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4global.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4global.so",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4clhep.so",
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4clhep.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/libG4ptl.so.2.3.3",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-pthread",
+				"backtrace" : 11,
+				"fragment" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/libG4ptl.so.3.0.0",
 				"role" : "libraries"
 			}
 		],

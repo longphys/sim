@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/long/software/geant4/geant4build/sim/build"
+			"value" : "/home/long/software/geant4/geant4build/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -79,7 +79,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "16"
+			"value" : "28"
 		},
 		{
 			"name" : "CMAKE_CACHE_PATCH_VERSION",
@@ -175,7 +175,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/gcc-ar-9"
+			"value" : "/usr/bin/gcc-ar-13"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_RANLIB",
@@ -191,7 +191,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/gcc-ranlib-9"
+			"value" : "/usr/bin/gcc-ranlib-13"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -303,7 +303,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/gcc-ar-9"
+			"value" : "/usr/bin/gcc-ar-13"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_RANLIB",
@@ -319,7 +319,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/gcc-ranlib-9"
+			"value" : "/usr/bin/gcc-ranlib-13"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS",
@@ -535,7 +535,7 @@
 				}
 			],
 			"type" : "BOOL",
-			"value" : "OFF"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_EXTRA_GENERATOR",
@@ -548,6 +548,18 @@
 			],
 			"type" : "INTERNAL",
 			"value" : ""
+		},
+		{
+			"name" : "CMAKE_FIND_PACKAGE_REDIRECTS_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake."
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/long/software/geant4/geant4build/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -631,18 +643,6 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
-		},
-		{
-			"name" : "CMAKE_HAVE_PTHREAD_H",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Have include pthread.h"
-				}
-			],
-			"type" : "INTERNAL",
 			"value" : "1"
 		},
 		{
@@ -679,7 +679,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/long/software/geant4/geant4build/sim"
+			"value" : "/home/long/software/geant4/geant4build"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -747,7 +747,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/make"
+			"value" : "/usr/bin/gmake"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -979,7 +979,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/usr/share/cmake-3.16"
+			"value" : "/usr/share/cmake-3.28"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1190,6 +1190,22 @@
 			"value" : "/usr/bin/strip"
 		},
 		{
+			"name" : "CMAKE_TAPI",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "CMAKE_TAPI-NOTFOUND"
+		},
+		{
 			"name" : "CMAKE_UNAME",
 			"properties" : 
 			[
@@ -1234,7 +1250,23 @@
 			"value" : "/usr/include"
 		},
 		{
-			"name" : "EXPAT_LIBRARY",
+			"name" : "EXPAT_LIBRARY_DEBUG",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "EXPAT_LIBRARY_DEBUG-NOTFOUND"
+		},
+		{
+			"name" : "EXPAT_LIBRARY_RELEASE",
 			"properties" : 
 			[
 				{
@@ -1259,7 +1291,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/usr/lib/x86_64-linux-gnu/libexpat.so][/usr/include][v2.2.9(2.2.9)]"
+			"value" : "[/usr/lib/x86_64-linux-gnu/libexpat.so][/usr/include][v2.6.1(2.6.1)]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Geant4",
@@ -1271,7 +1303,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4/Geant4Config.cmake][v11.1.2()]"
+			"value" : "[/home/long/software/geant4/geant4-v11.3.2-install/lib/cmake/Geant4/Geant4Config.cmake][v11.3.2()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_OpenGL",
@@ -1307,7 +1339,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/home/long/software/root/root-6.30.02/rootinstall/include][/home/long/software/root/root-6.30.02/rootinstall/lib/libvdt.so][v0.4()]"
+			"value" : "[/usr/include][/usr/lib/x86_64-linux-gnu/libvdt.so][v0.4()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_X11",
@@ -1320,6 +1352,18 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "[/usr/include][/usr/lib/x86_64-linux-gnu/libX11.so][c ][v()]"
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_XercesC",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding XercesC"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/usr/local/lib/libxerces-c.so][/usr/local/include][3.3.0][v3.3.0(3.3.0)]"
 		},
 		{
 			"name" : "FREETYPE_INCLUDE_DIR_freetype2",
@@ -1427,7 +1471,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4"
+			"value" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/cmake/Geant4"
 		},
 		{
 			"name" : "OPENGL_EGL_INCLUDE_DIR",
@@ -1444,6 +1488,38 @@
 			],
 			"type" : "PATH",
 			"value" : "/usr/include"
+		},
+		{
+			"name" : "OPENGL_GLES2_INCLUDE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "OPENGL_GLES2_INCLUDE_DIR-NOTFOUND"
+		},
+		{
+			"name" : "OPENGL_GLES3_INCLUDE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "OPENGL_GLES3_INCLUDE_DIR-NOTFOUND"
 		},
 		{
 			"name" : "OPENGL_GLX_INCLUDE_DIR",
@@ -1508,6 +1584,38 @@
 			],
 			"type" : "FILEPATH",
 			"value" : "/usr/lib/x86_64-linux-gnu/libGL.so"
+		},
+		{
+			"name" : "OPENGL_gles2_LIBRARY",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "OPENGL_gles2_LIBRARY-NOTFOUND"
+		},
+		{
+			"name" : "OPENGL_gles3_LIBRARY",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "OPENGL_gles3_LIBRARY-NOTFOUND"
 		},
 		{
 			"name" : "OPENGL_glu_LIBRARY",
@@ -1583,7 +1691,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
+			"value" : "-I/usr/include"
 		},
 		{
 			"name" : "PC_EXPAT_CFLAGS_I",
@@ -1643,7 +1751,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
+			"value" : "/usr/include"
 		},
 		{
 			"name" : "PC_EXPAT_LDFLAGS",
@@ -1655,7 +1763,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "-lexpat"
+			"value" : "-L/usr/lib/x86_64-linux-gnu;-lexpat"
 		},
 		{
 			"name" : "PC_EXPAT_LDFLAGS_OTHER",
@@ -1703,7 +1811,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
+			"value" : "/usr/lib/x86_64-linux-gnu"
 		},
 		{
 			"name" : "PC_EXPAT_LIBS",
@@ -1787,7 +1895,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
+			"value" : "-I/usr/include;-DXML_STATIC"
 		},
 		{
 			"name" : "PC_EXPAT_STATIC_CFLAGS_I",
@@ -1811,7 +1919,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
+			"value" : "-DXML_STATIC"
 		},
 		{
 			"name" : "PC_EXPAT_STATIC_INCLUDE_DIRS",
@@ -1823,7 +1931,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
+			"value" : "/usr/include"
 		},
 		{
 			"name" : "PC_EXPAT_STATIC_LDFLAGS",
@@ -1835,7 +1943,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "-lexpat"
+			"value" : "-L/usr/lib/x86_64-linux-gnu;-lexpat;-lm"
 		},
 		{
 			"name" : "PC_EXPAT_STATIC_LDFLAGS_OTHER",
@@ -1871,7 +1979,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "expat"
+			"value" : "expat;m"
 		},
 		{
 			"name" : "PC_EXPAT_STATIC_LIBRARY_DIRS",
@@ -1883,7 +1991,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
+			"value" : "/usr/lib/x86_64-linux-gnu"
 		},
 		{
 			"name" : "PC_EXPAT_STATIC_LIBS",
@@ -1943,7 +2051,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "2.2.9"
+			"value" : "2.6.1"
 		},
 		{
 			"name" : "PC_EXPAT_expat_INCLUDEDIR",
@@ -1994,6 +2102,22 @@
 			"value" : ""
 		},
 		{
+			"name" : "PKG_CONFIG_ARGN",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Arguments to supply to pkg-config"
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
 			"name" : "PKG_CONFIG_EXECUTABLE",
 			"properties" : 
 			[
@@ -2019,7 +2143,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "-I/usr/include/uuid;-I/usr/include/freetype2;-I/usr/include/libpng16"
+			"value" : "-I/usr/include;-I/usr/include/freetype2;-I/usr/include/libpng16"
 		},
 		{
 			"name" : "PKG_FONTCONFIG_CFLAGS_I",
@@ -2079,7 +2203,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/usr/include/uuid;/usr/include/freetype2;/usr/include/libpng16"
+			"value" : "/usr/include;/usr/include/freetype2;/usr/include/libpng16"
 		},
 		{
 			"name" : "PKG_FONTCONFIG_LDFLAGS",
@@ -2091,7 +2215,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "-lfontconfig;-lfreetype"
+			"value" : "-L/usr/lib/x86_64-linux-gnu;-lfontconfig;-lfreetype"
 		},
 		{
 			"name" : "PKG_FONTCONFIG_LDFLAGS_OTHER",
@@ -2139,7 +2263,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
+			"value" : "/usr/lib/x86_64-linux-gnu"
 		},
 		{
 			"name" : "PKG_FONTCONFIG_LIBS",
@@ -2223,7 +2347,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "-I/usr/include/uuid;-I/usr/include/freetype2;-I/usr/include/libpng16"
+			"value" : "-I/usr/include;-I/usr/include/freetype2;-I/usr/include/libpng16;-DXML_STATIC"
 		},
 		{
 			"name" : "PKG_FONTCONFIG_STATIC_CFLAGS_I",
@@ -2247,7 +2371,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
+			"value" : "-DXML_STATIC"
 		},
 		{
 			"name" : "PKG_FONTCONFIG_STATIC_INCLUDE_DIRS",
@@ -2259,7 +2383,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/usr/include/uuid;/usr/include/freetype2;/usr/include/libpng16"
+			"value" : "/usr/include;/usr/include/freetype2;/usr/include/libpng16"
 		},
 		{
 			"name" : "PKG_FONTCONFIG_STATIC_LDFLAGS",
@@ -2271,7 +2395,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "-lfontconfig;-luuid;-lexpat;-lfreetype;-lpng16;-lm;-lz;-lm;-lz"
+			"value" : "-L/usr/lib/x86_64-linux-gnu;-lfontconfig;-lfreetype;-lbz2;-L/usr/lib/x86_64-linux-gnu;-L/usr/lib/x86_64-linux-gnu;-lz;-lpng16;-lm;-lz;-lm;-L/usr/lib/x86_64-linux-gnu;-L/usr/lib/x86_64-linux-gnu;-lz;-lbrotlidec;-L/usr/lib/x86_64-linux-gnu;-lbrotlicommon;-L/usr/lib/x86_64-linux-gnu;-lexpat;-lm"
 		},
 		{
 			"name" : "PKG_FONTCONFIG_STATIC_LDFLAGS_OTHER",
@@ -2307,7 +2431,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "fontconfig;uuid;expat;freetype;png16;m;z;m;z"
+			"value" : "fontconfig;freetype;bz2;z;png16;m;z;m;z;brotlidec;brotlicommon;expat;m"
 		},
 		{
 			"name" : "PKG_FONTCONFIG_STATIC_LIBRARY_DIRS",
@@ -2319,7 +2443,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
+			"value" : "/usr/lib/x86_64-linux-gnu;/usr/lib/x86_64-linux-gnu;/usr/lib/x86_64-linux-gnu;/usr/lib/x86_64-linux-gnu;/usr/lib/x86_64-linux-gnu;/usr/lib/x86_64-linux-gnu;/usr/lib/x86_64-linux-gnu"
 		},
 		{
 			"name" : "PKG_FONTCONFIG_STATIC_LIBS",
@@ -2379,7 +2503,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "2.13.1"
+			"value" : "2.15.0"
 		},
 		{
 			"name" : "PKG_FONTCONFIG_fontconfig_INCLUDEDIR",
@@ -2439,7 +2563,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/home/long/software/geant4/geant4-v11.1.2-singleinstall/lib/cmake/Geant4/PTL"
+			"value" : "/home/long/software/geant4/geant4-v11.3.2-install/lib/cmake/Geant4/PTL"
 		},
 		{
 			"name" : "Qt5Core_DIR",
@@ -2478,18 +2602,6 @@
 			"value" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5OpenGL"
 		},
 		{
-			"name" : "Qt5PrintSupport_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt5PrintSupport."
-				}
-			],
-			"type" : "PATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5PrintSupport"
-		},
-		{
 			"name" : "Qt5Widgets_DIR",
 			"properties" : 
 			[
@@ -2515,7 +2627,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libCore.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libCore.so"
 		},
 		{
 			"name" : "ROOT_DIR",
@@ -2527,7 +2639,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/cmake"
+			"value" : "/home/long/software/root/root-6.36.00-install/cmake"
 		},
 		{
 			"name" : "ROOT_Gpad_LIBRARY",
@@ -2543,7 +2655,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libGpad.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libGpad.so"
 		},
 		{
 			"name" : "ROOT_Graf3d_LIBRARY",
@@ -2559,7 +2671,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libGraf3d.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libGraf3d.so"
 		},
 		{
 			"name" : "ROOT_Graf_LIBRARY",
@@ -2575,7 +2687,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libGraf.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libGraf.so"
 		},
 		{
 			"name" : "ROOT_Hist_LIBRARY",
@@ -2591,7 +2703,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libHist.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libHist.so"
 		},
 		{
 			"name" : "ROOT_Imt_LIBRARY",
@@ -2607,7 +2719,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libImt.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libImt.so"
 		},
 		{
 			"name" : "ROOT_MathCore_LIBRARY",
@@ -2623,7 +2735,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libMathCore.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libMathCore.so"
 		},
 		{
 			"name" : "ROOT_Matrix_LIBRARY",
@@ -2639,7 +2751,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libMatrix.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libMatrix.so"
 		},
 		{
 			"name" : "ROOT_MultiProc_LIBRARY",
@@ -2655,7 +2767,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libMultiProc.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libMultiProc.so"
 		},
 		{
 			"name" : "ROOT_Net_LIBRARY",
@@ -2671,7 +2783,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libNet.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libNet.so"
 		},
 		{
 			"name" : "ROOT_Physics_LIBRARY",
@@ -2687,7 +2799,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libPhysics.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libPhysics.so"
 		},
 		{
 			"name" : "ROOT_Postscript_LIBRARY",
@@ -2703,7 +2815,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libPostscript.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libPostscript.so"
 		},
 		{
 			"name" : "ROOT_RIO_LIBRARY",
@@ -2719,7 +2831,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libRIO.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libRIO.so"
 		},
 		{
 			"name" : "ROOT_ROOTDataFrame_LIBRARY",
@@ -2735,7 +2847,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libROOTDataFrame.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libROOTDataFrame.so"
 		},
 		{
 			"name" : "ROOT_ROOTVecOps_LIBRARY",
@@ -2751,7 +2863,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libROOTVecOps.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libROOTVecOps.so"
 		},
 		{
 			"name" : "ROOT_Rint_LIBRARY",
@@ -2767,7 +2879,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libRint.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libRint.so"
 		},
 		{
 			"name" : "ROOT_Thread_LIBRARY",
@@ -2783,7 +2895,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libThread.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libThread.so"
 		},
 		{
 			"name" : "ROOT_TreePlayer_LIBRARY",
@@ -2799,7 +2911,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libTreePlayer.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libTreePlayer.so"
 		},
 		{
 			"name" : "ROOT_Tree_LIBRARY",
@@ -2815,7 +2927,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libTree.so"
+			"value" : "/home/long/software/root/root-6.36.00-install/lib/libTree.so"
 		},
 		{
 			"name" : "ROOT_genmap_CMD",
@@ -2843,7 +2955,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/bin/genreflex"
+			"value" : "/home/long/software/root/root-6.36.00-install/bin/genreflex"
 		},
 		{
 			"name" : "ROOT_hadd_CMD",
@@ -2859,7 +2971,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/bin/hadd"
+			"value" : "/home/long/software/root/root-6.36.00-install/bin/hadd"
 		},
 		{
 			"name" : "ROOT_root_CMD",
@@ -2875,7 +2987,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/bin/root"
+			"value" : "/home/long/software/root/root-6.36.00-install/bin/root"
 		},
 		{
 			"name" : "ROOT_rootbrowse_CMD",
@@ -2891,7 +3003,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/bin/rootbrowse"
+			"value" : "/home/long/software/root/root-6.36.00-install/bin/rootbrowse"
 		},
 		{
 			"name" : "ROOT_rootcint_CMD",
@@ -2907,7 +3019,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/bin/rootcint"
+			"value" : "/home/long/software/root/root-6.36.00-install/bin/rootcint"
 		},
 		{
 			"name" : "ROOT_rootcling_CMD",
@@ -2923,7 +3035,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/bin/rootcling"
+			"value" : "/home/long/software/root/root-6.36.00-install/bin/rootcling"
 		},
 		{
 			"name" : "ROOT_rootcp_CMD",
@@ -2939,7 +3051,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/bin/rootcp"
+			"value" : "/home/long/software/root/root-6.36.00-install/bin/rootcp"
 		},
 		{
 			"name" : "ROOT_rootdraw_CMD",
@@ -2967,7 +3079,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/bin/rootls"
+			"value" : "/home/long/software/root/root-6.36.00-install/bin/rootls"
 		},
 		{
 			"name" : "ROOT_rootmkdir_CMD",
@@ -2983,7 +3095,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/bin/rootmkdir"
+			"value" : "/home/long/software/root/root-6.36.00-install/bin/rootmkdir"
 		},
 		{
 			"name" : "ROOT_rootmv_CMD",
@@ -2999,7 +3111,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/bin/rootmv"
+			"value" : "/home/long/software/root/root-6.36.00-install/bin/rootmv"
 		},
 		{
 			"name" : "ROOT_rootrm_CMD",
@@ -3015,7 +3127,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/bin/rootrm"
+			"value" : "/home/long/software/root/root-6.36.00-install/bin/rootrm"
 		},
 		{
 			"name" : "Simulation_BINARY_DIR",
@@ -3027,7 +3139,19 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/long/software/geant4/geant4build/sim/build"
+			"value" : "/home/long/software/geant4/geant4build/build"
+		},
+		{
+			"name" : "Simulation_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
 		},
 		{
 			"name" : "Simulation_SOURCE_DIR",
@@ -3039,19 +3163,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/long/software/geant4/geant4build/sim"
-		},
-		{
-			"name" : "THREADS_HAVE_PTHREAD_ARG",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Result of TRY_COMPILE"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
+			"value" : "/home/long/software/geant4/geant4build"
 		},
 		{
 			"name" : "VDT_INCLUDE_DIR",
@@ -3067,7 +3179,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/include"
+			"value" : "/usr/include"
 		},
 		{
 			"name" : "VDT_LIBRARY",
@@ -3083,7 +3195,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/home/long/software/root/root-6.30.02/rootinstall/lib/libvdt.so"
+			"value" : "/usr/lib/x86_64-linux-gnu/libvdt.so"
 		},
 		{
 			"name" : "WITH_GEANT4_UIVIS",
@@ -3128,22 +3240,6 @@
 			],
 			"type" : "FILEPATH",
 			"value" : "/usr/lib/x86_64-linux-gnu/libICE.so"
-		},
-		{
-			"name" : "X11_LIBRARIES",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
 		},
 		{
 			"name" : "X11_LIB_X11_SOLO",
@@ -3220,6 +3316,38 @@
 			],
 			"type" : "FILEPATH",
 			"value" : "/usr/lib/x86_64-linux-gnu/libX11.so"
+		},
+		{
+			"name" : "X11_X11_xcb_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_X11_xcb_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_X11_xcb_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_X11_xcb_LIB-NOTFOUND"
 		},
 		{
 			"name" : "X11_XRes_INCLUDE_PATH",
@@ -3350,6 +3478,38 @@
 			"value" : "/usr/lib/x86_64-linux-gnu/libXau.so"
 		},
 		{
+			"name" : "X11_Xaw_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_Xaw_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_Xaw_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_Xaw_LIB-NOTFOUND"
+		},
+		{
 			"name" : "X11_Xcomposite_INCLUDE_PATH",
 			"properties" : 
 			[
@@ -3363,7 +3523,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/include"
+			"value" : "X11_Xcomposite_INCLUDE_PATH-NOTFOUND"
 		},
 		{
 			"name" : "X11_Xcomposite_LIB",
@@ -3379,7 +3539,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/libXcomposite.so"
+			"value" : "X11_Xcomposite_LIB-NOTFOUND"
 		},
 		{
 			"name" : "X11_Xcursor_INCLUDE_PATH",
@@ -3395,7 +3555,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/include"
+			"value" : "X11_Xcursor_INCLUDE_PATH-NOTFOUND"
 		},
 		{
 			"name" : "X11_Xcursor_LIB",
@@ -3411,7 +3571,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/libXcursor.so"
+			"value" : "X11_Xcursor_LIB-NOTFOUND"
 		},
 		{
 			"name" : "X11_Xdamage_INCLUDE_PATH",
@@ -3427,7 +3587,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/include"
+			"value" : "X11_Xdamage_INCLUDE_PATH-NOTFOUND"
 		},
 		{
 			"name" : "X11_Xdamage_LIB",
@@ -3443,7 +3603,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/libXdamage.so"
+			"value" : "X11_Xdamage_LIB-NOTFOUND"
 		},
 		{
 			"name" : "X11_Xdmcp_INCLUDE_PATH",
@@ -3523,7 +3683,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/include"
+			"value" : "X11_Xfixes_INCLUDE_PATH-NOTFOUND"
 		},
 		{
 			"name" : "X11_Xfixes_LIB",
@@ -3539,7 +3699,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/libXfixes.so"
+			"value" : "X11_Xfixes_LIB-NOTFOUND"
 		},
 		{
 			"name" : "X11_Xft_INCLUDE_PATH",
@@ -3587,7 +3747,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/include"
+			"value" : "X11_Xi_INCLUDE_PATH-NOTFOUND"
 		},
 		{
 			"name" : "X11_Xi_LIB",
@@ -3603,7 +3763,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/libXi.so"
+			"value" : "X11_Xi_LIB-NOTFOUND"
 		},
 		{
 			"name" : "X11_Xinerama_INCLUDE_PATH",
@@ -3619,7 +3779,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/include"
+			"value" : "X11_Xinerama_INCLUDE_PATH-NOTFOUND"
 		},
 		{
 			"name" : "X11_Xinerama_LIB",
@@ -3635,7 +3795,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/libXinerama.so"
+			"value" : "X11_Xinerama_LIB-NOTFOUND"
 		},
 		{
 			"name" : "X11_Xkb_INCLUDE_PATH",
@@ -3763,7 +3923,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/include"
+			"value" : "X11_Xrandr_INCLUDE_PATH-NOTFOUND"
 		},
 		{
 			"name" : "X11_Xrandr_LIB",
@@ -3779,7 +3939,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/libXrandr.so"
+			"value" : "X11_Xrandr_LIB-NOTFOUND"
 		},
 		{
 			"name" : "X11_Xrender_INCLUDE_PATH",
@@ -3907,7 +4067,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/include"
+			"value" : "X11_Xtst_INCLUDE_PATH-NOTFOUND"
 		},
 		{
 			"name" : "X11_Xtst_LIB",
@@ -3923,7 +4083,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/libXtst.so"
+			"value" : "X11_Xtst_LIB-NOTFOUND"
 		},
 		{
 			"name" : "X11_Xutil_INCLUDE_PATH",
@@ -4054,6 +4214,1122 @@
 			"value" : "/usr/include"
 		},
 		{
+			"name" : "X11_xcb_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/include"
+		},
+		{
+			"name" : "X11_xcb_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/libxcb.so"
+		},
+		{
+			"name" : "X11_xcb_composite_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_composite_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_composite_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_composite_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_cursor_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_cursor_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_cursor_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_cursor_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_damage_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_damage_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_damage_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_damage_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_dpms_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_dpms_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_dpms_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_dpms_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_dri2_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_dri2_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_dri2_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_dri2_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_dri3_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_dri3_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_dri3_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_dri3_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_errors_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_errors_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_errors_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_errors_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_ewmh_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_ewmh_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_ewmh_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_ewmh_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_glx_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_glx_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_glx_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_glx_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_icccm_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_icccm_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_icccm_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_icccm_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_image_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_image_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_image_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_image_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_keysyms_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_keysyms_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_keysyms_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_keysyms_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_present_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_present_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_present_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_present_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_randr_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_randr_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_randr_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_randr_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_record_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_record_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_record_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_record_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_render_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_render_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_render_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_render_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_render_util_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_render_util_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_render_util_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_render_util_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_res_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_res_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_res_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_res_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_screensaver_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_screensaver_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_screensaver_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_screensaver_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_shape_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_shape_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_shape_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_shape_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_shm_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_shm_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_shm_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_shm_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_sync_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_sync_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_sync_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_sync_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_util_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_util_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_util_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_util_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_xf86dri_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_xf86dri_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_xf86dri_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_xf86dri_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_xfixes_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_xfixes_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_xfixes_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_xfixes_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_xinerama_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_xinerama_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_xinerama_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_xinerama_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_xinput_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_xinput_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_xinput_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_xinput_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_xkb_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_xkb_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_xkb_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_xkb_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_xrm_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_xrm_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_xrm_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_xrm_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_xtest_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_xtest_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_xtest_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_xtest_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_xv_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_xv_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_xv_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_xv_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_xvmc_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xcb_xvmc_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xcb_xvmc_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xcb_xvmc_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xkbcommon_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xkbcommon_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xkbcommon_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xkbcommon_LIB-NOTFOUND"
+		},
+		{
+			"name" : "X11_xkbcommon_X11_INCLUDE_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a file."
+				}
+			],
+			"type" : "PATH",
+			"value" : "X11_xkbcommon_X11_INCLUDE_PATH-NOTFOUND"
+		},
+		{
+			"name" : "X11_xkbcommon_X11_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "X11_xkbcommon_X11_LIB-NOTFOUND"
+		},
+		{
 			"name" : "X11_xkbfile_INCLUDE_PATH",
 			"properties" : 
 			[
@@ -4084,6 +5360,66 @@
 			],
 			"type" : "FILEPATH",
 			"value" : "X11_xkbfile_LIB-NOTFOUND"
+		},
+		{
+			"name" : "XercesC_INCLUDE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Xerces-C++ include directory"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/local/include"
+		},
+		{
+			"name" : "XercesC_LIBRARY_DEBUG",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Xerces-C++ libraries (debug)"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "XercesC_LIBRARY_DEBUG-NOTFOUND"
+		},
+		{
+			"name" : "XercesC_LIBRARY_RELEASE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Xerces-C++ libraries (release)"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/local/lib/libxerces-c.so"
+		},
+		{
+			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "linker supports push/pop state"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "TRUE"
 		},
 		{
 			"name" : "__pkg_config_arguments_PC_EXPAT",
